@@ -1,0 +1,122 @@
+html {
+  line-height: 1.618;
+  font-family: $family-sans-serif;
+  font-size: 16px;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+a {
+  opacity: 0.8;
+  text-decoration: none;
+  color: $text-strong;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+    outline: none;
+    color: $black-ter;
+  }
+}
+
+.site-header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 20rem;
+  text-align: center;
+
+  & .is-active {
+    & a {
+      opacity: 1;
+      color: $text-strong;
+      font-weight: $weight-bold;
+    }
+  }
+
+  & a {
+    opacity: 0.5;
+    color: $black-ter;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+      color: $text-strong;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    position: relative;
+    width: 100%;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 20rem;
+  border-right: 1px solid $main-border;
+  border-left: 1px solid $main-border;
+  box-shadow: 0 1px 4px $box-shadow;
+  background: $main-background;
+  padding: 1rem 2rem;
+  width: calc(100% - 20rem);
+  max-width: 70rem;
+  min-height: 100vh;
+
+  & .list-footer {
+    padding: 1.5rem 0;
+  }
+
+  @media print, screen and (max-width: $tablet) {
+    margin-left: 0;
+    border-top: 1px solid $main-border;
+    border-right: none;
+    border-bottom: 1px solid $main-border;
+    border-left: none;
+    padding: 0 1rem;
+    width: 100%;
+    min-height: initial;
+  }
+}
+
+.site-footer {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: block;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: $text;
+    font-family: $family-monospace;
+    font-size: $size-7;
+
+    & a {
+      opacity: 0.7;
+      color: $text;
+
+      &:focus,
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
