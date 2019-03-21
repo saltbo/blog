@@ -1,0 +1,98 @@
+name = "闫勃"
+
+# These two variable definitions need to go before [contact], etc.
+languages = [
+  "汉语(native)",
+  "英语 (conversational)"
+]
+
+interests = [
+  "区块链",
+  "智能硬件"
+]
+
+[contact]
+
+  [[contact.list]]
+    class = "email"
+    url = "mailto:saltbo@foxmail.com"
+    title = "saltbo@foxmail.com"
+
+  [[contact.list]]
+    class = "phone"
+    url = "tel: +86 18519384536"
+    title = "+86 18519384536"
+
+  [[contact.list]]
+    class = "github"
+    url = "//github.com/saltbo"
+    title = "github.com/saltbo"
+
+  [[contact.list]]
+    class = "website"
+    url = "//yanbo.me"
+    title = "yanbo.me"
+
+[education]
+
+  [[education.list]]
+    degree = "M.Sc. Computer Science"
+    school = "University of Universe"
+    year = "2006 - 2008"
+    description = "Thesis: Automatic Peeling Bananas."
+
+  [[education.list]]
+    degree = "B.S. Computer Science"
+    school = "University of Universe"
+    year = "2002 - 2006"
+    description = "Courses: Algorithms, Computer Architecture."
+
+
+[experience]
+
+  [[experience.list]]
+    name = "Google Cloud"
+    company = "Google, Inc."
+    location = "Mountain View, CA, USA"
+    title = "Software Engineer"
+    year = "01/2016 - now"
+    description = """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse elit quam, maximus eget ex eget, vehicula ultricies nunc.
+      Nam sodales eu ipsum non ultricies."""
+
+  [[experience.list]]
+    name = "Amazon Web Services"
+    company = "Amazon"
+    location = "Seattle, WA, USA"
+    title = "Software Engineer"
+    year = "09/2014 - 12/2015"
+    projects = [
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+    ]
+
+  [[experience.list]]
+    name = "Aliyun"
+    company = "Alibaba, Inc."
+    location = "Hangzhou, Zhejiang, China"
+    title = "Software Engineer"
+    year = "01/2009 - 08/2014"
+    projects = [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ]
+
+[skill]
+
+  [[skill.list]]
+    name = "Golang"
+    level = "90"
+
+  [[skill.list]]
+    name = "PHP"
+    level = "90"
