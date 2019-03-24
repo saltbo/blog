@@ -3,8 +3,7 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
-      <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} ·
-        {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read · <span id="busuanzi_container_page_pv"></span><span id="busuanzi_value_page_pv"></span> viewed</span></p>
+      <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read · <span id="busuanzi_value_page_pv"></span> viewed</p>
     </header>
     <article class="post-content">{{ .Content }}</article>
     <footer class="post-footer">
