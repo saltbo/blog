@@ -3,20 +3,39 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
-      <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</p>
+      <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read · <span id="busuanzi_value_page_pv"></span> viewed</p>
     </header>
     <article class="post-content">{{ .Content }}</article>
     <footer class="post-footer">
+      <ul class="post-copyright">
+        <li>
+          <strong>原始链接：</strong>
+          <a href="{{.Permalink}}">{{.Permalink}}</a></li>
+        <li>
+          <strong>版权声明：</strong>
+          本博客所有文章除特别声明外，均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>许可协议。
+          转载请注明来自 <a href="{{ .Site.BaseURL }}">{{.Site.Params.seotitle}}</a>
+        </li>
+      </ul>
       {{ if isset .Params "tags" }}
       <ul class="post-tags">
         {{ range $tag := .Params.tags }}
-          <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag | title }}</span></a></li>
+        <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag | title }}</span></a></li>
         {{ end }}
       </ul>
       {{ end }}
-      <p class="post-copyright">
-        {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}This post was published <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.{{ end }}
-      </p>
+      <div class="post-reward">
+        <p class="reward-tips">如果您感觉我的文章质量不错，读后收获很大，预计能为您提高 10% 的工作效率，不妨小额捐助我一下，让我有动力继续写出更多好文章。</p>
+        <a class="reward-btn" href="JavaScript:;;">打赏</a>
+        <ul class="reward-ways reward-ways-collapsed">
+          {{ range .Site.Params.rewards }}
+          <li id="{{ .name }}">
+            <img src="{{ .url }}">
+            <p>{{ .name }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
     </footer>
     {{ if ne .Params.comments false }}
       {{ if .Site.Params.changyan }}

@@ -2,16 +2,14 @@
 title: "基于Docker搭建开发测试环境--网络·缓存"
 date: 2017-07-15T22:59:11+08:00
 tags: ["docker"] 
-
 ---
-
 Docker网络类型 docker有三种网络类型bridge、host、none，默认bridge。bridge的意思是容器拥有独立的网络环境通...
 
 <!--more-->
 
 ### Docker网络类型
 
-```
+```bash
 [www@BJ-TEST-SHZF ~]$ ifconfig
  docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.0.1  netmask 255.255.240.0  broadcast 0.0.0.0
@@ -84,7 +82,7 @@ server{
 这里的话主要就是修改下server_name和root即可，注意Dockerfile里提到了，我们是挂载到/data/web下，所以如图的路径就是/data/web/project-x
 
 ##### 部署Shell
-```
+```bash
  #!/bin/bash
  
 appname="store-dev"
@@ -129,7 +127,7 @@ docker run -v $logpath:/data/logs -v $apppath:/data/web/ -p 80:80 --name $name -
 这里主要说下docker化后的项目如何部署。
 
 ##### deploy.sh
-```
+```bash
 #!/bin/bash
 
 port=""
@@ -164,7 +162,7 @@ fi
 ```
 
 ##### project-a.sh
-```
+```bash
 #!/bin/bash
 
 export env="testing"
@@ -247,7 +245,7 @@ server{
     }
 }
 ```
-```
+```bash
 # 加入代理并重启
 if [ $appport ] ; then
     echo $appport
@@ -294,7 +292,7 @@ ENTRYPOINT ["docker/entrypoint.sh"]
 CMD ["supervisord"]
 ```
 
-```
+```dockerfile
 FROM registry-internal.cn-beijing.aliyuncs.com/xxxx/golang:1.7-govendor AS build-env
 
 ENV ROOT_PATH /go/src/gitlab.xxxx.com/shzf/goscron

@@ -15,7 +15,7 @@
       letter-spacing: 1px;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
   }
 
@@ -42,13 +42,51 @@
       }
     }
 
+    & .post-reward {
+      border-top: 1px solid #eee;
+      text-align: center;
+      color: #555;
+      margin: 3rem auto;
+      word-break: break-word;
+      & .reward-tips {
+        padding: 0 10rem;
+      }
+      & .reward-btn {
+        padding: 0.2rem 0.5rem;
+        color: #fff;
+        font-weight: bold;
+        background: red;
+        border-radius: 0.2rem;
+      }
+
+      & .reward-ways-collapsed {
+        display: none !important;
+      }
+      & .reward-ways {
+        margin-top: 3rem;
+        padding: 0 10rem;
+
+        & li {
+          list-style: none;
+          display: inline-block;
+          margin: 0 2rem;
+          & img {
+            width: 10rem;
+            height: 10rem;
+          }
+          & p {
+            margin: 0;
+          }
+        }
+      }
+    }
+
     & .post-copyright {
       color: $text;
-      margin-top: 1rem;
-      margin-bottom: 0;
-      border-radius: $radius;
-      font-size: 0.9rem;
-      opacity: 0.5;
+      padding: 1rem 1.5rem;
+      border-left: 3px solid #ff1700;
+      background-color: #f9f9f9;
+      list-style: none;
 
       &:hover {
         opacity: 1;
@@ -56,10 +94,10 @@
 
       & a {
         opacity: 1;
+        color: #268bd2;
       }
 
-      & strong {
-        color: $text-strong;
+      & li {
       }
     }
   }

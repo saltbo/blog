@@ -38,6 +38,16 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   description = "A programer from feature."
   paginate = 10
 
+  [[params.rewards]]
+    name = "微信"
+    url = "/images/reward/wechat.png"
+  [[params.rewards]]
+    name = "支付宝"
+    url = "/images/reward/alipay.png"
+  [[params.rewards]]
+    name = "EOS"
+    url = "/images/reward/eos.png"
+
   # Choose your social networks
   email = "saltbo@foxmail.com"
   github = "saltbo"

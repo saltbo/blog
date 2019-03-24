@@ -3,9 +3,6 @@
 
 <!-- Site Footer -->
 <footer class="site-footer">
-  <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  </span>
   <p>© {{ if eq now.Year 2017 }}2017{{ else }}2017-{{ now.Year }}{{ end }} {{ .Site.Title }}</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
   {{ if and (isset .Site.Params "icp") (ne .Site.Params.ICP "") }}

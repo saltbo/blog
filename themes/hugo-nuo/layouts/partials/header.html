@@ -28,6 +28,14 @@
         </li>
       {{ end }}
     </ul>
+
+    {{ if and (.TableOfContents) (eq .Type "post") }}
+    <div class="toc">
+      <a class="toc-btn" href="JavaScript: void();">隐藏目录</a>
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+
   </nav>
   <nav class="social-menu collapsed">
     <h2 class="offscreen">Social Networks</h2>

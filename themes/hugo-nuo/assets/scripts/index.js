@@ -7,6 +7,23 @@ var siteMenu = document.querySelector('.site-menu');
 var socialMenu = document.querySelector('.social-menu');
 var toTopBtn = document.querySelector('.to-top');
 
+
+var tocMenu = document.querySelector('#TableOfContents');
+var collapseBtn = document.querySelector('.toc-btn');
+
+var rewardBtn = document.querySelector(".reward-btn");
+var rewardWay = document.querySelector(".reward-ways");
+
+rewardBtn && rewardBtn.addEventListener('click', function() {
+  rewardWay.classList.toggle('reward-ways-collapsed');
+})
+
+collapseBtn && collapseBtn.addEventListener('click', function() {
+  var collapse = tocMenu.classList.contains('toc-menu-collapsed');
+  collapseBtn.innerHTML = !collapse ? '显示目录' : '隐藏目录'
+  tocMenu.classList.toggle('toc-menu-collapsed');
+})
+
 // Site and social menu toggle
 menuToggle &&
   menuToggle.addEventListener('click', function() {
