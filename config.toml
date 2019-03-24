@@ -28,6 +28,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   identifier = "tags"
   url = "/tags/"
 
+
 # Add your own params here
 [params]
   author = "saltbo"
@@ -37,16 +38,6 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   subtitle = "Keep moving"
   description = "A programer from feature."
   paginate = 10
-
-  [[params.rewards]]
-    name = "微信"
-    url = "/images/reward/wechat.png"
-  [[params.rewards]]
-    name = "支付宝"
-    url = "/images/reward/alipay.png"
-  [[params.rewards]]
-    name = "EOS"
-    url = "/images/reward/eos.png"
 
   # Choose your social networks
   email = "saltbo@foxmail.com"
@@ -109,3 +100,14 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 
   # ICP Number (China Only)
   # ICP = "苏ICP备16005986号-2"
+
+# The ways of reward. 
+[[params.rewards]]
+  name = "微信"
+  url = "/images/reward/wechat.png"
+[[params.rewards]]
+  name = "支付宝"
+  url = "/images/reward/alipay.png"
+[[params.rewards]]
+  name = "EOS"
+  url = "/images/reward/eos.png"
