@@ -1,56 +1,52 @@
-baseURL = ""
-languageCode = "en"
-title = "Hugo Blog"
-theme = "hugo-nuo"
+baseURL = "http://saltbo.cn"
+languageCode = "en-us"
+title = "Saltbo"
+theme = "even"
 enableRobotsTXT = true
 PygmentsCodeFences = true
 canonifyurls = true
+uglyURLs = true
 
 # Disqus Username
-disqusShortname = "disqus_shortname"
+disqusShortname = "saltbo"
 
 # Google Analytics UA number
-googleAnalytics = "UA-XXXXXXXX-X"
+googleAnalytics = "UA-133655531-1"
 
 # Copyright of your post
-copyright = "© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce."
+copyright = "© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce."
 
 # Initial site menu, you can extend menu with content.
 [[menu.main]]
-  name = "Home"
+  name = "主页"
   weight = 10
   identifier = "home"
   url = "/"
 
 [[menu.main]]
-  name = "Works"
+  name = "标签"
   weight = 20
-  identifier = "works"
-  url = "https://github.com/laozhu"
-
-[[menu.main]]
-  name = "Tags"
-  weight = 30
   identifier = "tags"
-  url = "/tags/"
+  url = "/tags.html"
+
 
 # Add your own params here
 [params]
-  author = "Ritchie Zhu"
+  author = "saltbo"
   bg = "images/grey-prism.svg"
-  avatar = "images/avatar.png"
-  seotitle = "Hugo Blog (SEO Version)"
-  subtitle = "~ Keep It Simple & Stupid ~"
-  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
+  avatar = "images/avatar.jpg"
+  seotitle = "Saltbo Blog"
+  subtitle = "Keep moving"
+  description = "A programer from feature."
   paginate = 10
 
   # Choose your social networks
-  email = "name@domain.com"
-  github = "github_username"
-  twitter = "twitter_username"
-  linkedin = "linkedin_username"
-  weibo = "weibo_username"
-  wechat= "images/qrcode.jpg"  # Replace with your wechat qrcode image
+  email = "saltbo@foxmail.com"
+  github = "saltbo"
+  twitter = "yanbo1225"
+  # linkedin = "linkedin_username"
+  weibo = "bigbo1225"
+  # wechat= "images/qrcode.jpg"  # Replace with your wechat qrcode image
   # facebook = "facebook_username"
   # google = "googlplus_id_number"
   # instagram = "instagram_username"
@@ -105,3 +101,14 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 
   # ICP Number (China Only)
   # ICP = "苏ICP备16005986号-2"
+
+# The ways of reward. 
+[[params.rewards]]
+  name = "微信"
+  url = "/images/reward/wechat.png"
+[[params.rewards]]
+  name = "支付宝"
+  url = "/images/reward/alipay.png"
+[[params.rewards]]
+  name = "EOS"
+  url = "/images/reward/eos.png"
