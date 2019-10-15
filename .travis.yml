@@ -10,9 +10,11 @@ sudo: false
 install: true
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install hugo
+  - sudo apt-get install -y hugo
   - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+addons:
+  apt:
+  update: true
   
 script:
   - make
