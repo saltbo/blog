@@ -8,11 +8,14 @@ cache:
 dist: trusty
 sudo: false
 install: true
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install hugo
+  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+  
 script:
   - make
-
-after_success:
-  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
 
 deploy:
   - provider: script
