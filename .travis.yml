@@ -2,6 +2,9 @@ language: go
 go:
   - 1.13.x
 
+addons:
+  apt:
+  update: true
 cache:
   directories:
     - $GOPATH/pkg/mod
@@ -12,9 +15,7 @@ install: true
 before_install:
   - sudo apt-get install -y hugo
   - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
-addons:
-  apt:
-  update: true
+
   
 script:
   - make
