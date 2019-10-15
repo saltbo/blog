@@ -1,0 +1,19 @@
+language: go
+go:
+  - 1.13.x
+
+cache:
+  directories:
+    - $GOPATH/pkg/mod
+dist: trusty
+sudo: false
+install: true
+script:
+  - make
+
+after_success:
+  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+
+deploy:
+  - provider: script
+  - script: uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public
