@@ -2,6 +2,7 @@
 title: "Uptoc - 将你的Hugo静态博客部署到阿里云OSS上"
 date: 2019-10-27T12:20:43+08:00
 tags: ["hugo", "阿里云", "OSS"] 
+
 ---
 
 使用Hugo有一段时间了，和大家一样最开始是是部署在GithubPages上，后来觉得GithubPages在国内访问太慢了。搜寻一圈发现了Netlify，用了一段时间，但是速度还不是很满意。那么有没有办法将我们的博客部署到国内的云存储上呢？
@@ -42,27 +43,27 @@ uptoc --endpoint oss-cn-beijing.aliyuncs.com \
 
 只需要简单的参数就可以将目标文件自动同步到云端。当然为了安全考虑，access_key和access_secret支持系统变量，这样我们就可以通过Travis等集成工具的后台来配置它们。
 
-![image-20191027124716113](static/ciimgs/image-20191027124716113.png)
+![image-20191027142908681](/images/posts/image-20191027124716113.png)
 
 现在只需要在你的.travis.yml中增加如下配置就完成了
 
 ```bash
 after_success:
   - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
-  - uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public
+  - uptoc --endpoint oss -cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public
 ```
 
 完整配置详见https://github.com/saltbo/blog/blob/master/.travis.yml
 
-### 阿里云OSS配置
+### 3 阿里云OSS配置
 
-![image-20191027135934555](static/ciimgs/image-20191027135934555.png)
+![image-20191027135934555](/images/posts/image-20191027135934555.png)
 
 创建好bucket，在bucket的基础设置里需要进行这两项配置。
 
 
 
-### hugo配置调整
+### 4 hugo配置调整
 
 ```
 uglyURLs = true
