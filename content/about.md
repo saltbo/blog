@@ -6,34 +6,45 @@ menu: "main"
 weight: 40
 ---
 
-# #关于我
+### 个人介绍
+你好，我是闫勃(Saltbo)，一只生活在帝都的猴儿。11年开始接触编程，从脚本小子一步步进入编程世界。现就职于[得到](https://www.igetget.com)（罗辑思维），欢迎任何能力出众的小伙伴加入我们。
 
-你好，我是闫勃(Saltbo)，一只生活在帝都的猴儿。
 
-目前就职于[得到](https://www.igetget.com)（罗辑思维），欢迎任何能力出众的小伙伴加入我们。
+### 个人属性
 
-# #关于本站
+- 开源爱好者、Golang开发者、Rust尝鲜者
+- 嵌入式开发爱好者、区块链小学生
+- 嵌入式：树莓派、AVR、ARM、STM32
+- 区块链：ETH、EOS、BTM、Scatter
+- 前端：Vue、iView、Element
+- 后端：MySQL、MongoDB、Redis、Etcd、RabbitMQ、Kafka
+- 网络：HTTP、HTTPS、WebSocket、Vmess、GRPC
+- 云原生：API网关、Docker、K8s、Istio
+- 小说：牧神记、诡秘之主
+- 游戏：王者、吃鸡
 
-网站基于[Hugo](https://gohugo.io/)生成，源码托管于[Github](https://github.com/saltbo/blog)。
+如果你想联系我：
+- 邮件：saltbo@foxmail.com
+- GitHub：[https://github.com/saltbo](https://github.com/saltbo)
+- 其他方式：[Twitter](https://twitter.com/yanbo1225)、[新浪微博](https://weibo.com/bigbo1225)
 
-采用[Travis](https://travis-ci.org/saltbo/blog)持续集成，通过[Uptoc](https://github.com/saltbo/uptoc)将静态文件部署在[阿里云OSS](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=bs8qa9fz)上。
+### 关于本站
 
-内容使用[Typora](https://www.typora.io/)编辑。
+- 网站基于 [Hugo](https://gohugo.io/) 生成，源码托管于 [Github](https://github.com/saltbo/blog)。
+- 采用 [Travis](https://travis-ci.org/saltbo/blog) 持续集成，通过 [Uptoc ](https://github.com/saltbo/uptoc)将静态文件部署在 [阿里云OSS ](https://www.aliyun.com/product/oss)上。
+- 内容使用 [Typora](https://www.typora.io/) 编辑。
+- 全站`HTTPS`设计，安全、极速。
+- 异步`Google analysts`分析统计。
 
-# #关于我的技术生涯（太啰嗦不要看了）
 
-大概是从11年开始coding，典型的野路子出生。
+### 赞助本站
 
-在11年之前大概有3-5年的时间一直是处于瞎子摸象阶段。期间基本就是脚本小子的学习路线，什么东西酷就研究什么。比如扫端口，注入，破解，WG等等。
+如果觉得本站的内容对你有所帮助，可以通过以下方式赞助我：
+- 阿里云云大使，购买相关产品我将获得佣金：[点击注册](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=bs8qa9fz)
+- Vulter邀请注册链接，注册充值我将获得佣金：[点击注册](https://www.vultr.com/?ref=6887367)
 
-11年开始正式coding，入门的语言是被喷N次的易语言。之后在Win软件开发方面先后使用过Qt和C#。
 
-12年开始接触PHP，早期手撸原生代码。后来在工作之前用的Tp，工作之后用的Yaf。期间做过各种小网站和微信公众号（都死了）
+### 版权说明
 
-13年在大学开始学习单片机相关技术，先后使用过51,AVR,PIC,ARM等MCU，成品有六足爬虫，3D光立方，遥控WiFi小车和三维超声测距等。
+本站采用「[署名 4.0 国际 (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/deed.zh)」创作共享协议。通俗地讲，只要在使用时署名，那么使用者可以对本站所有原创内容进行转载、节选、混编、二次创作，允许商业性使用。
 
-15年6月8日正式入职罗辑思维，从事H5商城开发工作。主要是商城的基本功能实现和一个异步调度系统的研发，期间完成了从PHP到Golang的转型。
-
-17年10月被调到API网关项目组，目前仍然在做API网关方面的工作
-
-未完，待续。。。
