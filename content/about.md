@@ -29,6 +29,7 @@ weight: 40
 - GitHub：[https://github.com/saltbo](https://github.com/saltbo)
 - 其他方式：[微博](https://weibo.com/bigbo1225)、[Twitter](https://twitter.com/yanbo1225)
 
+
 ### 关于本站
 
 - 网站基于 [Hugo](https://gohugo.io/) 生成，源码托管于 [Github](https://github.com/saltbo/blog)。
