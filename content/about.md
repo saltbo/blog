@@ -42,6 +42,7 @@ weight: 40
 ### 赞助本站
 
 如果觉得本站的内容对你有所帮助，可以通过以下方式赞助我：
+
 - 阿里云云大使，购买相关产品我将获得佣金：[点击注册](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=bs8qa9fz)
 - Vulter邀请注册链接，注册充值我将获得佣金：[点击注册](https://www.vultr.com/?ref=6887367)
 
