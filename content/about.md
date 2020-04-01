@@ -24,9 +24,10 @@ weight: 40
 - 游戏：王者、吃鸡
 
 如果你想联系我：
+
 - 邮件：saltbo@foxmail.com
 - GitHub：[https://github.com/saltbo](https://github.com/saltbo)
-- 其他方式：[Twitter](https://twitter.com/yanbo1225)、[新浪微博](https://weibo.com/bigbo1225)
+- 其他方式：[微博](https://weibo.com/bigbo1225)、[Twitter](https://twitter.com/yanbo1225)
 
 ### 关于本站
 
