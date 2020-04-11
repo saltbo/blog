@@ -30,10 +30,11 @@ module.exports = themeConfig => {
     directories: [
       {
         id: 'post',
-        dirname: '_posts',
+        dirname: 'posts',
         path: '/posts/',
         layout: 'Posts',
         itemlayout: 'Posts',
+        itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
       },
     ],
