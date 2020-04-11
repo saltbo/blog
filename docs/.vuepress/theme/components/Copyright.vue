@@ -11,14 +11,22 @@
 </template>
 <script>
 export default {
+    data(){
+        return {
+            location: {}
+        }
+    },
     computed:{
         origin(){
-            return window.location.origin
+            return this.location.origin
         },
         link(){
-            return window.location.href
+            return this.location.href
         }
-    } 
+    },
+    mounted(){
+        this.location = window.location;
+    }
 }
 </script>
 

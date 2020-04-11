@@ -1,24 +1,9 @@
-language: go
-go:
-  - 1.13.x
-
-addons:
-  apt:
-  update: true
-cache:
-  directories:
-    - $GOPATH/pkg/mod
-dist: trusty
-sudo: true
-install: true
-
-before_install:
-  - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.58.3/hugo_0.58.3_Linux-64bit.deb
-  - sudo dpkg -i hugo_0.58.3_Linux-64bit.deb
-
-script:
-  - make
-  
-after_success:
+language: node_js
+node_js:
+  - lts/*
+install:
+  - yarn install # npm ci
   - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+script:
+  - yarn build # npm run docs:build
   - uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public
