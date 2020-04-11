@@ -8,7 +8,7 @@ module.exports = {
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     ['script', { type: 'text/javascript' }, `
       var targetProtocol = "https:";
-      if (window.location.host != localhost && window.location.protocol != targetProtocol)
+      if (window.location.hostname != 'localhost' && window.location.protocol != targetProtocol)
         window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);`]
   ],
   // theme: '@vuepress/theme-blog',
