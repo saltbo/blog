@@ -1,0 +1,56 @@
+@require './code.styl'
+
+html, body
+  padding 0
+  margin 0
+
+a
+  font-weight 500
+  color $accentColor
+  text-decoration underline
+  &:hover
+    color darken($accentColor, 20%)
+
+h1, h2, h3, h4, h5, h6
+  font-weight 600
+  line-height 1.25
+  font-family PT Serif, Serif
+
+  {$contentClass}:not(.custom) > &
+    margin-top 'calc(0.5rem - %s)' % ($headerHeight)
+    padding-top 'calc(%s + 1rem)' % ($headerHeight)
+    margin-bottom 0
+
+  &:hover .header-anchor
+    opacity: 1
+
+h1
+  font-size 2.2rem
+
+h2
+  font-size 1.65rem
+  padding-bottom .3rem
+  border-bottom 1px solid $borderColor
+
+h3
+  font-size 1.35rem
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin 5px
+  margin-left -0.87em
+  opacity 0
+
+  &:hover
+    text-decoration none
+
+// blog global class
+.container
+  max-width 900px
+  padding 0 1.5rem
+  margin-left auto
+  margin-right auto
+
+.comment
+  margin-top: 20px

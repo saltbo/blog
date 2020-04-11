@@ -1,0 +1,25 @@
+{
+  "name": "blog2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "busuanzi.pure.js": "^1.0.3",
+    "core-js": "2.6.4",
+    "element-ui": "^2.13.0",
+    "moment": "^2.24.0",
+    "vue-cute-timeline": "^1.2.8",
+    "vue-moment": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-search": "^1.4.0",
+    "@vuepress/theme-blog": "^2.2.0",
+    "vuepress": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
