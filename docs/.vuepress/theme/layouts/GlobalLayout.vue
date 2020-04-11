@@ -4,7 +4,7 @@
       <Header />
     </el-header>
     <el-main style="margin-top: 30px;">
-      <DefaultGlobalLayout class="container"/>
+      <DefaultGlobalLayout />
     </el-main>
     <el-footer>
       <Footer />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
       <el-card class="box-card content">
         <article style="padding:0 20px;">
           <header>
@@ -12,7 +12,7 @@
             />
           </header>
 
-          <Content itemprop="articleBody" />
+          <Content />
           <Copyright />
           <!-- 版权 -->
           <!-- 打赏 -->

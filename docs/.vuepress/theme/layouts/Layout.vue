@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container">
     <el-card class="box-card">
       <article style="padding:0 20px;">
-        <Content itemprop="articleBody" />
+        <Content />
       </article>
     </el-card>
   </div>

@@ -1,13 +1,13 @@
 <template>
-  <div id="default-layout">
-      <el-card class="box-card">
-        <h3>目前共计 {{$tag.list.length}} 个标签</h3>
-        <ul class="tags">
-          <li v-for="tag in $tag.list">
-            <router-link class="page-link" :to="tag.path" style="">{{ tag.name }}</router-link>
-          </li>
-        </ul>
-      </el-card>
+  <div class="container">
+    <el-card class="box-card">
+      <h3>目前共计 {{$tag.list.length}} 个标签</h3>
+      <ul class="tags">
+        <li v-for="tag in $tag.list">
+          <router-link class="page-link" :to="tag.path" style="">{{ tag.name }}</router-link>
+        </li>
+      </ul>
+    </el-card>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#default-layout
+.container
   text-align center
 
 .tags
