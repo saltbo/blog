@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <el-card class="box-card content">
+      <el-card class="box-card">
         <article style="padding:0 20px;">
           <header>
             <h1 style="margin: 0">{{ $frontmatter.title }}</h1>
@@ -31,7 +31,6 @@ import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import Copyright from '@theme/components/Copyright.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
-
 export default {
   components: {
     Toc,

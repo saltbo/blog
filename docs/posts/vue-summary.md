@@ -1,5 +1,6 @@
 ---
 title: "后端开发写Vue（iView使用总结）"
+author: "saltbo"
 date: 2018-04-20T00:46:52+08:00
 tags: ["Vue", "iView"] 
 ---

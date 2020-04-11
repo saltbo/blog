@@ -1,5 +1,6 @@
 ---
 title: "Uptoc - 将你的Hugo静态博客部署到阿里云OSS上"
+author: "saltbo"
 date: 2019-10-27T12:20:43+08:00
 tags: ["hugo", "阿里云", "OSS"] 
 

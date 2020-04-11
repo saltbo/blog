@@ -1,5 +1,6 @@
 ---
 title: "基于Swoole和Redis实现的并发队列处理系统"
+author: "saltbo"
 date: 2016-04-24T22:57:46+08:00
 tags: ["php", "swoole", "redis"] 
 ---

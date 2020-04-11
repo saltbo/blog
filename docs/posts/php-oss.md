@@ -1,5 +1,6 @@
 ---
 title: "阿里云OSS上传服务的搭建"
+author: "saltbo"
 date: 2016-04-04T13:18:35+08:00
 tags: ["阿里云", "OSS"] 
 ---
