@@ -16,7 +16,7 @@
 
   <!-- content layout -->
   <div class="container" v-else>
-    <el-card class="box-card">
+    <el-card class="ebox-card">
       <article style="padding:0 10px;">
         <Content />
       </article>

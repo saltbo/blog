@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-      <el-card class="box-card">
+      <el-card class="ebox-card">
         <article style="padding:0 10px;">
-          <header>
+          <header class="post-header">
             <h1 class="post-title" itemprop="name headline">{{ $frontmatter.title }}</h1>
             <PostMeta
               :tags="$frontmatter.tags"
@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.post-header
+  padding 2rem 2.5rem 0 2.5rem;
 .post-title
   margin 20px 0
   word-break keep-all

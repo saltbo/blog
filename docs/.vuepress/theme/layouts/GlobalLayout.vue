@@ -56,7 +56,7 @@
 #app__global-layout
   word-wrap break-word
 
-.content-wrapper
+.container
   padding 120px 10px 30px 10px
   min-height calc(100vh - 30px - 120px - 100px)
   max-width $contentWidth

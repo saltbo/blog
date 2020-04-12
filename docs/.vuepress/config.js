@@ -34,6 +34,7 @@ module.exports = {
         link: '/about',
       },
     ],
+    sidebar: 'auto',
     dateFormat: 'YYYY-MM-DD',
     smoothScroll: true,
     search: true,
