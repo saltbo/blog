@@ -76,25 +76,20 @@ export default {
   border-top 1px solid #DCDFE6
   padding-top 8px
   margin-bottom 30px
-  &-tags
-    display flex
-    flex-wrap wrap
-    list-style none
-    overflow hidden
-    padding 0
-    margin 20px 0
-    > li
-      margin-bottom 10px
   > div
     display inline-flex
     line-height 12px
     font-size 15px
     margin-right 20px
+  @media (max-width: $MQMobile)
+    &-tags
+      margin-top 20px
+  
   svg
     margin-right 5px
     width 16px
     height 14px
 
 .tag-item
-  margin 0 5px
+  margin-right 10px
 </style>

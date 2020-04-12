@@ -46,4 +46,5 @@ export default {
 <style lang="stylus" scoped>
 .post-title
   margin 20px 0
+  word-break keep-all
 </style>
