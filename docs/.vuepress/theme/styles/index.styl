@@ -1,9 +1,5 @@
 @require './config.styl'
 
-{$contentClass}
-  padding-top: 0 !important
-  h1, h2, h3, h4, h5, h6
-    font-weight 750
 
 blockquote
   font-size .9rem
@@ -13,10 +9,14 @@ blockquote
   padding .25rem 0 .25rem 1rem
 
 
-.box-card
-
-.ebox-card > .el-card__body
+.box-card > .el-card__body
   padding: 0
 
-.comment
+.box-card
+  {$contentClass}
+    padding-top: 0 !important
+    h1, h2, h3, h4, h5, h6
+      font-weight 750
+
+.comment-card
   margin-top: 20px

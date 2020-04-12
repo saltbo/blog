@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-card class="box-card">
+    <el-card class="tags-card">
       <h3>目前共计 {{$tag.list.length}} 个标签</h3>
       <ul class="tags">
         <li v-for="tag in $tag.list">
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.container
+.tags-card
   text-align center
 
 .tags

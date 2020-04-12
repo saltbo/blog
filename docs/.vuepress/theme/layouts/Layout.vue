@@ -16,13 +16,13 @@
 
   <!-- content layout -->
   <div class="container" v-else>
-    <el-card class="ebox-card">
+    <el-card class="box-card">
       <article style="padding:0 10px;">
         <Content />
       </article>
     </el-card>
 
-    <el-card class="box-card comment" v-if="$page.frontmatter.layout">
+    <el-card class="comment-card" v-if="$page.frontmatter.layout">
       <Comment />
     </el-card>
   </div>

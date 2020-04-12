@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <el-card class="ebox-card">
+      <el-card class="box-card">
         <article style="padding:0 10px;">
           <header class="post-header">
             <h1 class="post-title" itemprop="name headline">{{ $frontmatter.title }}</h1>
@@ -18,7 +18,7 @@
         </article>
       </el-card>
 
-      <el-card class="box-card comment">
+      <el-card class="comment-card">
         <Comment />
       </el-card>
       <Toc />
