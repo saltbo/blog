@@ -17,7 +17,7 @@
   <!-- content layout -->
   <div class="container" v-else>
     <el-card class="box-card">
-      <article style="padding:0 20px;">
+      <article style="padding:0 10px;">
         <Content />
       </article>
     </el-card>

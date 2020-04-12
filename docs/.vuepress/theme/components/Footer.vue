@@ -67,7 +67,6 @@ export default {
 
 <style lang="stylus" scoped>
 .footer
-  width 900px
   margin 0 auto
   text-align center
   font-size .8em

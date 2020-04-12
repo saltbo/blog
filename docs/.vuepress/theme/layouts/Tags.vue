@@ -28,8 +28,13 @@ export default {
   text-align center
 
 .tags
+  padding 0
+  word-break break-all
   li 
     display inline
     margin 0 20px
     line-height 50px
+    @media (max-width: $MQMobile)
+      &
+        margin 0 10px
 </style>

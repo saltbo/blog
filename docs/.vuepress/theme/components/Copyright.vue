@@ -33,7 +33,8 @@ export default {
 <style lang="stylus" scoped>
 .copyright
     margin 0 0 20px 0
-    padding 0 30px 0 15px
+    padding-left 15px
+    word-break break-word
     color #666
     border-left 4px solid #ddd
     li

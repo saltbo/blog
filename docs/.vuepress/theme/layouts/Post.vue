@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <el-card class="box-card">
-        <article style="padding:0 20px;">
+        <article style="padding:0 10px;">
           <header>
             <h1 style="margin: 0">{{ $frontmatter.title }}</h1>
             <PostMeta
@@ -11,10 +11,9 @@
               :location="$frontmatter.location"
             />
           </header>
-
           <Content />
-          <Copyright />
           <!-- 版权 -->
+          <Copyright />
           <!-- 打赏 -->
         </article>
       </el-card>
