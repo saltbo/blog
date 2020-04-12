@@ -4,7 +4,7 @@ author: "saltbo"
 date: 2017-07-15T22:59:11+08:00
 tags: ["docker"] 
 ---
-Docker网络类型 docker有三种网络类型bridge、host、none，默认bridge。bridge的意思是容器拥有独立的网络环境通...
+> Docker网络类型 docker有三种网络类型bridge、host、none，默认bridge。bridge的意思是容器拥有独立的网络环境通...
 
 <!--more-->
 
