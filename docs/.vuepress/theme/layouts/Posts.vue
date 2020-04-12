@@ -63,7 +63,7 @@ export default {
 
         const postYear = this.dateFormat(posts[i].frontmatter.date, 'year');
         if(postYear!=lastPostYear){
-          posts.splice(i, 0, {title: postYear})
+          posts.splice(i, 0, {title: postYear, frontmatter:{date:new Date(postYear+"-01-01").toString()}})
         }
 
         lastPostYear = postYear
@@ -78,14 +78,26 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.post-link
-  line-height 30px
-  color #888
-  font-size 16px
-  cursor pointer
-  text-decoration none
-  .title
-    font-weight 600
-  :hover
-    color $accentColor
+.timeline-item
+  padding-bottom 0
+  h3
+    margin-top 50px
+    margin-bottom 0
+  .post-link
+    color #888
+    font-size 14px
+    font-weight 550
+    cursor pointer
+    text-decoration none
+    .date
+      display inline-block
+      width 45px
+    .title
+      font-size 16px
+      font-weight 600
+  &:hover
+    .timeline-circle
+      color $accentColor !important
+    .post-link 
+      color $accentColor
 </style>
