@@ -40,7 +40,7 @@ PHP的RPC框架并不少，比如鸟叔的Yar，比如我们今天讲到的Hpros
     $server->start();
 ```
 
-##Client
+## Client
 ```php
 <?php
     require_once("Hprose.php");
@@ -178,7 +178,7 @@ Trait Trait_Hprose
 
 哈哈哈~
 
-#后记
+## 后记
 虽然实现了最初的目标，但是由于Yaf的特性，必须继承Yaf_Controller_Abstract。所以get_class_methods的时候会把Yaf_Controller_Abstract中的方法也变成RPC服务，这是唯一的一个缺憾。。。
 
 ***---***

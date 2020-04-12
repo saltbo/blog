@@ -11,6 +11,9 @@ module.exports = {
       if (window.location.hostname != 'localhost' && window.location.protocol != targetProtocol)
         window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);`]
   ],
+  markdown: {
+    lineNumbers: true
+  },
   // theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [
