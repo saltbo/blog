@@ -3,7 +3,7 @@
       <el-card class="box-card">
         <article style="padding:0 10px;">
           <header>
-            <h1 style="margin: 0">{{ $frontmatter.title }}</h1>
+            <h1 class="post-title" itemprop="name headline">{{ $frontmatter.title }}</h1>
             <PostMeta
               :tags="$frontmatter.tags"
               :author="$frontmatter.author"
@@ -44,4 +44,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.post-title
+  margin 20px 0
 </style>

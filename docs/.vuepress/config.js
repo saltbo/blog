@@ -31,6 +31,7 @@ module.exports = {
         link: '/about',
       },
     ],
+    dateFormat: 'YYYY-MM-DD',
     smoothScroll: true,
     search: true,
     searchMaxSuggestions: 10,

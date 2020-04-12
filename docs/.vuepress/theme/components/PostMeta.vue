@@ -1,5 +1,6 @@
 <template>
   <div class="post-meta">
+    <!-- author -->
     <div
       v-if="author"
       class="post-meta-author"
@@ -11,28 +12,37 @@
       <span itemprop="name">{{ author }}</span>
       <span v-if="location" itemprop="address"> &nbsp; in {{ location }}</span>
     </div>
+
+    <!-- date -->
     <div v-if="date" class="post-meta-date">
       <ClockIcon />
       <time pubdate itemprop="datePublished" :datetime="date">
         {{ resolvedDate }}
       </time>
     </div>
-    <div id="busuanzi_container_page_pv">
-      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+
+    <!-- pv -->
+    <div class="post-meta-pv">
+      <EyeIcon />
+      <span id="busuanzi_value_page_pv"></span>
     </div>
-    <ul v-if="tags" class="post-meta-tags" itemprop="keywords">
-       <el-tag v-for="tag in resolvedTags" :key="tag">{{tag}}</el-tag>
-    </ul>
+
+    <!-- tags -->
+    <div class="post-meta-tags" itemprop="keywords" v-if="tags">
+      <TagIcon />
+      <div class="tag-item"v-for="tag in resolvedTags" :key="tag">
+        <router-link :to="'/tags/'+tag">{{tag}}</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import dayjs from 'dayjs'
-import { NavigationIcon, ClockIcon } from 'vue-feather-icons'
-// import PostTag from './PostTag.vue'
+import { NavigationIcon, ClockIcon, EyeIcon, TagIcon } from 'vue-feather-icons'
 export default {
   name: 'PostMeta',
-  components: { NavigationIcon, ClockIcon },
+  components: { NavigationIcon, ClockIcon, EyeIcon, TagIcon },
   props: {
     tags: {
       type: [Array, String],
@@ -63,6 +73,9 @@ export default {
 
 <style lang="stylus">
 .post-meta
+  border-top 1px solid #DCDFE6
+  padding-top 8px
+  margin-bottom 30px
   &-tags
     display flex
     flex-wrap wrap
@@ -75,10 +88,13 @@ export default {
   > div
     display inline-flex
     line-height 12px
-    font-size 12px
+    font-size 15px
     margin-right 20px
   svg
     margin-right 5px
-    width 14px
+    width 16px
     height 14px
+
+.tag-item
+  margin 0 5px
 </style>
