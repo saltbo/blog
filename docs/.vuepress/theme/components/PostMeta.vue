@@ -84,6 +84,8 @@ export default {
   @media (max-width: $MQMobile)
     &-tags
       margin-top 20px
+    & > div
+      margin-right 10px
   
   svg
     margin-right 5px

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-card class="box-card">
+    <el-card class="posts-card">
       <timeline>
         <timeline-title>太棒了! 目前共计 {{articles.length}} 篇日志。 继续努力。</timeline-title>
         <timeline-item v-for="article in articles">

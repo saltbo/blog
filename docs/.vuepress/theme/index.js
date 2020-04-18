@@ -33,9 +33,18 @@ module.exports = themeConfig => {
         dirname: 'posts',
         path: '/posts/',
         layout: 'Posts',
-        itemlayout: 'Posts',
+        itemLayout: 'Post',
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
+      },
+      {
+        id: 'book',
+        dirname: 'books',
+        path: '/books/',
+        layout: 'Books',
+        itemLayout: 'Book',
+        itemPermalink: '/:regular',
+        frontmatter: { title: 'Books', layout: 'Book' },
       },
     ],
     frontmatters: [
@@ -44,7 +53,7 @@ module.exports = themeConfig => {
         keys: ['tag', 'tags'],
         path: '/tags/',
         layout: 'Tags',
-        itemlayout: 'Tags',
+        // scopeLayout: 'Tags',
         frontmatter: { title: 'Tags' },
       },
     ],
@@ -71,54 +80,11 @@ module.exports = themeConfig => {
     themeConfigPluginOptions
   )
 
-  /**
-   * Integrate plugins
-   */
-
-  const enableSmoothScroll = themeConfig.smoothScroll === true
-
-  const plugins = [
-    '@vuepress/plugin-nprogress',
-    ['@vuepress/medium-zoom', true],
-    [
-      '@vuepress/search',
-      {
-        searchMaxSuggestions: 10,
-      },
-    ],
-    ['@vuepress/blog', blogPluginOptions],
-    ['smooth-scroll', enableSmoothScroll],
-    ['container', {
-      type: 'tip',
-      defaultTitle: {
-        '/': 'TIP',
-        '/zh/': '提示'
-      }
-    }],
-    ['container', {
-      type: 'warning',
-      defaultTitle: {
-        '/': 'WARNING',
-        '/zh/': '注意'
-      }
-    }],
-    ['container', {
-      type: 'danger',
-      defaultTitle: {
-        '/': 'WARNING',
-        '/zh/': '警告'
-      }
-    }],
-    ['container', {
-      type: 'details',
-      before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
-      after: () => '</details>\n'
-    }],
-  ]
-
-  const config = {
-    plugins,
+  return {
+    extend: '@vuepress/theme-default',  // Theme Inheritance => https://vuepress.vuejs.org/theme/inheritance.html
+    plugins: [
+      ['@vuepress/blog', blogPluginOptions],
+      ['@vuepress/medium-zoom', true],
+    ]
   }
-
-  return config
 }

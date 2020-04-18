@@ -22,7 +22,7 @@
       </article>
     </el-card>
 
-    <el-card class="box-card comment" v-if="$page.frontmatter.layout">
+    <el-card class="comment-card" v-if="$page.frontmatter.layout">
       <Comment />
     </el-card>
   </div>

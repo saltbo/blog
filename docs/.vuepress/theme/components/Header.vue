@@ -1,7 +1,7 @@
 <template>
   <section id="header-wrapper">
     <header id="header">
-      <div class="header-wrapper container">
+      <div class="header-wrapper">
         <div class="title">
           <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
         </div>
