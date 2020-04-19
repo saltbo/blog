@@ -17,4 +17,4 @@ jobs:
       - name: Build
         run: make build
       - name: Deploy
-        run: uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
+        run: /root/uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
