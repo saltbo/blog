@@ -10,9 +10,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Uptoc
+        uses: saltbo/uptoc-action@master
       - name: Check out code
         uses: actions/checkout@v1
       - name: Build
         run: make build
-      - name: Set up Uptoc
-        uses: saltbo/uptoc-action@master
+      - name: Deploy
+        run: uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
