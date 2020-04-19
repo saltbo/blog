@@ -12,9 +12,13 @@ jobs:
     steps:
       - name: Set up Uptoc
         uses: saltbo/uptoc-action@master
+        with:
       - name: Check out code
         uses: actions/checkout@v1
       - name: Build
-        run: make build
+        run: yarn build
       - name: Deploy
         run: /root/uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
+        env:
+          UPTOC_UPLOADER_KEYID: ${{ secrets.UPTOC_UPLOADER_KEYID }}
+          UPTOC_UPLOADER_KEYSECRET: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
