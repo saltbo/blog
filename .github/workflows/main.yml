@@ -10,8 +10,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Uptoc
-        uses: saltbo/uptoc-action@master
       - name: Set up Node
         uses: actions/setup-node@master
       - name: Check out code
@@ -19,7 +17,10 @@ jobs:
       - name: Build
         run: yarn && yarn build
       - name: Deploy
-        run: uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
-        env:
-          UPTOC_UPLOADER_KEYID: ${{ secrets.UPTOC_UPLOADER_KEYID }}
-          UPTOC_UPLOADER_KEYSECRET: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
+        uses: saltbo/uptoc-action@master
+        with:
+          access_key: ${{ secrets.UPTOC_UPLOADER_KEYID }}
+          access_secret: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
+          endpoint: oss-cn-zhangjiakou.aliyuncs.com
+          bucket: saltbo-blog
+          dist: public
