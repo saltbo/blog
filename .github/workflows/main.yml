@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Set up Uptoc
         uses: saltbo/uptoc-action@master
-        with:
       - name: Check out code
         uses: actions/checkout@v1
       - name: Build
