@@ -78,13 +78,13 @@ How to do something during rust developing.
 
 ## 如何将int转成bytes
 
-```golang
+```go
 
 ```
 
 ## 如何将bytes转成int
 
-```golang
+```go
 
 ```
 
