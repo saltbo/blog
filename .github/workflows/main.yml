@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: yarn && yarn build
       - name: Deploy
-        run: /root/uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
+        run: uptoc --endpoint oss-cn-zhangjiakou.aliyuncs.com --bucket saltbo-blog public 
         env:
           UPTOC_UPLOADER_KEYID: ${{ secrets.UPTOC_UPLOADER_KEYID }}
           UPTOC_UPLOADER_KEYSECRET: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
