@@ -19,6 +19,7 @@ jobs:
       - name: Deploy
         uses: saltbo/uptoc-action@master
         with:
+          driver: oss
           endpoint: oss-cn-zhangjiakou.aliyuncs.com
           bucket: saltbo-blog
           dist: public
