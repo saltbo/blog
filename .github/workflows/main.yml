@@ -19,8 +19,9 @@ jobs:
       - name: Deploy
         uses: saltbo/uptoc-action@master
         with:
-          access_key: ${{ secrets.UPTOC_UPLOADER_KEYID }}
-          access_secret: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
           endpoint: oss-cn-zhangjiakou.aliyuncs.com
           bucket: saltbo-blog
           dist: public
+        env:
+          UPTOC_UPLOADER_KEYID: ${{ secrets.UPTOC_UPLOADER_KEYID }}
+          UPTOC_UPLOADER_KEYSECRET: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
