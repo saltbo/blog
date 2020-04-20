@@ -12,12 +12,9 @@ jobs:
     steps:
       - name: Set up Node
         uses: actions/setup-node@master
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Cache dependencies
         uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -28,7 +25,7 @@ jobs:
       - name: Build
         run: yarn && yarn build
       - name: Deploy
-        uses: saltbo/uptoc-action@master
+        uses: saltbo/uptoc@master
         with:
           driver: oss
           endpoint: oss-cn-zhangjiakou.aliyuncs.com
