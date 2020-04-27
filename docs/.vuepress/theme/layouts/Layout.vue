@@ -17,6 +17,7 @@
           <h1 class="post-title" itemprop="name headline">{{ $frontmatter.title }}</h1>
         </header>
         <Content />
+        <PageEdit />
       </article>
 
       <!-- <el-card class="box-card comment">
@@ -28,6 +29,7 @@
 
 <script>
 import Sidebar from '@parent-theme/components/Sidebar.vue'
+import PageEdit from '@parent-theme/components/PageEdit.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import Copyright from '@theme/components/Copyright.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
@@ -38,6 +40,7 @@ export default {
     Copyright,
     Comment,
     PostMeta,
+    PageEdit,
   },
   computed:{
     sidebarItems () {
