@@ -37,15 +37,6 @@ module.exports = themeConfig => {
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
       },
-      {
-        id: 'book',
-        dirname: 'books',
-        path: '/books/',
-        layout: 'Books',
-        itemLayout: 'Book',
-        itemPermalink: '/:regular',
-        frontmatter: { title: 'Books', layout: 'Book' },
-      },
     ],
     frontmatters: [
       {

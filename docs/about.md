@@ -1,9 +1,7 @@
 ---
 title: "关于"
-date: 2018-12-09T23:16:22+08:00
-layout: "about"
-menu: "main"
-weight: 40
+layout: "Sp"
+comment: true
 ---
 
 ### 个人介绍

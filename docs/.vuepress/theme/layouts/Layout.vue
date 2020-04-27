@@ -1,40 +1,69 @@
 <template>
-  <!-- pages layout -->
-  <div class="container" v-if="$pagination">
-    <el-card class="box-card">
-      <ul id="default-layout">
-        <li v-for="page in $pagination.pages">
-          <router-link class="page-link" :to="page.path">{{ page.title }}</router-link>
-        </li>
-      </ul>
-      <div id="pagination">
-        <router-link v-if="$pagination.hasPrev" :to="$pagination.prevLink">Prev</router-link>
-        <router-link v-if="$pagination.hasNext" :to="$pagination.nextLink">Next</router-link>
-      </div>
-    </el-card>
-  </div>
-
-  <!-- content layout -->
-  <div class="container" v-else>
-    <el-card class="box-card">
+  <div class="">
+    <Sidebar
+      :items="sidebarItems"
+      @toggle-sidebar="toggleSidebar"
+    >
+      <template #top>
+        <slot name="sidebar-top" />
+      </template>
+      <template #bottom>
+        <slot name="sidebar-bottom" />
+      </template>
+    </Sidebar>
+    <div style="padding-left: 20rem;">
       <article style="padding:0 10px;">
+        <header>
+          <h1 class="post-title" itemprop="name headline">{{ $frontmatter.title }}</h1>
+        </header>
         <Content />
       </article>
-    </el-card>
 
-    <el-card class="comment-card" v-if="$page.frontmatter.layout">
-      <Comment />
-    </el-card>
+      <!-- <el-card class="box-card comment">
+        <Comment />
+      </el-card> -->
+    </div>
   </div>
 </template>
+
 <script>
+import Sidebar from '@parent-theme/components/Sidebar.vue'
+import PostMeta from '@theme/components/PostMeta.vue'
+import Copyright from '@theme/components/Copyright.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import { resolveSidebarItems } from '@parent-theme/util'
 export default {
   components: {
-    Comment
+    Sidebar,
+    Copyright,
+    Comment,
+    PostMeta,
+  },
+  computed:{
+    sidebarItems () {
+      return resolveSidebarItems(
+        this.$page,
+        this.$page.regularPath,
+        this.$site,
+        this.$localePath
+      )
+    },
+  },
+  methods:{
+    toggleSidebar (to) {
+      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
+      this.$emit('toggle-sidebar', this.isSidebarOpen)
+    },
   },
   mounted(){
-    console.log(this)
+    console.log(this);
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.post-title
+  margin 20px 0
+  word-break keep-all
+
+</style>
