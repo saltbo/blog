@@ -1523,7 +1523,7 @@ asn1.js@^4.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
-asn1@~0.2.3:
+asn1@^0.2.4, asn1@~0.2.3:
   version "0.2.4"
   resolved "https://registry.npm.taobao.org/asn1/download/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
   integrity sha1-jSR136tVO7M+d7VOWeiAu4ziMTY=
@@ -5306,6 +5306,13 @@ node-releases@^1.1.53:
   version "1.1.53"
   resolved "https://registry.npm.taobao.org/node-releases/download/node-releases-1.1.53.tgz#2d821bfa499ed7c5dffc5e2f28c88e78a08ee3f4"
   integrity sha1-LYIb+kme18Xf/F4vKMiOeKCO4/Q=
+
+node-rsa@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/node-rsa/download/node-rsa-1.0.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-rsa%2Fdownload%2Fnode-rsa-1.0.8.tgz#29a4517380f3272cd2073ff4d4c1ca44127ea4ad"
+  integrity sha1-KaRRc4DzJyzSBz/01MHKRBJ+pK0=
+  dependencies:
+    asn1 "^0.2.4"
 
 nopt@1.0.10:
   version "1.0.10"

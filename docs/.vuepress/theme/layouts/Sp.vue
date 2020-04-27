@@ -34,7 +34,6 @@ export default {
     Comment
   },
   mounted(){
-    console.log(this)
   }
 }
 </script>

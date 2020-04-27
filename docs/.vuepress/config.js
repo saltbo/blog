@@ -15,6 +15,9 @@ module.exports = {
     lineNumbers: true
   },
   // theme: '@vuepress/theme-blog',
+  plugins: [
+    require('./vuepress-plugin-sign')
+  ],
   themeConfig: {
     nav: [
       {
