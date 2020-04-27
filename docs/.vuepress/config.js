@@ -44,7 +44,9 @@ module.exports = {
     search: true,
     searchMaxSuggestions: 10,
     lastUpdated: '最近更新', // string | boolean
-    hostname: 'https://saltbo.cn',
+    sitemap: {
+      hostname: 'https://saltbo.cn',
+    },
     comment:{
       service: "disqus",
       shortname: "saltbo",
