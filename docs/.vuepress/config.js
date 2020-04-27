@@ -1,5 +1,6 @@
 // .vuepress/config.js
 module.exports = {
+  lang: 'zh-CN',
   title: "Saltbo's Blog", 
   description: 'A Blog of saltbo',
   dest: 'public',
@@ -19,7 +20,6 @@ module.exports = {
     require('./vuepress-plugin-sign'),
   ],
   themeConfig: {
-    sitehost: 'https://saltbo.cn',
     nav: [
       {
         text: '主页',
@@ -43,6 +43,8 @@ module.exports = {
     smoothScroll: true,
     search: true,
     searchMaxSuggestions: 10,
+    lastUpdated: '最近更新', // string | boolean
+    hostname: 'https://saltbo.cn',
     comment:{
       service: "disqus",
       shortname: "saltbo",

@@ -1,6 +1,7 @@
 const removeMd = require('remove-markdown')
 const path = require('path')
 const pick = require('lodash/pick')
+const moment = require('moment')
 
 module.exports = themeConfig => {
   /**
@@ -57,7 +58,7 @@ module.exports = themeConfig => {
     // 'directories',
     // 'frontmatters',
     // 'globalPagination',
-    // 'sitemap',
+    'sitemap',
     'comment',
     // 'newsletter',
   ]
@@ -76,15 +77,11 @@ module.exports = themeConfig => {
     plugins: [
       ['@vuepress/blog', blogPluginOptions],
       ['@vuepress/medium-zoom', true],
-      [
-        'sitemap', {
-          hostname: themeConfig.sitehost,
-          exclude: ['./404.html'],
-          dateFormatter: time => {
-            return time
-          }
+      ['@vuepress/last-updated', {
+        transformer: (timestamp, lang) => {
+          return moment(timestamp).format('Y-M-D H:m:s')
         }
-      ]
+      }],
     ]
   }
 }

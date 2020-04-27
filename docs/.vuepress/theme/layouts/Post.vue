@@ -12,6 +12,7 @@
             />
           </header>
           <Content />
+          <PageEdit />
           <!-- 版权 -->
           <Copyright />
           <!-- 打赏 -->
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import PageEdit from '@parent-theme/components/PageEdit.vue'
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import Copyright from '@theme/components/Copyright.vue'
@@ -36,6 +38,7 @@ export default {
     Copyright,
     Comment,
     PostMeta,
+    PageEdit
   },
   mounted(){
     console.log(this);
