@@ -16,9 +16,10 @@ module.exports = {
   },
   // theme: '@vuepress/theme-blog',
   plugins: [
-    require('./vuepress-plugin-sign')
+    require('./vuepress-plugin-sign'),
   ],
   themeConfig: {
+    sitehost: 'https://saltbo.cn',
     nav: [
       {
         text: '主页',

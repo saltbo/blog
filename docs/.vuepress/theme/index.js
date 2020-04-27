@@ -76,6 +76,15 @@ module.exports = themeConfig => {
     plugins: [
       ['@vuepress/blog', blogPluginOptions],
       ['@vuepress/medium-zoom', true],
+      [
+        'sitemap', {
+          hostname: themeConfig.sitehost,
+          exclude: ['./404.html'],
+          dateFormatter: time => {
+            return time
+          }
+        }
+      ]
     ]
   }
 }
