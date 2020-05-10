@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-      <el-card class="box-card">
-        <article style="padding:0 10px;">
+      <div class="box">
+        <article>
           <header class="post-header">
             <h1 class="title" itemprop="name headline">{{ $frontmatter.title }}</h1>
             <PostMeta
@@ -17,11 +17,11 @@
           <Copyright />
           <!-- 打赏 -->
         </article>
-      </el-card>
+      </div>
 
-      <el-card class="comment-card">
+      <div class="box with-padding">
         <Comment />
-      </el-card>
+      </div>
       <Toc />
   </div>
 </template>

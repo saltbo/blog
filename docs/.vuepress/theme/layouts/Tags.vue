@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <el-card class="tags-card">
+    <div class="box tags">
       <h3>目前共计 {{$tag.list.length}} 个标签</h3>
-      <ul class="tags">
+      <ul>
         <li v-for="tag in $tag.list">
           <router-link class="page-link" :to="tag.path" style="">{{ tag.name }}</router-link>
         </li>
       </ul>
-    </el-card>
+    </div>
   </div>
 </template>
 
@@ -24,12 +24,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.tags-card
-  text-align center
 
 .tags
   padding 0
-  word-break break-all
+  text-align center
+  word-break break-word
   li 
     display inline
     margin 0 20px

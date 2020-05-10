@@ -1,14 +1,12 @@
 <template>
-  <div class="container">
-    <el-card class="box-card">
-        <section class="theme-container">
-            <article class="content">
-                <h1>404</h1>
-                <blockquote>{{ getMsg() }}</blockquote>
-                <router-link to="/">Take me home.</router-link>
-            </article>
-        </section>
-    </el-card>
+  <div class="box">
+    <section class="theme-container">
+        <article class="content">
+            <h1>404</h1>
+            <blockquote>{{ getMsg() }}</blockquote>
+            <router-link to="/">Take me home.</router-link>
+        </article>
+    </section>
   </div>
 </template>
 

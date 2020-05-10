@@ -14,21 +14,12 @@ layout: "Sp"
 :::
 
 
-
-### DHT手册
-<Book-Card name="Golang" link="/books/go.html" icon="https://www.gitdig.com/static/go-833be199b7a2a4e7aadbb23addc19f6d.png" />
-<Book-Card name="Rust" link="/books/rust.html" icon="/images/book.png" />
-<Book-Card name="Python" link="/books/python.html" icon="/images/more.png"/>
-
-
-
 ### 开源项目
 
 - [Bytom-Chrome-Extension](https://github.com/Bytom-Community/Bytom-Chrome-Extension):  比原链钱包（Chrome浏览器插件版）
  - [Gofbot](https://github.com/saltbo/gofbot)：一个通用的请求转发机器人
  - [UPToc](http://github.com/saltbo/uptoc)：一个用于将文件部署到云存储的cli工具
  - [ZPan](http://github.com/saltbo/zpan)：一个基于云存储的私有云网盘系统
-
 
 
 ### 技术文章

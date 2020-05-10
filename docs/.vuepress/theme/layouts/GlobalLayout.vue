@@ -2,13 +2,9 @@
   <div id="app__global-layout">
     <header>
       <Header />
-      <MobileHeader
-        :is-open="isMobileHeaderOpen"
-        @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
-      />
     </header>
 
-    <main class="content-wrapper">
+    <main>
       <DefaultGlobalLayout />
     </main>
     
@@ -20,14 +16,12 @@
 
 <script>
   import GlobalLayout from '@app/components/GlobalLayout.vue'
-  import Header from '@theme/components/Header.vue'
-  import MobileHeader from '@theme/components/MobileHeader.vue'
+  import Header from '@parent-theme/components/Navbar.vue'
   import Footer from '@theme/components/Footer.vue'
   export default {
     components: { 
       DefaultGlobalLayout: GlobalLayout,
       Header,
-      MobileHeader,
       Footer,
     },
     data(){
@@ -56,14 +50,14 @@
 #app__global-layout
   word-wrap break-word
 
-.container
-  padding 120px 10px 30px 10px
-  min-height calc(100vh - 30px - 120px - 100px)
-  max-width $contentWidth
-  margin 0 auto
+// .container
+//   padding 120px 10px 30px 10px
+//   min-height calc(100vh - 30px - 120px - 100px)
+//   max-width $contentWidth
+//   margin 0 auto
 
-  @media (max-width: $MQMobile)
-    &
-      padding 70px 10px 20px 10px
-      min-height calc(100vh - 20px - 70px - 100px)
+//   @media (max-width: $MQMobile)
+//     &
+//       padding 70px 10px 20px 10px
+//       min-height calc(100vh - 20px - 70px - 100px)
 </style>

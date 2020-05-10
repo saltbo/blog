@@ -21,24 +21,16 @@ module.exports = {
   ],
   themeConfig: {
     nav: [
-      {
-        text: '主页',
-        link: '/',
-      },
-      {
-        text: '文章',
-        link: '/posts/',
-      },
-      {
-        text: '标签',
-        link: '/tags/',
-      },
-      {
-        text: '关于',
-        link: '/about',
-      },
+      { text: '主页', link: '/'},
+      { text: '专栏', link: '/books/'},
+      { text: '文章', link: '/posts/'},
+      { text: '标签', link: '/tags/' },
+      { text: '关于', link: '/about' },
     ],
-    sidebar: 'auto',
+    sidebar: {
+      '/books/': getBooks(),
+      '/projects/': getProjects(),
+    },
     dateFormat: 'YYYY-MM-DD',
     smoothScroll: true,
     search: true,
@@ -57,4 +49,36 @@ module.exports = {
       siteStartAt: '2019/03/21 22:03:04'
     },
   }
+}
+
+function getBooks(){
+  return [
+    {
+      title: 'DevHowTo',
+      collapsable: false, 
+      sidebarDepth: 2,
+      children: [
+        '',
+        'go',
+        'rust',
+        'python',
+      ]
+    }
+  ]
+}
+
+function getProjects(){
+  return [
+    {
+      title: 'MyProjects',
+      collapsable: false, 
+      sidebarDepth: 2,
+      children: [
+        '',
+        'uptoc',
+        'zpan',
+        'longist',
+      ]
+    }
+  ]
 }

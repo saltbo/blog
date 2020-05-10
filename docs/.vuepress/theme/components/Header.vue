@@ -1,25 +1,23 @@
 <template>
-  <section id="header-wrapper">
-    <header id="header">
-      <div class="header-wrapper">
-        <div class="title">
-          <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
-        </div>
-        <div class="header-right-wrap">
-          <ul v-if="$themeConfig.nav" class="nav">
-            <li
-              v-for="item in $themeConfig.nav"
-              :key="item.text"
-              class="nav-item"
-            >
-              <NavLink :link="item.link">{{ item.text }}</NavLink>
-            </li>
-          </ul>
-          <SearchBox />
-          <!-- <Feed /> -->
-        </div>
+  <section id="header">
+    <div class="header-wrapper">
+      <div class="title">
+        <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
       </div>
-    </header>
+      <div class="header-right-wrap">
+        <ul v-if="$themeConfig.nav" class="nav">
+          <li
+            v-for="item in $themeConfig.nav"
+            :key="item.text"
+            class="nav-item"
+          >
+            <NavLink :link="item.link">{{ item.text }}</NavLink>
+          </li>
+        </ul>
+        <SearchBox />
+        <!-- <Feed /> -->
+      </div>
+    </div>
   </section>
 </template>
 

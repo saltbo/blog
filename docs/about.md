@@ -9,7 +9,6 @@ comment: true
 
 
 ### 个人属性
-
 - 开源爱好者、Golang开发者、Rust尝鲜者
 - 嵌入式开发爱好者、区块链小学生
 - 嵌入式：树莓派、AVR、ARM、STM32
