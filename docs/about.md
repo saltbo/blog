@@ -24,13 +24,13 @@ comment: true
 
 - 邮件：saltbo@foxmail.com
 - GitHub：[https://github.com/saltbo](https://github.com/saltbo)
-- 其他方式：[微博](https://weibo.com/bigbo1225)、[Twitter](https://twitter.com/yanbo1225)
+- 其他方式：[微博](https://weibo.com/bigbo1225)、[Twitter](https://twitter.com/saltboc)
 
 
 ### 关于本站
 
-- 网站基于 [Hugo](https://gohugo.io/) 生成，源码托管于 [Github](https://github.com/saltbo/blog)。
-- 采用 [Travis](https://travis-ci.org/saltbo/blog) 持续集成，通过 [Uptoc ](https://github.com/saltbo/uptoc)将静态文件部署在 [阿里云OSS ](https://www.aliyun.com/product/oss)上。
+- 网站基于 [Vuepress](https://vuepress.vuejs.org/) 生成，源码托管于 [Github](https://github.com/saltbo/blog)。
+- 采用 [Github Action](https://github.com/saltbo/blog/actions) 持续集成，通过 [Uptoc ](https://github.com/saltbo/uptoc)将静态文件部署在 [阿里云OSS ](https://www.aliyun.com/product/oss)上。
 - 内容使用 [Typora](https://www.typora.io/) 编辑。
 - 全站`HTTPS`设计，安全、极速。
 - 异步`Google analysts`分析统计。
