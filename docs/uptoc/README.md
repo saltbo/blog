@@ -2,11 +2,11 @@
 sidebar: 'auto'
 ---
 
-# 介绍
+# Uptoc
 
 > `uptoc` 是一个用于将静态文件部署到云存储的命令行工具，它通常配合持续集成平台使用。当然你也可以安装在你的本地使用。
 
-## 支持的云存储
+## 驱动
 - 阿里云oss (github.com/aliyun/aliyun-oss-go-sdk/oss)
 - 腾讯云cos (github.com/tencentyun/cos-go-sdk-v5)
 - 七牛云 (github.com/qiniu/api.v7)
@@ -68,7 +68,7 @@ after_success:
   - uptoc --endpoint uploader-cn-zhangjiakou.aliyuncs.com --bucket blog-bucket public
 ```
 
-## 驱动列表
+## 驱动配置
 
 | driver | bucket | endpoint | endpoint enum |
 | -----  | --------- | ------ | ---- |
