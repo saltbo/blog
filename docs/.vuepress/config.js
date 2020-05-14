@@ -29,13 +29,15 @@ module.exports = {
     ],
     sidebar: {
       '/books/': getBooks(),
-      '/uptoc/': getProjectUptoc(),
-      // '/zpan/': getProjectZpan(),
     },
-    dateFormat: 'YYYY-MM-DD',
-    smoothScroll: true,
     search: true,
+    smoothScroll: true,
+    dateFormat: 'YYYY-MM-DD',
     searchMaxSuggestions: 10,
+    repo: 'saltbo/blog',
+    docsDir: 'docs',
+    editLinks: true,
+    editLinkText: '发现错误了？去修改!',
     lastUpdated: '最近更新', // string | boolean
     sitemap: {
       hostname: 'https://saltbo.cn',
@@ -63,22 +65,6 @@ function getBooks(){
         'go',
         'rust',
         'python',
-      ]
-    }
-  ]
-}
-
-function getProjectUptoc(){
-  return [
-    {
-      title: 'Uptoc',
-      collapsable: false, 
-      sidebarDepth: 2,
-      children: [
-        '',
-        'uptoc',
-        'zpan',
-        'longist',
       ]
     }
   ]
