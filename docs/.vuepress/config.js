@@ -1,8 +1,8 @@
 // .vuepress/config.js
 module.exports = {
   lang: 'zh-CN',
-  title: "Saltbo's Blog", 
-  description: 'A Blog of saltbo',
+  title: "Boblab", 
+  description: 'A laboratory of saltbo',
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -29,7 +29,8 @@ module.exports = {
     ],
     sidebar: {
       '/books/': getBooks(),
-      '/projects/': getProjects(),
+      '/uptoc/': getProjectUptoc(),
+      // '/zpan/': getProjectZpan(),
     },
     dateFormat: 'YYYY-MM-DD',
     smoothScroll: true,
@@ -67,10 +68,10 @@ function getBooks(){
   ]
 }
 
-function getProjects(){
+function getProjectUptoc(){
   return [
     {
-      title: 'MyProjects',
+      title: 'Uptoc',
       collapsable: false, 
       sidebarDepth: 2,
       children: [

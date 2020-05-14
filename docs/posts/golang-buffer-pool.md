@@ -1,6 +1,7 @@
 ---
 title: "使用buffer对象池（sync.Pool）需要着重关注引用问题"
 author: "saltbo"
+tags: ["golang"]
 date: 2020-05-10T20:12:41+08:00
 ---
 
@@ -35,7 +36,13 @@ func (c *Context) BodyBuffer() (*bytes.Buffer, error) {
 }
 ```
 
+结果，在线上有一个服务反馈他们有一个接口收到的RequestBody中混入了其他的数据。收到反馈后我们重新Review这段代码，迅速想到这里sync.Pool的使用存在问题。
+
+这里我们在Put后又返回了buffer的指针，就造成多个Request公用一个buffer，自然就会导致某个Request中混入其他Request的Body。
+
 ## 修正
+
+定位到问题后，我们迅速的进行了修改。 但是，万万没想到，又大意了！
 ```go
 func (c *Context) BodyBytes() ([]byte, error) {
    if v, ok := c.Get("BB"); ok {
@@ -58,7 +65,12 @@ func (c *Context) BodyBytes() ([]byte, error) {
 }
 ```
 
+可以看到，我们为了解决原始代码的问题，想着在Put之前取出Bytes返回。但是，这里的Bytes函数读取的是Buffer中的属性里的一个[]byte，所以就导致仍然存在问题。
+
 ## 重现
+
+为了验证我们的猜想，我们写了下面的代码进行验证，最终的输出确实可以看到Body里混入了其他数据。
+
 ```go
 func main() {
 	pool := sync.Pool{New: func() interface{} {
@@ -103,6 +115,9 @@ func main() {
 ```
 
 ## 解决
+
+最终，我们将buffer放到Context中，问题得到了解决。
+
 ```go
 func (c *Context) ReadBodyBytes() ([]byte, error) {
    if c.bodyBuffer.Len() > 0 {
@@ -117,3 +132,8 @@ func (c *Context) ReadBodyBytes() ([]byte, error) {
    return c.bodyBuffer.Bytes(), nil
 }
 ```
+
+
+## 总结
+
+在使用sync.Pool的时候需要注意引用问题。 切记要保证Put回去对象已经使用完毕。
