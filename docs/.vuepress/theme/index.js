@@ -61,6 +61,7 @@ module.exports = themeConfig => {
     'sitemap',
     'comment',
     // 'newsletter',
+    'feed',
   ]
   const themeConfigPluginOptions = {
     ...pick(themeConfig, properties),
@@ -76,6 +77,8 @@ module.exports = themeConfig => {
     extend: '@vuepress/theme-default',  // Theme Inheritance => https://vuepress.vuejs.org/theme/inheritance.html
     plugins: [
       ['@vuepress/blog', blogPluginOptions],
+      [require('../vuepress-plugin-disqusjs'), themeConfig.disqusjs],
+      [require('../vuepress-plugin-sign')],
       ['@vuepress/medium-zoom', true],
       ['@vuepress/last-updated', {
         transformer: (timestamp, lang) => {

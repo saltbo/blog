@@ -16,9 +16,6 @@ module.exports = {
     lineNumbers: true
   },
   // theme: '@vuepress/theme-blog',
-  plugins: [
-    require('./vuepress-plugin-sign'),
-  ],
   themeConfig: {
     nav: [
       { text: '主页', link: '/'},
@@ -39,12 +36,16 @@ module.exports = {
     editLinks: true,
     editLinkText: '发现错误了？去修改!',
     lastUpdated: '最近更新', // string | boolean
+    disqusjs: {
+      shortname: 'saltbo',
+      api: 'https://disqus.skk.moe/disqus/',
+      apikey: 'gioBErFEknLy1N9x4vhz8cPY46yXTmJXUIZWbSvADryC6QcbDyCnC76mvypN1dtT',
+    },
     sitemap: {
       hostname: 'https://saltbo.cn',
     },
-    comment:{
-      service: "disqus",
-      shortname: "saltbo",
+    feed: {
+      canonical_base: 'https://saltbo.cn'
     },
     footer: {
       copyright: "© 2020 - Saltbo's Blog",

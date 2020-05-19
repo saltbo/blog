@@ -20,7 +20,7 @@
       </div>
 
       <div class="box with-padding">
-        <Comment />
+        <Disqusjs />
       </div>
       <Toc />
   </div>
@@ -31,12 +31,10 @@ import PageEdit from '@parent-theme/components/PageEdit.vue'
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import Copyright from '@theme/components/Copyright.vue'
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 export default {
   components: {
     Toc,
     Copyright,
-    Comment,
     PostMeta,
     PageEdit
   },

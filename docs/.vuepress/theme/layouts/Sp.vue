@@ -7,15 +7,13 @@
       </article>
 
     <div class="box with-padding" v-if="$page.frontmatter.comment">
-      <Comment />
+      <Disqusjs />
     </div>
   </div>
 </template>
 <script>
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 export default {
   components: {
-    Comment,
   },
   mounted(){
   }

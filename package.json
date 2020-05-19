@@ -9,6 +9,7 @@
     "@vuepress/theme-blog": "^2.2.0",
     "busuanzi.pure.js": "^1.0.3",
     "core-js": "2.6.4",
+    "disqusjs": "^1.2.6",
     "moment": "^2.24.0",
     "node-rsa": "^1.0.8",
     "vue-cute-timeline": "^1.2.8",
