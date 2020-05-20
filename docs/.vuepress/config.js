@@ -38,7 +38,7 @@ module.exports = {
     lastUpdated: '最近更新', // string | boolean
     disqusjs: {
       shortname: 'saltbo',
-      api: 'https://disqus.skk.moe/disqus/',
+      api: 'https://disqus.saltbo.cn/',
       apikey: 'gioBErFEknLy1N9x4vhz8cPY46yXTmJXUIZWbSvADryC6QcbDyCnC76mvypN1dtT',
     },
     sitemap: {
