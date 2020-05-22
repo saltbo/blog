@@ -78,6 +78,7 @@ module.exports = themeConfig => {
     plugins: [
       // official plugins
       ['@vuepress/blog', blogPluginOptions],
+      ['@vuepress/google-analytics', {'ga': themeConfig.googleAnalytics}],
       ['@vuepress/medium-zoom', true],
       ['@vuepress/last-updated', {
         transformer: (timestamp, lang) => {

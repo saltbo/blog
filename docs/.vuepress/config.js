@@ -36,6 +36,7 @@ module.exports = {
     editLinks: true,
     editLinkText: '发现错误了？去修改!',
     lastUpdated: '最近更新', // string | boolean
+    googleAnalytics: 'UA-133655531-1',
     disqusjs: {
       shortname: 'saltbo',
       api: 'https://disqus.saltbo.cn/',

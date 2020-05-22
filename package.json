@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
+    "@vuepress/plugin-google-analytics": "^1.5.0",
     "@vuepress/plugin-search": "^1.4.0",
     "@vuepress/theme-blog": "^2.2.0",
     "busuanzi.pure.js": "^1.0.3",
@@ -21,5 +22,6 @@
     "build": "vuepress build docs"
   },
   "author": "saltbo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }
