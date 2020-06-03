@@ -12,7 +12,7 @@ editLink: false
 
 之所以定位为实验室，是因为我发现如果只是单纯的作为博客来维护，我会缺乏足够的兴趣和动力。定位成实验室，可以往里面积累以后学到的所有技术，可以记录项目的开发过程，可以展示开源项目。
 
-这里既是我的博客，也是我的实验室，在这里我会把我的想法和项目记录下来，希望对你也有帮助。
+这里既是我的博客，也是我的实验室，在这里我会把我的想法和项目记录下来，希望对你也有帮助。test
 
 :::
 
@@ -35,5 +35,6 @@ editLink: false
 ### 演讲和讲义
  - 八里庄技术沙龙-12 期：[如何从零实现一个高性能的API网关](https://blog.luojilab.com/2019/08/14/dd-technical/ddgw/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzU1OTU1ODUsNDM2NTgyNjkwXX0=
+eyJoaXN0b3J5IjpbMTc4NTI2NjczLC0xOTc1NTk1NTg1LDQzNj
+U4MjY5MF19
 -->
