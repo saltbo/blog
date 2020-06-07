@@ -65,7 +65,7 @@ steps:
 
 ```yaml
 after_success:
-  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh 
   - uptoc --region cn-zhangjiakou --bucket blog-bucket public
 ```
 
