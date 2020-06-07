@@ -50,6 +50,7 @@ steps:
       driver: oss
       region: cn-zhangjiakou
       bucket: saltbo-blog
+      exclude: .cache,test
       dist: public
     env:
       UPTOC_UPLOADER_AK: ${{ secrets.UPTOC_UPLOADER_KEYID }}
