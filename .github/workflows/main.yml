@@ -28,8 +28,10 @@ jobs:
       - name: Fetch Issues
         uses: saltbo/issues2md@master
         with: 
-          dist: docs/ideas
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
+          repo: saltbo/blog
+          dist: docs/feeds
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         run: yarn && yarn build
       - name: Deploy

@@ -52,7 +52,7 @@ export default {
   computed: {
     articles(){
       let posts = this.$site.pages.filter(item => {
-        return item.id == 'idea'
+        return item.id == 'feed'
       })
       this.sortPostsByDate(posts)
       
