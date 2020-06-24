@@ -29,6 +29,7 @@ jobs:
         uses: saltbo/issues2md@master
         with: 
           dist: docs/issues
+          ghToken: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         run: yarn && yarn build
       - name: Deploy
