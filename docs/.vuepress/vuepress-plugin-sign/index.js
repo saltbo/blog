@@ -21,8 +21,8 @@ module.exports = (options = {}, context) => ({
     const hash = sha1(trimedContent);
     const key = new NodeRSA({b: 512});
     const sign = key.encrypt(hash, 'base64');
-    console.log('hash:', hash)
-    console.log('sign:', sign);
+    // console.log('hash:', hash)
+    // console.log('sign:', sign);
     $page.contentSign = sign
   }
 })

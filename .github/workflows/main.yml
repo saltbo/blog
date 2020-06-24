@@ -25,6 +25,10 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Check out code
         uses: actions/checkout@v1
+      - name: Fetch Issues
+        uses: saltbo/issues2md@develop
+        with: 
+          dist: docs/issues
       - name: Build
         run: yarn && yarn build
       - name: Deploy

@@ -38,6 +38,15 @@ module.exports = themeConfig => {
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
       },
+      // {
+      //   id: 'idea',
+      //   dirname: 'ideas',
+      //   path: '/ideas/',
+      //   layout: 'Ideas',
+      //   itemLayout: 'Idea',
+      //   itemPermalink: '/:regular',
+      //   frontmatter: { title: 'Ideas' },
+      // },
     ],
     frontmatters: [
       {

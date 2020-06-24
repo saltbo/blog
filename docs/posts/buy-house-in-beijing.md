@@ -52,7 +52,7 @@ date: 2020-04-18T10:48:41+08:00
 
 ![image-20200615225039228](https://i.loli.net/2020/06/15/9xFjydYfT5PGgco.png)
 
-![image-20200615225032195](https://i.loli.net/2020/06/15/jzP4p9ANdKUvr51.png)
+![](https://i.loli.net/2020/06/15/jzP4p9ANdKUvr51.png)
 
 ![image-20200615225022581](https://i.loli.net/2020/06/15/RYJzeAaStKMPoI1.png)
 
