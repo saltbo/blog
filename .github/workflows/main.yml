@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - master
+  issues:
+    types: 
+      - opened
+      - edited
+      - deleted
   pull_request:
 
 jobs:
