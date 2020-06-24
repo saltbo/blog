@@ -19,8 +19,9 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '主页', link: '/'},
-      { text: '专栏', link: '/books/'},
+      { text: '随想', link: '/feeds/'},
       { text: '文章', link: '/posts/'},
+      { text: '专栏', link: '/books/'},
       { text: '标签', link: '/tags/' },
       { text: '关于', link: '/about' },
     ],
