@@ -26,7 +26,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
       - name: Fetch Issues
-        uses: saltbo/issues2md@develop
+        uses: saltbo/issues2md@master
         with: 
           dist: docs/issues
       - name: Build
