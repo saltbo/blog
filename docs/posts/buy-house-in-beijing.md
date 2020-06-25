@@ -24,15 +24,17 @@ date: 2020-04-18T10:48:41+08:00
 根据现状和目标，可选择的区域为东四环到东五环+北四环到北五环外两公里内。
 在这个区域和预算范围内，新房只有回龙观和北七家附近有几个楼盘。其他区域均为二手房。 
 
+
+
 ## 新房
 
 公园十七区
 
-![image-20200615225523653](https://i.loli.net/2020/06/15/URp46zdHmOZAKey.png)
+<img src="https://static.saltbo.cn/images/2020-06/URp46zdHmOZAKey.png" alt="image-20200625183916790" style="zoom: 50%;" />
 
 ### 祥云赋
 
-![image-20200615225301351](https://i.loli.net/2020/06/15/DG7tIAvoPguTLh6.png)
+<img src="https://static.saltbo.cn/images/2020-06/DG7tIAvoPguTLh6.png" alt="image-20200615225301351" style="zoom:50%;" />
 
 
 
@@ -40,9 +42,9 @@ date: 2020-04-18T10:48:41+08:00
 
 ### 国美第一城
 
-![image-20200615223256284](https://i.loli.net/2020/06/15/98xXSDawPom74Hz.png)
+![image-20200615223256284](https://static.saltbo.cn/images/2020-06/98xXSDawPom74Hz.png)
 
-![image-20200615223243010](https://i.loli.net/2020/06/15/uzLDJF5iMCqk8YW.png)
+![image-20200615223243010](https://static.saltbo.cn/images/2020-06/uzLDJF5iMCqk8YW.png)
 
 ### 梵谷水郡
 
@@ -50,33 +52,35 @@ date: 2020-04-18T10:48:41+08:00
 
 ### 炫特嘉园
 
-![image-20200615225039228](https://i.loli.net/2020/06/15/9xFjydYfT5PGgco.png)
+![image-20200615225039228](https://static.saltbo.cn/images/2020-06/9xFjydYfT5PGgco.png)
 
-![](https://i.loli.net/2020/06/15/jzP4p9ANdKUvr51.png)
+![](https://static.saltbo.cn/images/2020-06/jzP4p9ANdKUvr51.png)
 
-![image-20200615225022581](https://i.loli.net/2020/06/15/RYJzeAaStKMPoI1.png)
+![image-20200615225022581](https://static.saltbo.cn/images/2020-06/RYJzeAaStKMPoI1.png)
 
 
 
 ### 酷特区
 
-![image-20200615225014379](https://i.loli.net/2020/06/15/UTDn9Wy3gkqfIKo.png)
+![image-20200615225014379](https://static.saltbo.cn/images/2020-06/UTDn9Wy3gkqfIKo.png)
 
 ### 朝阳捷座
 
-![image-20200615225949568](/Users/saltbo/Library/Application Support/typora-user-images/image-20200615225949568.png)
 
-![image-20200615225939547](https://i.loli.net/2020/06/15/HFSsWZuezODkqKw.png)
+
+![image-20200625185130079](https://static.saltbo.cn/images/2020-06/jA3NRICrHayZUep.png)
+
+![image-20200615225939547](https://static.saltbo.cn/images/2020-06/HFSsWZuezODkqKw.png)
 
 ### 都市经典
 
-![image-20200615221225177](https://i.loli.net/2020/06/15/ian7Wp8YPJeSzqV.png)
+![image-20200615221225177](https://static.saltbo.cn/images/2020-06/ian7Wp8YPJeSzqV.png)
 
 ### 兴隆家园
 
-![image-20200615223225051](https://i.loli.net/2020/06/15/qHl6FeKcLJb1kWC.png)
+![image-20200615223225051](https://static.saltbo.cn/images/2020-06/qHl6FeKcLJb1kWC.png)
 
-![image-20200615223215770](https://i.loli.net/2020/06/15/OBpKXkztf3e8ZcF.png)
+![image-20200615223215770](https://static.saltbo.cn/images/2020-06/OBpKXkztf3e8ZcF.png)
 
 ### 京棉新城三厂
 
@@ -84,23 +88,23 @@ date: 2020-04-18T10:48:41+08:00
 
 ### 海华堂
 
-![image-20200615223201788](https://i.loli.net/2020/06/15/JSXk92sqHKbI5cv.png)
+![image-20200615223201788](https://static.saltbo.cn/images/2020-06/JSXk92sqHKbI5cv.png)
 
 ### 晨光家园
 
-![image-20200615223154407](https://i.loli.net/2020/06/15/pZikhO2qG5dTD4J.png)
+![image-20200615223154407](https://static.saltbo.cn/images/2020-06/pZikhO2qG5dTD4J.png)
 
-![image-20200615223144918](https://i.loli.net/2020/06/15/A7LdvRapwcn3esV.png)
+![image-20200615223144918](https://static.saltbo.cn/images/2020-06/A7LdvRapwcn3esV.png)
 
 ### 天鹅湾
 
-![image-20200615223128871](https://i.loli.net/2020/06/15/5hkoPZrDzSdjbIw.png)
+![image-20200615223128871](https://static.saltbo.cn/images/2020-06/5hkoPZrDzSdjbIw.png)
 
-![image-20200615223115192](https://i.loli.net/2020/06/15/ljeJZMIUmab62sW.png)
+![image-20200615223115192](https://static.saltbo.cn/images/2020-06/ljeJZMIUmab62sW.png)
 
 ### 朝阳雅筑
 
-![image-20200615223105742](https://i.loli.net/2020/06/15/gxY4H6DVzIcXvEB.png)
+![image-20200615223105742](https://static.saltbo.cn/images/2020-06/gxY4H6DVzIcXvEB.png)
 
 
 
