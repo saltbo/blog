@@ -15,11 +15,31 @@ sidebar: 'auto'
 
 ## 安装
 
-从[Releases](https://github.com/saltbo/uptoc/releases)页面下载您所需平台的二进制文件，或者直接使用下面的安装脚本
+**homebrew** (可能不是最新版本):
 
 ```bash
-curl -sSf http://uptoc.saltbo.cn/install.sh | sh
+brew install uptoc
 ```
+
+**homebrew tap**:
+
+```bash
+brew install saltbo/bin/uptoc
+```
+
+**Shell script**:
+
+```bash
+curl -sSf https://uptoc.saltbo.cn/install.sh | sh
+```
+
+**deb/rpm**:
+
+从[Release页面](https://github.com/saltbo/uptoc/releases)下载`.deb`或`.rpm`，然后分别使用`dpkg -i`和`rpm -i`安装。
+
+**manually**:
+
+从[Release页面](https://github.com/saltbo/uptoc/releases)下载预编译的二进制文件，然后复制到所需位置。
 
 ## 使用
 
@@ -57,17 +77,15 @@ steps:
       UPTOC_UPLOADER_SK: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
 ```
 
-### 其他类似Travis的平台
+### Typora编辑器
 
-如果你使用的是其他CI平台，那么可以使用下面的方式进行使用。
-
-为了安全考虑，请务必在CI平台上添加上UPTOC_UPLOADER_AK和UPTOC_UPLOADER_SK而非直接写死在yaml里。
-
-```yaml
-after_success:
-  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh 
-  - uptoc --region cn-zhangjiakou --bucket blog-bucket public
+**在本地配置相关信息：**
+```bash
+uptoc config
 ```
+
+**在Typora中配置自定义命令：**
+![image-20200628214441740](https://static.saltbo.cn/images/image-20200628214441740.png)
 
 ## 驱动配置
 
