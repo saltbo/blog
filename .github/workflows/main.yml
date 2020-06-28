@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: yarn && yarn build
       - name: Deploy
-        uses: saltbo/uptoc@develop
+        uses: saltbo/uptoc@master
         with:
           driver: oss
           region: cn-zhangjiakou
