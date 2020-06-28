@@ -78,8 +78,7 @@ steps:
 ```
 
 ### Typora编辑器
-
-**在本地配置相关信息：**
+**在本地配置相关信息： [live](https://asciinema.org/a/343794)**
 ```bash
 uptoc config
 ```
