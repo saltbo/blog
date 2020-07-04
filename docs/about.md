@@ -1,6 +1,5 @@
 ---
 title: "关于"
-layout: "Sp"
 comment: true
 editLink: false
 ---

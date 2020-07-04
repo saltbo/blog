@@ -1,26 +1,18 @@
 <template>
   <Card>
-    <timeline>
-      <timeline-title>太棒了! 目前共计 {{articles.length}} 篇文章。 继续努力。</timeline-title>
-      <timeline-item v-for="article in articles">
-        <h3 v-if="!article.id">{{ article.title }}</h3>
-        <router-link v-else class="post-link" :to="article.path">
-          <span class="date">{{dateFormat(article.frontmatter.date)}}</span>
-          <span class="title">{{ article.title }}</span>
-        </router-link>
-      </timeline-item>
-    </timeline>
+    <div v-for="article in articles">
+      <h3 v-if="!article.id">{{ article.title }}</h3>
+      <router-link v-else class="post-link" :to="article.path">
+        <span class="date">{{ dateFormat(article.frontmatter.date) }}</span>
+        <span class="title">{{ article.title }}</span>
+      </router-link>
+    </div>
   </Card>
 </template>
 
 <script>
-import { Timeline, TimelineItem, TimelineTitle } from "vue-cute-timeline";
 export default {
-  components: {
-    Timeline,
-    TimelineItem,
-    TimelineTitle
-  },
+  components: {},
   methods: {
     compareDate(a, b) {
       function getTimeNum(date) {
@@ -53,28 +45,11 @@ export default {
   },
   computed: {
     articles() {
-      let posts = this.$site.pages.filter(item => {
-        return item.id == "post";
+      let pages = this.$site.pages.filter(item => {
+        return item.id == "note";
       });
-      this.sortPostsByDate(posts);
-
-      // insert the year item into the posts array.
-      let lastPostYear;
-      for (let i = 0; i < posts.length; i++) {
-        if (!posts[i].frontmatter) continue;
-
-        const postYear = this.dateFormat(posts[i].frontmatter.date, "year");
-        if (postYear != lastPostYear) {
-          posts.splice(i, 0, {
-            title: postYear,
-            frontmatter: { date: new Date(postYear + "-01-01").toString() }
-          });
-        }
-
-        lastPostYear = postYear;
-      }
-
-      return posts;
+      this.sortPostsByDate(pages);
+      return pages;
     }
   },
   mounted() {}

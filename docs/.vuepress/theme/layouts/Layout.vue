@@ -1,6 +1,15 @@
 <template>
-  <div class="container" v-if="$pagination">
-    <div class="box with-padding">
+  <div>
+    <div v-if="!$pagination">
+      <Card>
+        <Content />
+      </Card>
+
+      <Card class="mt-8 p-10" v-if="$page.frontmatter.comment">
+        <Disqusjs />
+      </Card>
+    </div>
+    <div v-else>
       <ul id="default-layout">
         <li v-for="page in $pagination.pages">
           <router-link class="page-link" :to="page.path">{{ page.title }}</router-link>
@@ -12,26 +21,17 @@
       </div>
     </div>
   </div>
-
-  <DefaultThemeLayout v-else></DefaultThemeLayout>
 </template>
 
 <script>
-import DefaultThemeLayout from '@parent-theme/layouts/Layout.vue'
 export default {
-  components: {
-    DefaultThemeLayout,
-  },
-  computed:{
-  },
-  methods:{
-  },
-  mounted(){
+  components: {},
+  computed: {},
+  methods: {},
+  mounted() {
     console.log(this);
   }
-}
+};
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

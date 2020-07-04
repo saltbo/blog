@@ -1,3 +1,7 @@
+---
+sidebar: 'auto'
+---
+
 # GoHowTo
 
 How to do something during rust developing.

@@ -1,48 +1,7 @@
 @require './config.styl'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-blockquote
-  font-size .9rem
-  color darken($textColor, 50%)
-  background-color: #f3f5f7;
-  border-left: 0.3rem solid #42b983
-  margin 0.5rem 0
-  padding .25rem .25rem .25rem 1rem
-
-.container
-  padding 0 10px 30px 10px
-  min-height calc(100vh - 30px - 120px - 100px)
-  max-width $contentWidth
-  margin 0 auto
-  margin-top $headerHeight
-
-.box
-  border-radius: 4px;
-  border: 1px solid #ebeef5;
-  background-color: #fff;
-  overflow: hidden;
+.cl
   color: #303133;
-  transition: .3s
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-  {$contentClass}
-    padding-top: 0 !important
-    h1, h2, h3, h4, h5, h6
-      font-weight 750
-
-.with-padding
-  padding: 20px
-  margin-top: 20px;
-
-.theorem
-  margin 1rem 0
-  padding .1rem 1.5rem
-  border-radius 0.4rem
-  background-color #f0f4f8
-  .title
-    font-weight bold
-
-.custom-block
-  &.right
-    color transparentify($textColor, 0.4)
-    font-size 0.9rem
-    text-align right

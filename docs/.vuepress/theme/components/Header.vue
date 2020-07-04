@@ -1,132 +1,66 @@
+
 <template>
-  <section id="header">
-    <div class="header-wrapper">
-      <div class="title">
-        <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
-      </div>
-      <div class="header-right-wrap">
-        <ul v-if="$themeConfig.nav" class="nav">
-          <li
-            v-for="item in $themeConfig.nav"
-            :key="item.text"
-            class="nav-item"
-          >
-            <NavLink :link="item.link">{{ item.text }}</NavLink>
-          </li>
-        </ul>
-        <SearchBox />
-        <!-- <Feed /> -->
-      </div>
+  <header>
+    <div class="topbar">
+      <nav class="container mx-auto flex items-center justify-between flex-wrap px-20 py-3">
+        <router-link to="/" class="flex items-center flex-shrink-0 text-white mr-6">
+          <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
+            />
+          </svg>
+          <span class="font-semibold text-xl tracking-tight">Boblab</span>
+        </router-link>
+        <div class="block lg:hidden">
+          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow"></div>
+          <div>
+            <a v-for="item in userLinks" :key="item.link" :href="item.link" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">{{item.text}}</a>
+          </div>
+        </div>
+      </nav>
     </div>
-  </section>
+  </header>
 </template>
 
 <script>
-import SearchBox from '@SearchBox'
-// import Feed from './Feed'
-
 export default {
-  components: { SearchBox },
-}
+  computed: {
+    userNav() {
+      return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || [];
+    },
+
+    userLinks() {
+      function resolveNavLinkItem(linkItem) {
+        return Object.assign(linkItem, {
+          type: linkItem.items && linkItem.items.length ? "links" : "link"
+        });
+      }
+
+      return (this.userNav || []).map(link => {
+        return Object.assign(resolveNavLinkItem(link), {
+          items: (link.items || []).map(resolveNavLinkItem)
+        });
+      });
+    }
+  }
+};
 </script>
 
-<style lang="stylus">
-@import '~@app/style/config'
+<style lang="stylus" scoped>
+header {
+  height: $headerHeight;
+}
 
-#header
-  z-index 12
-  position fixed
-  top 0
-  width 100%
-  height $headerHeight
-  box-sizing border-box
-  background-color $headerBgColor
-  padding 20px 32px 20px
-  margin auto
-  box-shadow 0 5px 20px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.05)
-  transition all 1s cubic-bezier(0.25, 0.8, 0.25, 1)
-
-  ol, ul
-    list-style none
-    margin 0
-    padding 0
-
-  &:hover
-    box-shadow 0 5px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1)
-
-// border-bottom 5px solid lighten(#3eaf7c, 50%)
-.header-wrapper
-  display flex
-  line-height 40px
-  height 40px
-
-  .title
-    /* flex 0 0 200px */
-    font-size 30px
-    margin 0
-    letter-spacing 2px
-    display block
-    text-transform uppercase
-
-    a
-      color $darkTextColor
-      font-weight bold
-      font-family PT Serif, Serif
-      text-decoration none
-
-  .header-right-wrap
-    flex 1
-    display flex
-    justify-content flex-end
-    align-items center
-
-    .nav
-      flex 0 0 auto
-      display flex
-      margin 0
-
-      .nav-item
-        margin-left 20px
-
-        a
-          font-family PT Serif, Serif
-          font-size 20px
-          // color lighten(#3eaf7c, 30%)
-          text-decoration none
-          transition color 0.3s
-
-    .search-box
-      font-family PT Serif, Serif
-      margin-left 20px
-
-      input
-        border-radius 5px
-        transition all 0.5s
-        border 1px solid #cecece
-
-        &:hover
-          border 1px solid $accentColor
-          box-shadow 0 0 5px $accentColor
-
-      .suggestions
-        border 1px solid $darkBorderColor
-        top 40px
-        right 0
-
-        a
-          color $darkTextColor
-          text-decoration none
-
-          &.focused
-            color $accentColor
-
-@media (max-width: $MQMobile)
-  #header
-    display none
-
-  .header-wrapper
-    flex-direction column
-
-    .header-right-wrap
-      display none
+.topbar {
+  @apply: fixed w-full top-0 bg-teal-500;
+  z-index: 99999;
+}
 </style>

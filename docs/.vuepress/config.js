@@ -1,7 +1,7 @@
 // .vuepress/config.js
 module.exports = {
   lang: 'zh-CN',
-  title: "Boblab", 
+  title: "Boblab",
   description: 'A laboratory of saltbo',
   dest: 'public',
   head: [
@@ -15,14 +15,19 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
+  postcss: {
+    plugins: [
+      require('tailwindcss')('./tailwind.config.js'),
+      require('autoprefixer')
+    ]
+  },
   // theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [
-      { text: '主页', link: '/'},
-      { text: '随想', link: '/feeds/'},
-      { text: '文章', link: '/posts/'},
-      { text: '专栏', link: '/books/'},
-      { text: '标签', link: '/tags/' },
+      { text: '主页', link: '/' },
+      { text: '笔记', link: '/notes/' },
+      { text: '博文', link: '/posts/' },
+      { text: '友链', link: '/links' },
       { text: '关于', link: '/about' },
     ],
     sidebar: {
@@ -57,11 +62,11 @@ module.exports = {
   }
 }
 
-function getBooks(){
+function getBooks() {
   return [
     {
       title: 'DevHowTo',
-      collapsable: false, 
+      collapsable: false,
       sidebarDepth: 2,
       children: [
         '',

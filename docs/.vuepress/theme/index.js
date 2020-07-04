@@ -39,13 +39,13 @@ module.exports = themeConfig => {
         frontmatter: { title: 'Posts' },
       },
       {
-        id: 'feed',
-        dirname: 'feeds',
-        path: '/feeds/',
-        layout: 'Feeds',
-        itemLayout: 'Feed',
+        id: 'note',
+        dirname: 'notes',
+        path: '/notes/',
+        layout: 'Notes',
+        itemLayout: 'Note',
         itemPermalink: '/:regular',
-        frontmatter: { title: 'Feeds' },
+        frontmatter: { title: 'Notes' },
       },
     ],
     frontmatters: [
@@ -54,7 +54,6 @@ module.exports = themeConfig => {
         keys: ['tag', 'tags'],
         path: '/tags/',
         layout: 'Tags',
-        // scopeLayout: 'Tags',
         frontmatter: { title: 'Tags' },
       },
     ],
@@ -87,7 +86,7 @@ module.exports = themeConfig => {
     plugins: [
       // official plugins
       ['@vuepress/blog', blogPluginOptions],
-      ['@vuepress/google-analytics', {'ga': themeConfig.googleAnalytics}],
+      ['@vuepress/google-analytics', { 'ga': themeConfig.googleAnalytics }],
       ['@vuepress/medium-zoom', true],
       ['@vuepress/last-updated', {
         transformer: (timestamp, lang) => {

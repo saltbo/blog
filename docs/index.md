@@ -1,7 +1,6 @@
 ---
 title: "首页"
-layout: "Sp"
-editLink: false
+layout: Home
 ---
 
 ### 欢迎
