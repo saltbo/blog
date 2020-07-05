@@ -1,15 +1,11 @@
 <template>
   <Card title="我的笔记">
-    <!-- <div>
-      <router-link class="post-link" :to="article.path">
-        <span class="title"></span>
-      </router-link>
-    </div>-->
-
     <table class="table-auto my-0">
       <tbody>
-        <tr v-for="(page,index) in pages">
-          <td class="w-1/2 px-4 py-2">{{ page.title }}</td>
+        <tr v-for="page in pages">
+          <td class="w-1/2 px-4 py-2">
+            <router-link :to="page.path">{{ page.title }}</router-link>
+          </td>
           <td class="w-1/4 px-4 py-2">{{ page.frontmatter.date | moment}}</td>
         </tr>
       </tbody>

@@ -3,7 +3,9 @@
     <Card title="开源项目">
       <div class="grid grid-cols-2 gap-4">
         <Card shadow="never">
-          <h3>Uptoc</h3>
+          <router-link to="/uptoc">
+            <h3>Uptoc</h3>
+          </router-link>
           <div class="intro">A static file deployment tool that supports multiple platforms./ 一个支持多家云厂商的静态文件部署工具</div>
           <div class="flex flex-row">
             <div class="py-2">Go</div>
