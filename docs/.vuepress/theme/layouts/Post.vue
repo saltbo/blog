@@ -6,7 +6,7 @@
           <h1 class="title" itemprop="name headline">{{ $frontmatter.title }}</h1>
           <PostMeta :tags="$frontmatter.tags" :author="$frontmatter.author" :date="$frontmatter.date" :location="$frontmatter.location" />
         </header>
-        <Content />
+        <Content class="custom" />
         <PageEdit />
         <!-- 版权 -->
         <Copyright />
@@ -15,7 +15,7 @@
       <Toc />
     </Card>
 
-    <Card class="mt-5">
+    <Card class="mt-5 px-10">
       <Disqusjs />
     </Card>
   </div>

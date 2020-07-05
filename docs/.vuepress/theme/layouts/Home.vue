@@ -1,25 +1,7 @@
 <template>
   <div>
     <Card title="开源项目">
-      <div class="grid grid-cols-2 gap-4 my-5">
-        <Card shadow="never">
-          <h3>Uptoc</h3>
-          <div class="intro">A static file deployment tool that supports multiple platforms./ 一个支持多家云厂商的静态文件部署工具</div>
-          <div class="flex flex-row">
-            <div class="py-2">Go</div>
-            <div class="py-2 ml-2">120</div>
-            <div class="py-2 ml-2">cli deploying publishing</div>
-          </div>
-        </Card>
-        <Card shadow="never">
-          <h3>Uptoc</h3>
-          <div class="intro">A static file deployment tool that supports multiple platforms./ 一个支持多家云厂商的静态文件部署工具</div>
-          <div class="flex flex-row">
-            <div class="py-2">Go</div>
-            <div class="py-2 ml-2">120</div>
-            <div class="py-2 ml-2">cli deploying publishing</div>
-          </div>
-        </Card>
+      <div class="grid grid-cols-2 gap-4">
         <Card shadow="never">
           <h3>Uptoc</h3>
           <div class="intro">A static file deployment tool that supports multiple platforms./ 一个支持多家云厂商的静态文件部署工具</div>

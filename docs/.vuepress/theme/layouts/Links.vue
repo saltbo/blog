@@ -13,8 +13,8 @@
         </a>
       </Card>
     </div>
-    <div class>
-      <Content />
+    <div class="mt-10">
+      <Content class="custom" />
       <PageEdit />
     </div>
   </Card>

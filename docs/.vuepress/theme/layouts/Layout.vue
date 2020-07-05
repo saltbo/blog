@@ -2,10 +2,10 @@
   <div id="default-layout">
     <div v-if="!$pagination">
       <Card :title="$page.title">
-        <Content />
+        <Content class="custom" />
       </Card>
 
-      <Card class="p-10" v-if="$page.frontmatter.comment">
+      <Card class="mt-5 px-10" v-if="$page.frontmatter.comment">
         <Disqusjs />
       </Card>
     </div>

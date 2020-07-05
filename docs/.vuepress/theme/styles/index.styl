@@ -1,23 +1,24 @@
-@require './config.styl'
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@require './config.styl'
+
+h1 
+  @apply text-2xl;
+
+h2 
+  @apply text-xl;
+
+h3 
+  @apply text-lg;
 
 h1, h2, h3, h4, h5, h6
-  font-weight 600
+  font-weight 750
   line-height 1.25
+  {$contentClass} > &
+      @apply mt-8 mb-3
+      &:first-child
+        @apply mt-2
 
-  {$contentClass}:not(.custom) > &
-    margin-top 0.5rem
-    padding-top 1rem
-    margin-bottom 0
-
-    &:first-child
-      margin-top -1.5rem
-      margin-bottom 1rem
-
-      + p, + pre, + .custom-block
-        margin-top 2rem
-
-  &:hover .header-anchor
-    opacity: 1
+{$contentClass}
+  @apply mx-10 !important
