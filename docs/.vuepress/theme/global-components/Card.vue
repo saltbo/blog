@@ -3,7 +3,7 @@
     <div v-if="title" class="header">
       <h1>{{title}}</h1>
     </div>
-    <div class="body">
+    <div class="body" :style="bodyStyle">
       <slot />
     </div>
   </div>
@@ -16,6 +16,9 @@ export default {
     shadow: {
       type: String,
       default: "always"
+    },
+    bodyStyle: {
+      type: Object
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 <template>
   <div id="default-layout">
     <div v-if="!$pagination">
-      <Card>
+      <Card :title="$page.title">
         <Content />
       </Card>
 
