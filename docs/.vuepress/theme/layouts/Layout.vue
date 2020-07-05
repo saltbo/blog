@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div id="default-layout">
     <div v-if="!$pagination">
       <Card>
         <Content />
       </Card>
 
-      <Card class="mt-8 p-10" v-if="$page.frontmatter.comment">
+      <Card class="p-10" v-if="$page.frontmatter.comment">
         <Disqusjs />
       </Card>
     </div>
     <div v-else>
-      <ul id="default-layout">
+      <ul>
         <li v-for="page in $pagination.pages">
           <router-link class="page-link" :to="page.path">{{ page.title }}</router-link>
         </li>

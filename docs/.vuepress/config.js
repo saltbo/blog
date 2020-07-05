@@ -26,7 +26,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       { text: '笔记', link: '/notes/' },
-      { text: '博文', link: '/posts/' },
+      { text: '文章', link: '/posts/' },
       { text: '友链', link: '/links' },
       { text: '关于', link: '/about' },
     ],

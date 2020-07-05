@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded p-4 overflow-hidden shadow">
+  <div :class="cardClass">
     <div v-if="title" class="title">{{title}}</div>
     <slot />
   </div>
@@ -8,12 +8,27 @@
 <script>
 export default {
   props: {
-    title: {
-      //   required: true
+    title: String,
+    shadow: {
+      type: String,
+      default: "always"
+    }
+  },
+  computed: {
+    cardClass() {
+      if (this.shadow == "always") {
+        return "card shadow";
+      }
+
+      return "card";
     }
   }
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.card {
+  @apply: rounded p-4 overflow-hidden border border-solid border-gray-300;
+  // border: 1px solid #eee;
+}
 </style>
