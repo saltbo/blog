@@ -34,7 +34,7 @@ jobs:
         uses: saltbo/issues2md@master
         with: 
           repo: saltbo/blog
-          dist: docs/feeds
+          dist: docs/notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build

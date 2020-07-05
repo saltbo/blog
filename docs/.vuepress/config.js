@@ -27,8 +27,8 @@ module.exports = {
       { text: '主页', link: '/' },
       { text: '笔记', link: '/notes/' },
       { text: '文章', link: '/posts/' },
-      { text: '友链', link: '/links' },
-      { text: '关于', link: '/about' },
+      { text: '友链', link: '/links.html' },
+      { text: '关于', link: '/about.html' },
     ],
     sidebar: {
       '/books/': getBooks(),
