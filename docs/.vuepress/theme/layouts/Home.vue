@@ -16,26 +16,37 @@
       </div>
     </Card>
     <Card title="置顶文章" class="mt-5">
-      <router-link :to="page.path" class="flex my-3" v-for="page in pages">
-        <div class="w-1/3 p-2">
-          <img src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
-        </div>
-        <div class="w-2/3 p-2">
-          <h3 class="title">{{ page.title }}</h3>
-          <div class="intro">{{ page.excerpt }}</div>
-          <div class="flex flex-row">
+      <div class="flex my-3" v-for="page in pages">
+        <router-link :to="page.path" class="w-1/3">
+          <img class="rounded" src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
+        </router-link>
+        <div class="w-2/3 px-4 py-1">
+          <h3 class="title">
+            <router-link :to="page.path">{{ page.title }}</router-link>
+          </h3>
+          <div class="intro" v-html="page.excerpt"></div>
+          <div class="meta">
+            <CalendarIcon class="icon" />
             <div class="py-2">{{ page.frontmatter.date | moment('YYYY-MM-DD') }}</div>
-            <div class="py-2 ml-2">阅读约10分钟</div>
-            <div class="py-2 ml-2">{{ page.frontmatter.tags }}</div>
+            <ClockIcon class="icon" />
+            <div class="py-2">阅读约10分钟</div>
+            <TagIcon class="icon" v-if="page.frontmatter.tags" />
+            <div class="py-2">
+              <div class="tag-item" v-for="tag in page.frontmatter.tags" :key="tag">
+                <router-link :to="'/tags/'+tag">{{tag}}</router-link>
+              </div>
+            </div>
           </div>
         </div>
-      </router-link>
+      </div>
     </Card>
   </div>
 </template>
 
 <script>
+import { CalendarIcon, ClockIcon, TagIcon } from "vue-feather-icons";
 export default {
+  components: { CalendarIcon, ClockIcon, TagIcon },
   computed: {
     pages() {
       let pages = this.$site.pages.filter(item => {
@@ -57,12 +68,23 @@ export default {
 }
 
 .intro {
-  color: #718096;
-  min-height: 56px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; // 控制多行的行数
+  -webkit-line-clamp: 2; // 控制多行的行数
   -webkit-box-orient: vertical;
+  @apply: mt-2 text-gray-600;
+}
+
+.meta {
+  @apply: flex flex-row items-center text-gray-600;
+
+  & > .icon {
+    @apply: w-5 h-5 flex justify-center mx-2;
+
+    &:first-child {
+      @apply: ml-0;
+    }
+  }
 }
 </style>

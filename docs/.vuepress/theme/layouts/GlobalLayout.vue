@@ -9,16 +9,16 @@
         <div class="w-1/4 px-2 py-2">
           <Card class>
             <div class="flex flex-row justify-center text-center">
-              <div class="p-2">
-                <div>文章数</div>
+              <div class="px-2">
+                <div>文章</div>
                 <span>20</span>
               </div>
-              <div class="p-2">
-                <div>笔记数</div>
+              <div class="px-2">
+                <div>笔记</div>
                 <span>20</span>
               </div>
-              <div class="p-2">
-                <div>标签数</div>
+              <div class="px-2">
+                <div>标签</div>
                 <span>120</span>
               </div>
             </div>
