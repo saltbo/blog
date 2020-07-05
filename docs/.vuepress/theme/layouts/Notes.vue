@@ -1,12 +1,19 @@
 <template>
-  <Card>
-    <div v-for="article in articles">
-      <h3 v-if="!article.id">{{ article.title }}</h3>
-      <router-link v-else class="post-link" :to="article.path">
-        <span class="date">{{ dateFormat(article.frontmatter.date) }}</span>
-        <span class="title">{{ article.title }}</span>
+  <Card title="我的笔记">
+    <!-- <div>
+      <router-link class="post-link" :to="article.path">
+        <span class="title"></span>
       </router-link>
-    </div>
+    </div>-->
+
+    <table class="table-auto my-0">
+      <tbody>
+        <tr v-for="(page,index) in pages">
+          <td class="w-1/2 px-4 py-2">{{ page.title }}</td>
+          <td class="w-1/4 px-4 py-2">{{ page.frontmatter.date | moment}}</td>
+        </tr>
+      </tbody>
+    </table>
   </Card>
 </template>
 
@@ -24,31 +31,15 @@ export default {
       posts.sort((prev, next) => {
         return this.compareDate(prev, next);
       });
-    },
-    dateFormat(date, type) {
-      function renderTime(date) {
-        var dateee = new Date(date).toJSON();
-        return new Date(+new Date(dateee) + 8 * 3600 * 1000)
-          .toISOString()
-          .replace(/T/g, " ")
-          .replace(/\.[\d]{3}Z/, "")
-          .replace(/-/g, "/");
-      }
-      date = renderTime(date);
-      const dateObj = new Date(date);
-      const year = dateObj.getFullYear();
-      const mon = dateObj.getMonth() + 1;
-      const day = dateObj.getDate();
-      if (type == "year") return year;
-      else return `${mon}-${day}`;
     }
   },
   computed: {
-    articles() {
+    pages() {
       let pages = this.$site.pages.filter(item => {
         return item.id == "note";
       });
       this.sortPostsByDate(pages);
+      console.log(pages);
       return pages;
     }
   },

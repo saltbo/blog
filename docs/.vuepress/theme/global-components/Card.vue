@@ -1,7 +1,11 @@
 <template>
   <div :class="cardClass">
-    <div v-if="title" class="title">{{title}}</div>
-    <slot />
+    <div v-if="title" class="header">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="body">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -28,7 +32,15 @@ export default {
 
 <style lang="stylus" scoped>
 .card {
-  @apply: rounded p-4 overflow-hidden border border-solid border-gray-300;
-  // border: 1px solid #eee;
+  @apply: rounded border border-solid border-gray-300;
+
+  .header {
+    @apply: p-4;
+    border-bottom: 1px solid #eee;
+  }
+
+  .body {
+    @apply: overflow-hidden p-4;
+  }
 }
 </style>

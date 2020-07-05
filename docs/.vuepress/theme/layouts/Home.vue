@@ -57,7 +57,7 @@ export default {
       let pages = this.$site.pages.filter(item => {
         return item.id == "post";
       });
-      console.log(pages);
+      console.log(this.$site);
 
       return pages.slice(0, 5);
     }
