@@ -11,15 +11,15 @@
             <div class="flex flex-row justify-center text-center">
               <div class="px-2">
                 <div>文章</div>
-                <span>20</span>
+                <span>{{ postsNum }}</span>
               </div>
               <div class="px-2">
                 <div>笔记</div>
-                <span>20</span>
+                <span>{{ notesNum }}</span>
               </div>
               <div class="px-2">
                 <div>标签</div>
-                <span>120</span>
+                <span>{{ tagsNum }}</span>
               </div>
             </div>
           </Card>
@@ -56,11 +56,14 @@ export default {
       isMobileHeaderOpen: false
     };
   },
-  mounted() {
-    this.script = require("busuanzi.pure.js");
-    this.$router.afterEach(() => {
-      this.isMobileHeaderOpen = false;
-    });
+  methods: {
+    findPagesNum(id) {
+      let pages = this.$site.pages.filter(item => {
+        return item.id == id;
+      });
+
+      return pages.length;
+    }
   },
   watch: {
     $route(to, from) {
@@ -68,6 +71,23 @@ export default {
         this.script.fetch();
       }
     }
+  },
+  computed: {
+    postsNum() {
+      return this.findPagesNum("post");
+    },
+    notesNum() {
+      return this.findPagesNum("note");
+    },
+    tagsNum() {
+      return this.$tag.list.length;
+    }
+  },
+  mounted() {
+    this.script = require("busuanzi.pure.js");
+    this.$router.afterEach(() => {
+      this.isMobileHeaderOpen = false;
+    });
   }
 };
 </script>

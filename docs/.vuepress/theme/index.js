@@ -54,6 +54,7 @@ module.exports = themeConfig => {
         keys: ['tag', 'tags'],
         path: '/tags/',
         layout: 'Tags',
+        scopeLayout: 'Tag',
         frontmatter: { title: 'Tags' },
       },
     ],
