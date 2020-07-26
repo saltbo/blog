@@ -3,7 +3,6 @@ title: "net.http三个坑的总结"
 author: "saltbo"
 tags: ["golang" ]
 date: 2018-04-22
-
 ---
 
 最近在做一个API网关项目，其中最核心的一部分是代理服务器的功能。在实现代理转发的过程中踩了golang的net.http这个包的三个坑，记录总结一下。
