@@ -98,6 +98,6 @@ module.exports = themeConfig => {
       // community plugins
       ['disqusjs', themeConfig.disqusjs],
       [require('../vuepress-plugin-sign')],
-    ]
+    ],
   }
 }

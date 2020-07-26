@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  purge: [
+    'docs/.vuepress/theme/**/*.html',
+    'docs/.vuepress/theme/**/*.vue',
+    'docs/.vuepress/theme/**/*.jsx',
+  ],
   theme: {
     container: {
       padding: {

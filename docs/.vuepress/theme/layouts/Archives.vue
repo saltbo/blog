@@ -22,17 +22,6 @@ export default {
     TimelineTitle,
   },
   methods: {
-    compareDate(a, b) {
-      function getTimeNum(date) {
-        return new Date(date.frontmatter.date).getTime();
-      }
-      return getTimeNum(b) - getTimeNum(a);
-    },
-    sortPostsByDate(posts) {
-      posts.sort((prev, next) => {
-        return this.compareDate(prev, next);
-      });
-    },
     dateFormat(date, type) {
       function renderTime(date) {
         var dateee = new Date(date).toJSON();

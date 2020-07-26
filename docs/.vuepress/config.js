@@ -1,4 +1,6 @@
 // .vuepress/config.js
+const path = require('path')
+
 module.exports = {
   lang: 'zh-CN',
   title: "Boblab",
@@ -17,8 +19,8 @@ module.exports = {
   },
   postcss: {
     plugins: [
-      require('tailwindcss')('./tailwind.config.js'),
-      require('autoprefixer')
+      require('autoprefixer'),
+      require('tailwindcss')(path.join(__dirname, 'theme/tailwind.config.js')),
     ]
   },
   additionalPages: [
