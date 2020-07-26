@@ -1,6 +1,6 @@
 <template>
   <div id="default-layout">
-    <Card :title="$page.title">
+    <Card>
       <Content class="custom" />
     </Card>
 
@@ -15,9 +15,7 @@ export default {
   components: {},
   computed: {},
   methods: {},
-  mounted() {
-    console.log(this);
-  }
+  mounted() {},
 };
 </script>
 

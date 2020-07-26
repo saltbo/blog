@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-10">
     <div class="flex my-3" v-for="page in pages">
       <router-link :to="page.path" class="w-1/3">
         <img class="rounded" src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
@@ -23,21 +23,32 @@
         </div>
       </div>
     </div>
+
+    <!-- pagination -->
+    <div class="mt-10 text-center">
+      <Pagination />
+    </div>
   </div>
 </template>
 
 <script>
 import { CalendarIcon, ClockIcon, TagIcon } from "vue-feather-icons";
+import { Pagination } from "@vuepress/plugin-blog/lib/client/components";
 export default {
   props: {
-    data: Array
+    data: Array,
   },
-  components: { CalendarIcon, ClockIcon, TagIcon },
+  components: {
+    CalendarIcon,
+    ClockIcon,
+    TagIcon,
+    Pagination,
+  },
   computed: {
     pages() {
-      return this.data.slice(0, 5);
-    }
-  }
+      return this.data;
+    },
+  },
 };
 </script>
 

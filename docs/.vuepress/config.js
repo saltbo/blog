@@ -21,12 +21,22 @@ module.exports = {
       require('autoprefixer')
     ]
   },
+  additionalPages: [
+    {
+      path: '/archives/',
+      frontmatter: {
+        layout: 'Archives'
+      }
+    }
+  ],
   // theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '笔记', link: '/notes/' },
       { text: '文章', link: '/posts/' },
+      { text: '笔记', link: '/notes/' },
+      { text: '标签', link: '/tags/' },
+      { text: '归档', link: '/archives/' },
       { text: '友链', link: '/links.html' },
       { text: '关于', link: '/about.html' },
     ],

@@ -1,6 +1,14 @@
 module.exports = {
   purge: [],
   theme: {
+    container: {
+      padding: {
+        default: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '6rem',
+      },
+    },
     boxShadow: {
       default: '0 2px 12px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0, 0, 0, .06)',
       md: '0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)',

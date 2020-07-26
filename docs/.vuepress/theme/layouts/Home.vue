@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Card title="开源项目">
-      <div class="grid grid-cols-2 gap-4">
+    <Card title="我的项目">
+      <div class="grid grid-cols-2 gap-4 px-10">
         <Card shadow="never">
           <router-link to="/uptoc">
             <h3>Uptoc</h3>
@@ -15,9 +15,6 @@
         </Card>
       </div>
     </Card>
-    <Card title="置顶文章" class="mt-5">
-      <Articles :data="articles" />
-    </Card>
   </div>
 </template>
 
@@ -25,15 +22,15 @@
 import Articles from "@theme/components/Articles.vue";
 export default {
   components: {
-    Articles
+    Articles,
   },
   computed: {
     articles() {
-      return this.$site.pages.filter(item => {
+      return this.$site.pages.filter((item) => {
         return item.id == "post";
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -64,9 +64,9 @@ module.exports = themeConfig => {
   }
 
   const properties = [
-    // 'directories',
-    // 'frontmatters',
-    // 'globalPagination',
+    'directories',
+    'frontmatters',
+    'globalPagination',
     'sitemap',
     'comment',
     // 'newsletter',
