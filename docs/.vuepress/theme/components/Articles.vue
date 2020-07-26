@@ -4,10 +4,10 @@
       <router-link :to="page.path" class="w-1/4">
         <img class="rounded" src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
       </router-link>
-      <div class="flex flex-col w-2/3 px-4 py-1">
-        <h3 class="title">
+      <div class="flex flex-col w-4/5 px-4 py-1">
+        <h1 class="title">
           <router-link :to="page.path">{{ page.title }}</router-link>
-        </h3>
+        </h1>
         <div class="intro" v-html="page.excerpt"></div>
         <div class="meta">
           <div class="meta-item">
@@ -71,7 +71,7 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 3; // 控制多行的行数
   -webkit-box-orient: vertical;
-  @apply: my-2 text-gray-600;
+  @apply: my-2;
 
   & >>> p {
     line-height: 1.4rem;
