@@ -1,7 +1,7 @@
 <template>
   <div class="px-10">
-    <div class="flex my-3" v-for="page in pages">
-      <router-link :to="page.path" class="w-1/4">
+    <div class="flex my-8" v-for="page in pages">
+      <router-link :to="page.path" class="flex w-1/4">
         <img class="rounded" src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
       </router-link>
       <div class="flex flex-col w-4/5 px-4 py-1">
