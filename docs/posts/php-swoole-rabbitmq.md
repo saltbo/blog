@@ -1,6 +1,7 @@
 ---
 title: "基于Swoole和RabbitMQ实现的一个完整的异步任务系统"
 author: "saltbo"
+cover: /images/posts/rabbitmq.png
 date: 2016-12-13T22:25:37+08:00
 tags: ["php", "swoole", "RabbitMQ"] 
 ---

@@ -58,11 +58,11 @@ export default {
 
 <style lang="stylus" scoped>
 .cover {
-  @apply: flex rounded;
+  @apply: flex;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 
   & > img {
-    @apply: block mx-auto;
+    @apply: block rounded mx-auto;
     width: 100%;
     height: 10rem;
     object-fit: fill;
@@ -79,14 +79,14 @@ export default {
 
 .intro {
   flex: 1 0 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; // 控制多行的行数
-  -webkit-box-orient: vertical;
-  @apply: my-2;
+  @apply: my-3;
 
   & >>> p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // 控制多行的行数
+    -webkit-box-orient: vertical;
     line-height: 1.4rem;
   }
 }

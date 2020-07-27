@@ -1,6 +1,7 @@
 ---
 title: "阿里云数加平台尝试之简单数据统计"
 author: "saltbo"
+cover: /images/posts/odps.jpeg
 date: 2016-08-14
 tags: ["阿里云", "大数据"] 
 ---
