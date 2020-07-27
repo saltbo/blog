@@ -1,8 +1,8 @@
 <template>
   <div class="px-10">
     <div class="flex my-8" v-for="page in pages">
-      <router-link :to="page.path" class="flex w-1/4">
-        <img class="rounded" src="https://static.zkqiang.cn/images/20200323131541.png-cover" alt />
+      <router-link :to="page.path" class="cover w-1/4">
+        <img :src="page.frontmatter.cover" alt />
       </router-link>
       <div class="flex flex-col w-4/5 px-4 py-1">
         <h1 class="title">
@@ -57,6 +57,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.cover {
+  @apply: flex rounded;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
+  & > img {
+    @apply: block mx-auto;
+    width: 100%;
+    height: 10rem;
+    object-fit: fill;
+    border: none;
+  }
+}
+
 .title {
   flex: 0 0 auto;
   overflow: hidden;

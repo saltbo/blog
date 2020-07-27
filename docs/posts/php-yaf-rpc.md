@@ -1,6 +1,7 @@
 ---
 title: "把基于Yaf框架的接口改造成RPC服务"
 author: "saltbo"
+cover: /images/posts/hprose.jpeg
 date: 2018-04-09T00:00:57+08:00
 tags: ["php", "Yaf", "RPC"] 
 ---

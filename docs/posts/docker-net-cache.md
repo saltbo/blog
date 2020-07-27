@@ -1,6 +1,7 @@
 ---
 title: "基于Docker搭建开发测试环境--网络·缓存"
 author: "saltbo"
+cover: /images/posts/docker.png
 date: 2017-07-15T22:59:11+08:00
 tags: ["docker"] 
 ---

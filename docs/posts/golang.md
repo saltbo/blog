@@ -1,6 +1,7 @@
 ---
-title: "写在学习golang一个月后"
-author: "saltbo"
+title: 写在学习golang一个月后
+author: saltbo
+cover: /images/posts/golang.jpg
 date: 2017-04-23T22:16:37+08:00
 tags: ["golang"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Uptoc - 将你的Hugo静态博客部署到阿里云OSS上"
 author: "saltbo"
+cover: /images/posts/uptoc.jpeg
 date: 2019-10-27T12:20:43+08:00
 tags: ["hugo", "阿里云", "OSS"] 
 ---
@@ -42,7 +43,7 @@ uptoc --endpoint oss-cn-beijing.aliyuncs.com \
 
 只需要简单的参数就可以将目标文件自动同步到云端。当然为了安全考虑，access_key和access_secret支持系统变量，这样我们就可以通过Travis等集成工具的后台来配置它们。
 
-![image-20191027142908681](/images/posts/image-20191027124716113.png)
+![image-20191027142908681](https://static.saltbo.cn/images/image-20191027124716113.png)
 
 现在只需要在你的.travis.yml中增加如下配置就完成了
 
@@ -56,7 +57,7 @@ after_success:
 
 ### 3 阿里云OSS配置
 
-![image-20191027135934555](/images/posts/image-20191027135934555.png)
+![image-20191027135934555](https://static.saltbo.cn/images/image-20191027135934555.png)
 
 创建好bucket，在bucket的基础设置里需要进行这两项配置。
 

@@ -1,6 +1,7 @@
 ---
 title: "王者奥义大全"
 author: "saltbo"
+cover: /images/posts/wzry.jpg
 date: 2020-03-27T20:42:41+08:00
 ---
 

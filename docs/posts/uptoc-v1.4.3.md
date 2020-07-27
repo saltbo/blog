@@ -1,6 +1,7 @@
 ---
 title: "Uptoc v1.4.3 版本发布，支持 Typora，支持配置上传目录。"
 author: "saltbo"
+cover: /images/posts/uptoc.jpeg
 date: 2020-06-29T01:10:41+08:00
 ---
 

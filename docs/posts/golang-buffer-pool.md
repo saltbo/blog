@@ -1,8 +1,9 @@
 ---
 title: "使用buffer对象池（sync.Pool）需要着重关注引用问题"
 author: "saltbo"
-tags: ["golang"]
+cover: /images/posts/syncpool.jpg
 date: 2020-05-10T20:12:41+08:00
+tags: ["golang"]
 ---
 
 sync.Pool可以在高并发场景下提高吞吐能力，但是如果使用不当会导致严重的问题。这里详细梳理一下这次遇到的问题。

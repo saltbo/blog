@@ -1,6 +1,7 @@
 ---
 title: "net.http三个坑的总结"
 author: "saltbo"
+cover: /images/posts/nethttp.jpeg
 tags: ["golang" ]
 date: 2018-04-22
 ---

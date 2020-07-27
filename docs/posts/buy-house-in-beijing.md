@@ -1,6 +1,7 @@
 ---
 title: "北京买房规划"
 author: "saltbo"
+cover: /images/posts/beijing.jpeg
 date: 2020-04-18T10:48:41+08:00
 ---
 
