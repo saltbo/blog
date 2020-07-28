@@ -1,7 +1,7 @@
 ---
 title: "Note测试内容"
 date: 2020-01-01T00:00:00+08:00
-label: [idea]
+labels: [idea]
 ---
 
 ## 介绍
