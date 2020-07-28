@@ -16,7 +16,7 @@
           </div>
           <div class="meta-item">
             <ClockIcon class="icon" />
-            <p>阅读约10分钟</p>
+            <p>{{ page.readingTime.text }}</p>
           </div>
           <div class="meta-item">
             <TagIcon class="icon" v-if="page.frontmatter.tags" />
@@ -50,6 +50,7 @@ export default {
   },
   computed: {
     pages() {
+      console.log(this.data);
       return this.data;
     },
   },

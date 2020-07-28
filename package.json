@@ -24,5 +24,7 @@
   },
   "author": "saltbo",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "vuepress-plugin-reading-time": "^0.1.1"
+  }
 }

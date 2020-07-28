@@ -96,6 +96,7 @@ module.exports = themeConfig => {
       }],
 
       // community plugins
+      ['reading-time'],
       ['disqusjs', themeConfig.disqusjs],
       [require('../vuepress-plugin-sign')],
     ],
