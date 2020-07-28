@@ -1,15 +1,12 @@
 <template>
   <Card title="我的笔记">
-    <table class="table-auto my-0">
-      <tbody>
-        <tr v-for="page in pages">
-          <td class="w-1/2 px-4 py-2">
-            <router-link :to="page.path">{{ page.title }}</router-link>
-          </td>
-          <td class="w-1/4 px-4 py-2">{{ page.frontmatter.date | moment}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="px-20 pb-10">
+      <div class="py-1" v-for="page in pages">
+        <router-link :to="page.path">{{ page.title }}</router-link>
+        <Badge v-for="label in page.frontmatter.label" :text="label" />
+        <span class="float-right text-gray-600">{{ page.frontmatter.date | moment('YYYY-MM-DD') }}</span>
+      </div>
+    </div>
   </Card>
 </template>
 
@@ -27,19 +24,19 @@ export default {
       posts.sort((prev, next) => {
         return this.compareDate(prev, next);
       });
-    }
+    },
   },
   computed: {
     pages() {
-      let pages = this.$site.pages.filter(item => {
+      let pages = this.$site.pages.filter((item) => {
         return item.id == "note";
       });
       this.sortPostsByDate(pages);
       console.log(pages);
       return pages;
-    }
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 

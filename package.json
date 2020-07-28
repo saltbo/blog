@@ -1,9 +1,15 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "My personal blog",
+  "author": "saltbo",
+  "license": "MIT",
   "main": "index.js",
-  "dependencies": {
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-google-analytics": "^1.5.0",
     "@vuepress/plugin-search": "^1.4.0",
@@ -16,15 +22,7 @@
     "vue-cute-timeline": "^1.2.8",
     "vue-moment": "^4.1.0",
     "vuepress": "^1.5.2",
-    "vuepress-plugin-disqusjs": "^1.0.1"
-  },
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
-  },
-  "author": "saltbo",
-  "license": "MIT",
-  "devDependencies": {
+    "vuepress-plugin-disqusjs": "^1.0.1",
     "vuepress-plugin-reading-time": "^0.1.1"
   }
 }
