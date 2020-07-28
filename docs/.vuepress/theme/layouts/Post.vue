@@ -31,11 +31,9 @@ export default {
     Toc,
     Copyright,
     PostMeta,
-    PageEdit
+    PageEdit,
   },
-  mounted() {
-    console.log(this);
-  }
+  mounted() {},
 };
 </script>
 

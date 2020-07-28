@@ -13,11 +13,9 @@
 import Articles from "@theme/components/Articles.vue";
 export default {
   components: {
-    Articles
+    Articles,
   },
-  mounted() {
-    console.log(111, this);
-  }
+  mounted() {},
 };
 </script>
 

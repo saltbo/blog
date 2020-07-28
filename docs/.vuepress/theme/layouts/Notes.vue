@@ -32,7 +32,6 @@ export default {
         return item.id == "note";
       });
       this.sortPostsByDate(pages);
-      console.log(pages);
       return pages;
     },
   },

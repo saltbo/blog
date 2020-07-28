@@ -50,7 +50,6 @@ export default {
   },
   computed: {
     pages() {
-      console.log(this.data);
       return this.data;
     },
   },
