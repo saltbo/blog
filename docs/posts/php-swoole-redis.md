@@ -4,6 +4,7 @@ author: "saltbo"
 cover: /images/posts/swoole.png
 date: 2016-04-24T22:57:46+08:00
 tags: ["php", "swoole", "redis"] 
+pinned: true
 ---
 
 由于PHP不支持多线程，但是作为一个完善的系统，有很多操作都是需要异步完成的。为了完成这些异步操作，我们做了一个基于Redis队列任务系统

@@ -15,7 +15,7 @@ module.exports = {
         window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);`]
   ],
   markdown: {
-    lineNumbers: true
+    // lineNumbers: true
   },
   postcss: {
     plugins: [
@@ -23,14 +23,6 @@ module.exports = {
       require('tailwindcss')(path.join(__dirname, 'theme/tailwind.config.js')),
     ]
   },
-  additionalPages: [
-    {
-      path: '/archives/',
-      frontmatter: {
-        layout: 'Archives'
-      }
-    }
-  ],
   // theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [

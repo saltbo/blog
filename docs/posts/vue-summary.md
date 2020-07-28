@@ -4,6 +4,7 @@ author: "saltbo"
 cover: /images/posts/iview.jpeg
 date: 2018-04-20T00:46:52+08:00
 tags: ["Vue", "iView"] 
+pinned: true
 ---
 
 作为一个正正经经的后端开发，虽然早年自称过全栈，但是随着前端技术发展的越来越快，技术栈越来越多，现在已经不敢自称全栈。早年搭建管理后台都是采用bootstrap，由后端渲染页面。但是有很多东西是后端渲染无法做到的。偶然发现一个组件库——[iView](https://www.iviewui.com/)，这是一个高质量的vue组件库，涵盖了你可以想象到的任何组件。但是因为之前没有vue基础，所以踩了很多坑，这里总结一下。

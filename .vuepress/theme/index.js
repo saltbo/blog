@@ -84,6 +84,14 @@ module.exports = themeConfig => {
 
   return {
     extend: '@vuepress/theme-default',  // Theme Inheritance => https://vuepress.vuejs.org/theme/inheritance.html
+    additionalPages: [
+      {
+        path: '/archives/',
+        frontmatter: {
+          layout: 'Archives'
+        }
+      }
+    ],
     plugins: [
       // official plugins
       ['@vuepress/blog', blogPluginOptions],
