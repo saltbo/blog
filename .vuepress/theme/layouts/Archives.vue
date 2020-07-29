@@ -18,24 +18,19 @@ export default {
   computed: {
     articles() {
       let posts = this.$site.pages.filter((item) => {
-        return item.id == "post";
+        return item.id == "post" || item.id == "note";
       });
       this.sortPostsByDate(posts);
 
       // insert the year item into the posts array.
-      let lastPostYear;
+      let lastYear;
       for (let i = 0; i < posts.length; i++) {
-        if (!posts[i].frontmatter) continue;
-
-        const postYear = posts[i].frontmatter.date.moment("YYYY");
-        if (postYear != lastPostYear) {
-          posts.splice(i, 0, {
-            title: postYear,
-            frontmatter: { date: new Date(postYear + "-01-01").toString() },
-          });
+        let year = posts[i].frontmatter.date.moment("YYYY");
+        if (year != lastYear) {
+          posts.splice(i, 0, { title: year });
         }
 
-        lastPostYear = postYear;
+        lastYear = year;
       }
 
       return posts;
