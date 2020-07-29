@@ -1,45 +1,20 @@
 <template>
-  <Card>
-    <timeline>
-      <timeline-title>太棒了! 目前共计 {{articles.length}} 篇文章。 继续努力。</timeline-title>
-      <timeline-item v-for="article in articles">
-        <h3 v-if="!article.id">{{ article.title }}</h3>
-        <router-link v-else class="post-link" :to="article.path">
-          <span class="date">{{dateFormat(article.frontmatter.date)}}</span>
-          <span class="title">{{ article.title }}</span>
-        </router-link>
-      </timeline-item>
-    </timeline>
+  <Card class="writing">
+    <!-- <div>太棒了! 目前共计 {{articles.length}} 篇文章。 继续努力。</div> -->
+    <div class="writing-item" v-for="article in articles">
+      <h3 v-if="!article.id">{{ article.title }}</h3>
+      <div v-else>
+        <p class="date">{{ article.frontmatter.date | moment('MM-DD') }}</p>
+        <router-link :to="article.path">{{ article.title }}</router-link>
+      </div>
+    </div>
   </Card>
 </template>
 
 <script>
-import { Timeline, TimelineItem, TimelineTitle } from "vue-cute-timeline";
 export default {
-  components: {
-    Timeline,
-    TimelineItem,
-    TimelineTitle,
-  },
-  methods: {
-    dateFormat(date, type) {
-      function renderTime(date) {
-        var dateee = new Date(date).toJSON();
-        return new Date(+new Date(dateee) + 8 * 3600 * 1000)
-          .toISOString()
-          .replace(/T/g, " ")
-          .replace(/\.[\d]{3}Z/, "")
-          .replace(/-/g, "/");
-      }
-      date = renderTime(date);
-      const dateObj = new Date(date);
-      const year = dateObj.getFullYear();
-      const mon = dateObj.getMonth() + 1;
-      const day = dateObj.getDate();
-      if (type == "year") return year;
-      else return `${mon}-${day}`;
-    },
-  },
+  components: {},
+  methods: {},
   computed: {
     articles() {
       let posts = this.$site.pages.filter((item) => {
@@ -52,7 +27,7 @@ export default {
       for (let i = 0; i < posts.length; i++) {
         if (!posts[i].frontmatter) continue;
 
-        const postYear = this.dateFormat(posts[i].frontmatter.date, "year");
+        const postYear = posts[i].frontmatter.date.moment("YYYY");
         if (postYear != lastPostYear) {
           posts.splice(i, 0, {
             title: postYear,
@@ -71,39 +46,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.timeline-item {
-  padding-bottom: 0;
+.writing {
+  @apply: px-20 pb-10;
 
-  h3 {
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
+  .writing-item {
+    @apply: my-2;
 
-  .post-link {
-    color: #888;
-    font-size: 14px;
-    font-weight: 550;
-    cursor: pointer;
-    text-decoration: none;
+    h3 {
+      @apply: mt-10;
+    }
 
     .date {
-      display: inline-block;
-      width: 45px;
-    }
-
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-  }
-
-  &:hover {
-    .timeline-circle {
-      color: $accentColor !important;
-    }
-
-    .post-link {
-      color: $accentColor;
+      @apply: inline-flex text-gray-600 w-20 ml-5;
     }
   }
 }
