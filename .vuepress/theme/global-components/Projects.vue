@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <div class="projects pt-3">
-      <div class="py-1" v-for="project in projects">
-        <router-link :to="project.path">{{ project.title }}: {{ project.intro }}</router-link>
-      </div>
+  <div class="projects">
+    <div class="projects-item" v-for="project in projects">
+      <router-link :to="project.path">{{ project.title }}: {{ project.intro }}</router-link>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -26,5 +25,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.projects {
+  @apply: mt-5;
+
+  .projects-item {
+    @apply: my-1;
+  }
+}
 </style>

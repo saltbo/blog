@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div class="writing pt-3">
-      <div class="py-1" v-for="post in posts">
-        <span class="text-gray-600 w-20">{{ post.frontmatter.date | moment('YYYY-MM-DD') }}</span>
-        <router-link class="ml-10" :to="post.path">{{ post.title }}</router-link>
-      </div>
+  <div class="writing">
+    <div class="writing-item" v-for="post in posts">
+      <p class="date">{{ post.frontmatter.date | moment('YYYY-MM-DD') }}</p>
+      <router-link :to="post.path">{{ post.title }}</router-link>
     </div>
   </div>
 </template>
@@ -23,5 +21,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.writing {
+  @apply: mt-5;
+
+  .writing-item {
+    @apply: my-1;
+
+    .date {
+      @apply: inline-flex text-gray-600 w-32;
+    }
+  }
+}
 </style>
