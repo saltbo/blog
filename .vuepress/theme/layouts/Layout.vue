@@ -1,6 +1,6 @@
 <template>
   <div id="default-layout">
-    <Card>
+    <Card class="py-10">
       <Content class="custom" />
     </Card>
 

@@ -3,6 +3,7 @@ title: "首页"
 layout: Home
 ---
 
+## Activity
 <!--START_SECTION:waka-->
 ```text
 Go           10 hrs 45 mins  ████████████░░░░░░░░░░░░░   49.01 % 
@@ -12,3 +13,9 @@ JavaScript   1 hr 20 mins    █░░░░░░░░░░░░░░░░
 Markdown     1 hr 3 mins     █░░░░░░░░░░░░░░░░░░░░░░░░   04.82 %
 ```
 <!--END_SECTION:waka-->
+
+## Writing
+<PindedPosts />
+
+## Projects
+<Projects />
