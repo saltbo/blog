@@ -26,7 +26,7 @@ export default {
   @apply: mt-5;
 
   .writing-item {
-    @apply: my-1;
+    @apply: my-2;
 
     .date {
       @apply: inline-flex text-gray-600 w-32;
