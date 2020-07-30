@@ -1,7 +1,7 @@
 <template>
   <div id="default-layout">
-    <Card class="py-10">
-      <Content class="custom" />
+    <Card>
+      <Content class="custom theme-content" />
     </Card>
 
     <Card class="mt-5 px-10" v-if="$page.frontmatter.comment">

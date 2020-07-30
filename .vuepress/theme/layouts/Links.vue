@@ -1,6 +1,6 @@
 <template>
   <Card title="友情链接">
-    <div class="grid grid-cols-3 gap-2 px-10">
+    <div class="grid grid-cols-3 gap-2 links">
       <Card shadow="never" :body-style="{padding: 0}" :style="`background-color: ${link.bgColor}; color: ${link.textColor}`" v-for="link in $frontmatter.meta">
         <a class="flex m-1" :href="link.link" target="_blank">
           <div class="w-1/3">
@@ -13,8 +13,8 @@
         </a>
       </Card>
     </div>
-    <div class="mt-10">
-      <Content class="custom" />
+    <div>
+      <Content class="custom theme-content" />
       <PageEdit />
     </div>
   </Card>
@@ -24,11 +24,17 @@
 import PageEdit from "@parent-theme/components/PageEdit.vue";
 export default {
   components: {
-    PageEdit
+    PageEdit,
   },
-  computed: {}
+  computed: {},
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+@require '../styles/wrapper.styl';
+
+.links {
+  @extend $wrapper;
+  @apply: pt-3;
+}
 </style>

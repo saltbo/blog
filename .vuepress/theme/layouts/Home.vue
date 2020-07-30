@@ -1,6 +1,6 @@
 <template>
   <Card class="py-10">
-    <Content class="custom activity" />
+    <Content class="custom theme-content" />
   </Card>
 </template>
 
@@ -15,7 +15,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '../styles/wrapper.styl';
+
 .activity {
+  @extend $wrapper;
+
   & >>> pre, pre[class*='language-'] {
     @apply: bg-gray-300;
 

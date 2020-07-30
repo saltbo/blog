@@ -2,11 +2,13 @@
   <div>
     <Card>
       <article>
-        <header class="post-header">
+        <header>
           <h1 class="title" itemprop="name headline">{{ $frontmatter.title }}</h1>
           <PostMeta :tags="$frontmatter.tags" :author="$frontmatter.author" :date="$frontmatter.date" :location="$frontmatter.location" />
         </header>
-        <Content class="custom" />
+        <!-- 内容 -->
+        <Content class="custom theme-content" />
+        <!-- 编辑 -->
         <PageEdit />
         <!-- 版权 -->
         <Copyright />
@@ -38,12 +40,25 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.post-header {
-  padding: 2rem 2.5rem 0 2.5rem;
+@require '../styles/wrapper.styl';
 
-  & > .title {
+article {
+  @extend $wrapper;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .title {
     margin: 20px 0;
     word-break: break-word;
+  }
+
+  .custom {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .page-edit {
+    padding: 1rem 0;
   }
 
   @media (max-width: $MQMobile) {
