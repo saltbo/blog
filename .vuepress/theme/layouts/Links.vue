@@ -1,8 +1,8 @@
 <template>
   <Card title="友情链接">
     <div class="grid grid-cols-3 gap-2 links">
-      <Card shadow="never" :body-style="{padding: 0}" :style="`background-color: ${link.bgColor}; color: ${link.textColor}`" v-for="link in $frontmatter.meta">
-        <a class="flex m-1" :href="link.link" target="_blank">
+      <Card shadow="never" :body-style="{padding: 0}" :style="`background-color: ${link.bgColor}; `" v-for="link in $frontmatter.meta">
+        <a class="flex m-1" :href="link.link" target="_blank" :style="`color: ${link.textColor}`">
           <div class="w-1/3">
             <img class="w-15 h-15 p-2 rounded-full" :src="link.avatar" alt />
           </div>
