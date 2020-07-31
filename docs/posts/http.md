@@ -13,13 +13,14 @@ tags: ["HTTP协议"]
 
 如果你搞懂了HTTP协议，那么你就可以做很多有趣的东西。
 
-比如做个QQ聊天机器人让你的QQ能够自动与人聊天；
+- 比如做个QQ聊天机器人让你的QQ能够自动与人聊天；
 
-比如做个机器人让它每天替你去做QQ等级加速的任务；
+- 比如做个机器人让它每天替你去做QQ等级加速的任务；
 
-比如做个论坛或贴吧的自动发帖器自动抢沙发；
+- 比如做个论坛或贴吧的自动发帖器自动抢沙发；
 
-比如你突然心血来潮想把自己微博下的几千条微博全部删掉。
+- 比如你突然心血来潮想把自己微博下的几千条微博全部删掉。
+
 
 是不是有点意思呢？
 
@@ -27,15 +28,19 @@ tags: ["HTTP协议"]
 
 还记得那些关于爬虫的文章吗？
 
+**《我从腾讯那“偷了”3000万QQ用户数据，出了份很有趣的独家报告！》**
 
-我从腾讯那“偷了”3000万QQ用户数据，出了份很有趣的独家报告！
+**《我用爬虫一天时间“偷了”知乎一百万用户，只为证明PHP是世界上最好的语言！》**
 
-我用爬虫一天时间“偷了”知乎一百万用户，只为证明PHP是世界上最好的语言！
 这是一个大数据时代，但是普通开发者如何才能拿到大数据呢？
 
 爬虫就是一个很好的解决方案。不论QQ空间还是知乎，不论淘宝还是京东，都可以利用爬虫爬去他们的数据拿来做我们自己的数据分析。
 
-那么，所谓爬虫到底是什么呢？ 其实爬虫就是一个根据一定的规则发送HTTP请求的小程序。
+
+
+那么，所谓爬虫到底是什么呢？ 
+
+其实爬虫就是一个根据一定的规则发送HTTP请求的小程序。
 
 现在你知道HTTP的重要性了吧？
 
@@ -60,33 +65,29 @@ User-Agent: Mozilla/5.0 (Macintosh;Intel Mac OS X 10_11_3) AppleWebKit/537.36 (K
 Cookie: BAIDUID=F2AA23D33A77970AEAC
 ```
 
-GET / HTTP/1.1
+### `GET / HTTP/1.1`
 
 GET是一种HTTP的请求方法，还有POST。这是最常用的两种方法，GET其实就是在进行最普通的URL访问。每当我们在浏览器的地址栏输入一个网址进行访问的时候都是发起了一个GET类型的HTTP请求。比如这个网址http://php.net/manual/zh/book.yaf.php
 
-访问这个地址发出的HTTP数据就是：
-
-GET /manual/zh/book.yaf.php  HTTP/1.1
+访问这个地址发出的HTTP数据就是： `GET /manual/zh/book.yaf.php  HTTP/1.1`
 
 HTTP/1.1是HTTP的版本，是99年发布出来的，目前主流的浏览器都是采用这个版本。
 
 ps：在去年中旬HTTP/2也发布了，不过貌似只有谷歌在Chrome中已经全面启用了HTTP/2。
 
-Host: 61.135.169.125
+### `Host: 61.135.169.125`
 
-Host其实就是目标服务器地址，可以是域名，也可以是IP地址。比如上面那个URL，在HTTP中的表现就是
-
-Host: php.net
+Host其实就是目标服务器地址，可以是域名，也可以是IP地址。比如上面那个URL，在HTTP中的表现就是`Host: php.net`
 
 看到这里是不是知道了什么呢？
 
 没错，昨天题目的答案其实你去访问一下这个IP地址就知道了。
 
-User-Agent: Mozilla/5.0 (Macintosh;Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36
+### `User-Agent: Mozilla/5.0 (Macintosh;Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36`
 
 User-Agent是指浏览器，通过它告诉服务器这个request是通过什么浏览器发出来的。
 
-Cookie: BAIDUID=F2AA23D33A77970
+### `Cookie: BAIDUID=F2AA23D33A77970`
 
 现在你肯定已经明白了访问网页就是不断的发送与接收HTTP数据，那么需要登录的网站是如何识别你的登录状态的呢？
 
@@ -112,21 +113,21 @@ Expires: Sat, 27 Feb 2016 13:59:27 GMT
 Content-Encoding: gzip
 ```
 
-HTTP/1.1 200 OK
+### HTTP/1.1 200 OK
 
 HTTP/1.1 前面已经说过了，HTTP的版本。
 
 200是HTTP的返回状态代码。200 OK 代表正常返回。其他常见的还有404代表找不到页面。302代表重定向跳转。502代表服务器错误。
 
-Server: bfe/1.0.8.14
+### Server: bfe/1.0.8.14
 
 Server顾名思义就是服务器，这里告诉了我们网站是用的什么服务器及服务器的版本，我这个抓的是百度的包，这里是bfe，据说是是百度自己研发的一套前端接入系统。我们常见的Web服务器主要是Apache和Nginx。
 
-Date: Sat, 27 Feb 2016 13:59:27 GM
+### Date: Sat, 27 Feb 2016 13:59:27 GM
 
 这个也很好理解，就是服务器的响应时间。
 
-Content-Type: text/html;charset=utf-8
+### Content-Type: text/html;charset=utf-8
 
 返回的数据类型，text/html意思就是html代码，charset指的是编码格式。我们常用的编码格式就是utf-8和gbk。我们常用的数据类型还有 image/jpeg，image/png，text/css，text/json，text/xml等等。
 

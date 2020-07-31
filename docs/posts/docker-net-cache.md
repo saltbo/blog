@@ -9,7 +9,7 @@ tags: ["docker"]
 Docker网络类型 docker有三种网络类型bridge、host、none，默认bridge。bridge的意思是容器拥有独立的网络环境通...
 <!-- more -->
 
-### Docker网络类型
+## Docker网络类型
 
 ```bash
 [www@BJ-TEST-SHZF ~]$ ifconfig
@@ -32,15 +32,16 @@ docker有三种网络类型bridge、host、none，默认bridge。bridge的意思
 
 docker0是Docker 服务默认会创建的一个网桥（其上有一个 docker0 内部接口），它在内核层连通了其他的物理或虚拟网卡，这就将所有容器和本地主机都放到同一个物理网络。
 
-### 要做的事 —— 搭建开发环境
+## 搭建开发环境
 
 先说一下背景。我们之前有大量的未docker化的项目，现在有一小部分项目开始docker化，但是又不想维护两台服务器（因为之前的服务器是cenos6，docker要求最低cenos7）。因此想要搭建一个共用的php环境，这样我们就可以把未docker化的项目统一在这个环境运行。如下图：
 
-![开发环境](http://upload-images.jianshu.io/upload_images/1846751-78a6de94fb2e9105.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![开发环境](https://static.saltbo.cn/images/1240.png)
 
 如图，Project-1和Project-2是docker化后的项目，即采用独立容器的方式。project-a,project-b,project-c等项目是通过挂载的方式挂到一个共用的开发环境store-dev。
 
-#####Dockerfile
+### Dockerfile
+
 ```dockerfile
 FROM registry.cn-beijing.aliyuncs.com/xxxx/php:5.6-onbuild
 
@@ -56,7 +57,7 @@ CMD ["supervisord"]
 ```
 基础镜像包含了nginx、php及项目所用到的一些扩展，因此Dockerfile文件基本没什么内容，主要是做一个软链，将docker目录链到$APP_HOME下的docker目录。$APP_HOME是基础镜像定义的，因为nginx.conf里的include是$APP_HOME/docker/nginx/*.conf
 
-#####Nginx配置
+### Nginx配置
 
 ```
 server{
@@ -83,7 +84,7 @@ server{
 ```
 这里的话主要就是修改下server_name和root即可，注意Dockerfile里提到了，我们是挂载到/data/web下，所以如图的路径就是/data/web/project-x
 
-##### 部署Shell
+### 部署Shell
 ```bash
  #!/bin/bash
  
@@ -105,12 +106,12 @@ docker run -v $logpath:/data/logs -v $apppath:/data/web/ -p 80:80 --name $name -
 
 >Tips: 电脑重启后并不用重新执行这个脚本，直接执行docker start store-dev即可。
 
-##### mac下的一个坑 —— 没有docker0
+### Mac没有docker0
 
 在开发环境中，如果我们想要调用宿主机本身的一个地址该如何调用呢。前面提到了，docker默认采用的是bridge模式，也就是网桥docker0。所以理论上说也很简单啦，直接调用docker0的ip即可。但是，很可悲的是mac下并没有docker0...
 
 
-![ifconfig-mac](http://upload-images.jianshu.io/upload_images/1846751-a1034ddf64fb327c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![ifconfig-mac](https://static.saltbo.cn/images/1240-20200731232214068.png)
 
 这就尴尬了。那么如何调用宿主机呢？
 
@@ -122,13 +123,13 @@ docker run -v $logpath:/data/logs -v $apppath:/data/web/ -p 80:80 --name $name -
 >Tips: Docker的核心技术是基于Linux的虚拟化，Mac之所以能用Docker其实是在Mac上装了个小型Linux，然后再这个Linux上实现的Docker。所以在Mac上找不到docker0。
 
 
-### 要做的事 —— 搭建测试环境
+## 搭建测试环境
 
 测试环境其实跟开发环境是一样的，不一样的就是监听的域名不同，那么我们就只需要改一下nginx的server_name即可。
 
 这里主要说下docker化后的项目如何部署。
 
-##### deploy.sh
+### deploy.sh
 ```bash
 #!/bin/bash
 
@@ -163,7 +164,7 @@ if [ $appport ] ; then
 fi
 ```
 
-##### project-a.sh
+### project-a.sh
 ```bash
 #!/bin/bash
 
@@ -179,7 +180,7 @@ sh deploy.sh
 
 我们提供了一个通用的脚本，通过它可以实现更新代码、拉取配置文件、打包、重启、加入代理。因为我们的配置文件是通过一个git库来维护，所以每个项目的docker目录下都会有CONF_REPO文件，里面记录了配置文件的git库地址。
 
-##### 第二个坑 —— 打包无法请求内网资源
+### 打包无法请求内网资源
 
 这里简单说一下docker build的实质。
 
@@ -199,7 +200,7 @@ sudo docker build -t image-$appname -f docker/Dockerfile --network host .
 `
 
 
-### 要做的事 —— 另一个开发环境
+## 另一个开发环境
 可以看到上面的deploy.sh的最后一步有个代理，那么这是个什么鬼呢？
 
 这就要说到另外一个开发环境。因为前后端分离的原因，我们一直有一个供前端同学调用的开发环境。
@@ -213,9 +214,9 @@ sudo docker build -t image-$appname -f docker/Dockerfile --network host .
 但是也是存在一个问题，一个服务器只有一个80端口。新的开发环境怎么办呢？
 
 由此我们引入了一个nginx代理，通过它做了一个泛解析，将不同域名的请求转发给不同的容器。如下图：
-![基于docker构建的开发&测试环境架构图](http://upload-images.jianshu.io/upload_images/1846751-38878e0b94bdfdf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![基于docker构建的开发&测试环境架构图](https://static.saltbo.cn/images/1240-20200731231934099.png)
 
-#####泛解析
+### 泛解析
 ```
 server{
     listen      80;
@@ -231,7 +232,8 @@ server{
 }
 ```
 可以看到，这里的192.168.0.1就是docker0的ip。
-##### 独立容器Nginx模板
+
+### 独立容器Nginx模板
 其实每个独立容器所需要的代理文件都是一样的，但是这一步又不可或缺，那么我们就可以把它做成自动化。
 ```
 server{
@@ -261,7 +263,7 @@ fi
 
 部署独立容器的时候会随机分配一个端口号，然后自动将之加入到Nginx的代理中。
 
-##### 最后一个坑 —— 打包过程缓存不生效
+### 打包过程缓存不生效
 
 一切都很完美，但是每次打包都很慢，这令我很痛苦。前面提到打包的过程中会到gitlab上拉取一些代码，这里的代码其实指的是我们自己的一些包。另外还有一些第三方的包在github上，每次都拉取代码实在是不能忍。
 
@@ -331,8 +333,8 @@ CMD ["supervisord"]
 
 这样成功命中缓存~
 
-### 特别鸣谢
+## 特别鸣谢
 感谢**第一貂蝉@青云**在我掉坑里的时候递的梯子！
 
 ---
-####*我是闫大伯，一只不断踩坑爬坑的野生程序猿*
+#### *我是闫大伯，一只不断踩坑爬坑的野生程序猿*

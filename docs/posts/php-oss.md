@@ -46,7 +46,7 @@ private function checkSource() {
 }
 ```
 这样可能看不懂，再来看下配置
-![配置](http://upload-images.jianshu.io/upload_images/1846751-c864e73fb9f62289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![配置](https://static.saltbo.cn/images/1240-20200801000327526.png)
 
 这回是不是理解了呢。
 通过这段代码可以实现在配置里指定单独的Bucket和绑定的域名。

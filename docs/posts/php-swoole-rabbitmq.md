@@ -14,15 +14,15 @@ pinned: true
 因为有了前面两个简单系统的经验，这回基于RabbitMQ的异步任务系统设计的的更加完善，包括多进程消费，异常重试等。
 
 ## 系统介绍 ##
-![消费端架构图](http://upload-images.jianshu.io/upload_images/1846751-5977d285fdbeb5e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![消费端架构图](https://static.saltbo.cn/images/1240-20200731234430392.png)
 
 从图中可以看到，我们这个系统是一个基于事件的异步任务系统。就是说当一个事件产生时，生产者将事件抛给调度器，调度器负责查询事件下有哪些任务，然后将这些任务丢到相应的队列中，最后由消费者消费任务队列中的任务。
 
 在整个系统中主要分为三大部分
 
-1.事件生产者，即产生消息事件的一方。
-2.任务调度器(Scheduler)，负责注册事件并调度任务。
-3.消费者(Worker)，负责消费任务队列中的任务。
+1. 事件生产者（Producer），即产生消息事件的一方。
+2. 任务调度器(Scheduler)，负责注册事件并调度任务。
+3. 消费者(Worker)，负责消费任务队列中的任务。
 
 ## 事件生产者  ##
 
@@ -60,23 +60,23 @@ EventManager::register('order_paied', 'virtualShipping', 'demo'); //虚拟商品
 
 重头戏来了，一个异步任务系统最重要的就是消费端了，现在让我们来看下Worker的流程图。
 
-![一个完整的消费进程](http://upload-images.jianshu.io/upload_images/1846751-9d6800435a8331db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![一个完整的消费进程](https://static.saltbo.cn/images/1240-20200731234439162.png)
 
 可以看到，在这里我们采用了两个交换器和两个队列，一个负责处理正常的任务即ntask，另一个负责处理需要延迟执行的任务即dtask。简单描述下一个任务的生命周期。
 
 ##### 正常任务
-1、task产生，进入正常任务的交换器Exchange[ebats_core_ntask]
-2、交换器根据topic将任务分发到对应的队列中
-3、子进程ntask阻塞等待成功获取到task，并执行该任务
-4、执行失败，需要重试时抛出RetryException，不需要重试时抛出TaskException
-5、子进程ntask捕获到重试异常将任务抛给延迟任务的交换器Exchange[ebats_core_dtask]
-6、将任务执行信息回调给上层开发者以便保存查看
+1. task产生，进入正常任务的交换器Exchange[ebats_core_ntask]
+2. 交换器根据topic将任务分发到对应的队列中
+3. 子进程ntask阻塞等待成功获取到task，并执行该任务
+4. 执行失败，需要重试时抛出RetryException，不需要重试时抛出TaskException
+5. 子进程ntask捕获到重试异常将任务抛给延迟任务的交换器Exchange[ebats_core_dtask]
+6. 将任务执行信息回调给上层开发者以便保存查看
 
 ##### 延迟任务
-1、子进程dtask阻塞等待成功获取到task，并执行该任务
-2、执行失败，需要重试时抛出RetryException，不需要重试时抛出TaskException
-3、子进程dtask捕获到重试异常将任务抛给延迟任务的交换器Exchange[ebats_core_dtask]
-4、将任务执行信息回调给上层开发者以便保存查看
+1. 子进程dtask阻塞等待成功获取到task，并执行该任务
+2. 执行失败，需要重试时抛出RetryException，不需要重试时抛出TaskException
+3. 子进程dtask捕获到重试异常将任务抛给延迟任务的交换器Exchange[ebats_core_dtask]
+4. 将任务执行信息回调给上层开发者以便保存查看
 
 消费者代码如下：
 
@@ -132,10 +132,9 @@ try{
 
 ## 广告 ##
 
-https://github.com/luojilab/async-task-lib
-第一次开源，未来的路还很长，请大家多多关照。
+https://github.com/luojilab/async-task-lib 第一次开源，未来的路还很长，请大家多多关照。
 
 
-###### *我是闫大伯，一只刚刚走上开源之路的程序猿*
+***我是闫大伯，一只刚刚走上开源之路的程序猿***
 
 

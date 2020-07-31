@@ -17,7 +17,7 @@ PHP的RPC框架并不少，比如鸟叔的Yar，比如我们今天讲到的Hpros
 
 鸟叔的Yar只支持PHP，而Hprose提供了多种客户端。
 
-![Hprose](http://upload-images.jianshu.io/upload_images/1846751-f32fe5a251bb12e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Hprose](https://static.saltbo.cn/images/1240-20200731233943992.png)
 
 这就为我们搭建一个跨语言的服务提供了可能。
 
@@ -182,5 +182,4 @@ Trait Trait_Hprose
 ## 后记
 虽然实现了最初的目标，但是由于Yaf的特性，必须继承Yaf_Controller_Abstract。所以get_class_methods的时候会把Yaf_Controller_Abstract中的方法也变成RPC服务，这是唯一的一个缺憾。。。
 
-***---***
 ***我是闫大伯，一只求知欲旺盛的程序猿***

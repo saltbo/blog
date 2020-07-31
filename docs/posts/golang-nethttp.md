@@ -6,10 +6,12 @@ tags: ["golang" ]
 date: 2018-04-22
 ---
 
+
+
 最近在做一个API网关项目，其中最核心的一部分是代理服务器的功能。在实现代理转发的过程中踩了golang的net.http这个包的三个坑，记录总结一下。
 <!-- more -->
 
-#### 0x00 | Host
+### 0x00 | Host
 
 当你发送一个请求给下游服务的时候，如果你发送请求的时候是IP，这个时候你想要通过Header里传递Host。但是，如果你只是在header头里设置Host: www.baidu.com，你会发现下游服务收到的Host还是IP。解决方案如下：
 
@@ -29,7 +31,7 @@ req.Host = req.Header.Get("Host")
 Host string
 ```
 
-#### 0x01 | Content-Length
+### 0x01 | Content-Length
 这个和上一个问题类似，区别是上一个问题导致Host错误，这个问题可能会导致丢失Content-Length从而变成chunked。
 
 这个问题很蛋疼，因为明明我在header里设置了Content-Length，但是实际却变成了chunked。经过反复的测试都没有重现，直到在github上找到了这个https://github.com/golang/go/issues/16264
@@ -123,7 +125,7 @@ req, _ := http.NewRequest(method, url, bodyReader)
 req.ContentLength = req.Header.Get("Content-Length")
 ```
 
-#### 0x02 | WriteHeader
+### 0x02 | WriteHeader
 
 这个问题就更蛋疼了。先看注释
 ```go

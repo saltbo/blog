@@ -1,0 +1,70 @@
+{$contentClass}
+    a
+        color: $accentColor;
+        font-weight: 500;
+        text-decoration: none;
+
+    kbd
+        background: #eee;
+        border: solid 0.15rem #ddd;
+        border-bottom: solid 0.25rem #ddd;
+        border-radius: 0.15rem;
+        padding: 0 0.15em;
+
+    blockquote
+        border-left: 0.2rem solid #dfe2e5;
+        color: #999;
+        font-size: 1rem;
+        margin: 1rem 0;
+        padding: 0.25rem 0 0.25rem 1rem;
+
+        & > p
+            margin: 0;
+
+    p
+        display: block;
+        margin-block-end: 1em;
+        margin-block-start: 1em;
+        margin-inline-end: 0px;
+        margin-inline-start: 0px;
+
+    ul
+        list-style: disc;
+
+    ol
+        list-style: decimal;
+
+    ul, ol
+        padding-left: 1.2em;
+
+    strong
+        font-weight: 600;
+
+    &:hover
+        text-decoration: none;
+
+    code, kbd, .line-number
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+    p, ul, ol
+        line-height: 1.7;
+
+    hr
+        border: 0;
+        border-top: 1px solid $borderColor;
+
+    table
+        border-collapse: collapse;
+        display: block;
+        margin: 1rem 0;
+        overflow-x: auto;
+
+    tr
+        border-top: 1px solid #dfe2e5;
+
+        &:nth-child(2n)
+            background-color: #f6f8fa;
+
+    th, td
+        border: 1px solid #dfe2e5;
+        padding: 0.6em 1em;
