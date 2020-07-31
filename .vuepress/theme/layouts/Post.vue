@@ -7,7 +7,7 @@
 					<PostMeta :tags="$frontmatter.tags" :author="$frontmatter.author" :date="$frontmatter.date" :location="$frontmatter.location" />
 				</header>
 				<!-- 内容 -->
-				<Content class="custom theme-content prose prose-sm sm:prose lg:prose-lg xl:prose-xl" />
+				<TContent />
 				<!-- 编辑 -->
 				<PageEdit />
 				<!-- 版权 -->
