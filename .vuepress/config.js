@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   lang: 'zh-CN',
-  title: "Boblab",
+  title: "Saltbo",
   description: 'A laboratory of saltbo',
   dest: 'public',
   head: [
