@@ -1,12 +1,12 @@
 <template>
-  <Card class="writing">
+  <Card class="lg:px-20 md:px-16 lg:pb-10">
     <!-- <div>太棒了! 目前共计 {{articles.length}} 篇文章。 继续努力。</div> -->
-    <div class="writing-item" v-for="article in articles">
-      <h3 v-if="!article.id">{{ article.title }}</h3>
-      <div v-else>
-        <p class="date">{{ article.frontmatter.date | moment('MM-DD') }}</p>
-        <router-link :to="article.path">{{ article.title }}</router-link>
-      </div>
+    <div class="flex py-1" v-for="article in articles">
+      <h2 class="w-full mt-10 mb-3" v-if="!article.id">{{ article.title }}</h2>
+      <template v-else>
+        <span class="flex-none text-gray-600 w-16 ml-3 lg:ml-6">{{ article.frontmatter.date | moment('MM-DD') }}</span>
+        <router-link class="flex-grow truncate" :to="article.path">{{ article.title }}</router-link>
+      </template>
     </div>
   </Card>
 </template>
@@ -40,20 +40,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-.writing {
-  @apply: px-20 pb-10;
-
-  .writing-item {
-    @apply: my-2;
-
-    h3 {
-      @apply: mt-10;
-    }
-
-    .date {
-      @apply: inline-flex text-gray-600 w-20 ml-5;
-    }
-  }
-}
-</style>
+<style lang="stylus" scoped></style>

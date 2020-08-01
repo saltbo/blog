@@ -1,5 +1,5 @@
 <template>
-  <div class="px-10">
+  <div class="lg:px-10">
     <div class="flex my-8" v-for="page in pages">
       <router-link :to="page.path" class="cover w-1/4">
         <img :src="page.frontmatter.cover" alt />
@@ -57,52 +57,44 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.cover {
+.cover
   @apply: flex;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 
-  & > img {
+  & > img
     @apply: block rounded mx-auto;
-    width: 100%;
+    border: none;
     height: 10rem;
     object-fit: fill;
-    border: none;
-  }
-}
+    width: 100%;
 
-.title {
+.title
   flex: 0 0 auto;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
-}
+  white-space: nowrap;
 
-.intro {
-  flex: 1 0 auto;
+.intro
   @apply: my-3;
+  flex: 1 0 auto;
 
-  & >>> p {
+  & >>> p
+    display: -webkit-box;
+    line-height: 1.4rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; // 控制多行的行数
     -webkit-box-orient: vertical;
-    line-height: 1.4rem;
-  }
-}
+    -webkit-line-clamp: 3; // 控制多行的行数
 
-.meta {
-  flex: 0 0 auto;
+.meta
   @apply: flex bottom-0;
+  flex: 0 0 auto;
 
-  & > .meta-item {
+  & > .meta-item
     @apply: flex flex-row items-center mr-4 text-gray-600;
 
-    & > .icon {
+    & > .icon
       @apply: w-5 h-5 flex justify-center mr-1;
-    }
-  }
-}
 </style>
 
 // &:first-child {

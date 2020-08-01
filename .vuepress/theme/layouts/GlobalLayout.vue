@@ -1,7 +1,7 @@
 <template>
   <div id="app__global-layout">
     <Header />
-    <main class="container">
+    <main class="container lg:mt-5 lg:mx-auto">
       <Layout />
     </main>
     <Footer />
@@ -63,11 +63,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#app__global-layout {
+#app__global-layout
   word-wrap: break-word;
-}
-
-main {
-  @apply: mx-auto mt-5;
-}
 </style>
