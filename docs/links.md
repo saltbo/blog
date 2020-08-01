@@ -2,30 +2,30 @@
 title: "友请链接"
 layout: Links
 meta: 
-  - name: 麋鹿鲁哟
-    intro: 大道至简，知易行难
-    avatar: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200122153807.jpg
-    link: https://www.cnblogs.com/miluluyo/ # 可选
+  - name: Jerry Qu
+    intro: 专注 WEB 端开发
+    avatar: https://static.saltbo.cn/images/2020-08/IK73Mn.jpg
+    link: https://imququ.com/
     bgColor: '#CBEAFA'
     textColor: '#6854A1'
+  - name: draveness
+    intro: 面向信仰编程
+    avatar: https://avatars0.githubusercontent.com/u/6493255?s=460&u=63f81c96cc52db210f104df233899342b280a2e2&v=4
+    link: https://draveness.me/
+    bgColor: '#718971'
+    textColor: '#fff'
+  - name: 稚晖
+    intro: 野生钢铁侠
+    avatar: http://pengzhihui.xyz/logo.jpg
+    link: http://pengzhihui.xyz/
+    bgColor: '#FCDBA0'
+    textColor: '#A05F2C'
   - name: XAOXUU
     intro: '#IOS #Volantis主题作者'
     avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
     link: https://xaoxuu.com
-    bgColor: '#718971'
-    textColor: '#fff'
-  - name: znote
-    intro: 荷尽已无擎雨盖，菊残犹有傲霜枝
-    avatar: https://zpj80231.gitee.io/znote/vuepress/head-fish.jpg
-    link: https://zpj80231.gitee.io/znote/
     bgColor: '#FCE5BF'
     textColor: '#7B2532'
-  - name: 平凡的你我
-    intro: 理想成为大牛的小陈同学
-    avatar: https://reinness.com/avatar.png
-    link: https://reinness.com
-    bgColor: '#FCDBA0'
-    textColor: '#A05F2C'
 ---
 
 ## 申请友链
