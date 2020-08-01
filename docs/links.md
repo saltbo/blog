@@ -16,8 +16,8 @@ meta:
     textColor: '#fff'
   - name: 稚晖
     intro: 野生钢铁侠
-    avatar: http://pengzhihui.xyz/logo.jpg
-    link: http://pengzhihui.xyz/
+    avatar: https://pengzhihui.xyz/logo.jpg
+    link: https://pengzhihui.xyz/
     bgColor: '#FCDBA0'
     textColor: '#A05F2C'
   - name: Jiajun Huang
@@ -26,7 +26,6 @@ meta:
     link: https://jiajunhuang.com/
     bgColor: '#EEDFF9'
     textColor: '#A05F2C'
-    
   - name: XAOXUU
     intro: '#IOS #Volantis主题作者'
     avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
