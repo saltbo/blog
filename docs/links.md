@@ -20,6 +20,13 @@ meta:
     link: http://pengzhihui.xyz/
     bgColor: '#FCDBA0'
     textColor: '#A05F2C'
+  - name: Jiajun Huang
+    intro: Jiajun的编程随想
+    avatar: https://static.saltbo.cn/images/2020-08/gIsNmN.png
+    link: https://jiajunhuang.com/
+    bgColor: '#EEDFF9'
+    textColor: '#A05F2C'
+    
   - name: XAOXUU
     intro: '#IOS #Volantis主题作者'
     avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
