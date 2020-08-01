@@ -32,9 +32,11 @@ h1, h2, h3, h4, h5, h6
 
   {$contentClass} > &
     @apply: mt-8 mb-3;
+    margin-top: - $headerHeight;
+    padding-top: $headerHeight + 20px;
 
     &:first-child
-      @apply: mt-2;
+      @apply: mt-2 pt-5;
 
 {$contentClass}
   @extend $wrapper;
