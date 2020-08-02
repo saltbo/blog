@@ -84,6 +84,6 @@ header
   max-height: 50rem;
 
 .closed
-  @media (max-width: 640px)
+  @media (max-width: 1000px)
     max-height: 0;
 </style>

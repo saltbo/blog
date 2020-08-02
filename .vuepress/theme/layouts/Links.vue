@@ -6,7 +6,7 @@
           <div class="w-1/3">
             <img class="w-15 h-15 p-2 rounded-full" :src="link.avatar" alt />
           </div>
-          <div class="w-2/3 text-center">
+          <div class="w-2/3 text-left pl-5 pt-2">
             <h3 class="my-2">{{ link.name }}</h3>
             <div class="text-xs">{{ link.intro }}</div>
           </div>
