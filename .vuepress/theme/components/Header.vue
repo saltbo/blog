@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     menuShow() {
-      return this.menuOpen ? "shown" : "";
+      return this.menuOpen ? "opened" : "closed";
     },
     userNav() {
       return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || [];
@@ -77,10 +77,13 @@ header
   z-index: 99999;
 
 .menu
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
 
-.shown
+.opened
   max-height: 50rem;
+
+.closed
+  @media (max-width: 640px)
+    max-height: 0;
 </style>
