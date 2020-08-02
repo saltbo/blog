@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <a class="block py-1" v-for="project in projects" :href="project.path" target="_blank">
+    <a class="block py-1" v-for="project in projects" :href="project.path" target="_blank" rel="noopener">
       <span class="lg:inline-block lg:w-20 lg:text-right">{{ project.title }}</span>
       <span class="intro">- {{ project.intro }}</span>
       <Badge v-if="project.stable" text="stable" />
