@@ -1,15 +1,15 @@
 <template>
-  <div class="lg:px-10">
-    <div class="flex my-8" v-for="page in pages">
-      <router-link :to="page.path" class="cover w-1/4">
-        <img :src="page.frontmatter.cover" alt />
+  <div class="px-2 lg:px-10">
+    <div class="py-3 md:flex" v-for="page in pages">
+      <router-link class="md:flex-none" :to="page.path">
+        <img class="rounded-md w-full md:w-56 h-40 mx-auto shadow" :src="page.frontmatter.cover" alt />
       </router-link>
-      <div class="flex flex-col w-4/5 px-4 py-1">
-        <h1 class="title">
-          <router-link :to="page.path">{{ page.title }}</router-link>
-        </h1>
-        <div class="intro" v-html="page.excerpt"></div>
-        <div class="meta">
+      <div class="flex flex-col md:ml-5">
+        <router-link :to="page.path">
+          <h1 class="break-all md:max-w-sm lg:max-w-lg xl:max-w-2xl md:truncate my-3">{{ page.title }}</h1>
+        </router-link>
+        <div class="intro md:flex-grow break-all" v-html="page.excerpt"></div>
+        <div class="flex flex-wrap mt-2">
           <div class="meta-item">
             <CalendarIcon class="icon" />
             <p>{{ page.frontmatter.date | moment('YYYY-MM-DD') }}</p>
@@ -57,27 +57,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.cover
-  @apply: flex;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-
-  & > img
-    @apply: block rounded mx-auto;
-    border: none;
-    height: 10rem;
-    object-fit: fill;
-    width: 100%;
-
-.title
-  flex: 0 0 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.icon
+  @apply: flex w-5 h-5 justify-center mr-1;
 
 .intro
-  @apply: my-3;
-  flex: 1 0 auto;
-
   & >>> p
     display: -webkit-box;
     line-height: 1.4rem;
@@ -86,17 +69,6 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3; // 控制多行的行数
 
-.meta
-  @apply: flex bottom-0;
-  flex: 0 0 auto;
-
-  & > .meta-item
-    @apply: flex flex-row items-center mr-4 text-gray-600;
-
-    & > .icon
-      @apply: w-5 h-5 flex justify-center mr-1;
+.meta-item
+  @apply: flex items-center mr-2 mb-2;
 </style>
-
-// &:first-child {
-//   @apply: ml-0;
-// }
