@@ -1,35 +1,27 @@
 <template>
-	<div class="writing">
-		<div class="writing-item" v-for="post in posts">
-			<p class="date">{{ post.frontmatter.date | moment('YYYY-MM-DD') }}</p>
-			<router-link :to="post.path">{{ post.title }}</router-link>
-		</div>
-	</div>
+  <div>
+    <div class="my-2" v-for="post in posts">
+      <span class="hidden lg:inline-block text-gray-600 w-24">{{ post.frontmatter.date | moment('YYYY-MM-DD') }}</span>
+      <router-link :to="post.path">{{ post.title }}</router-link>
+      <span class="lg:hidden text-gray-600 text-xs">({{ post.frontmatter.date | moment('MMM DD，YYYY') }})</span>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-	computed: {
-		posts() {
-			let posts = this.$site.pages.filter((item) => {
-				return item.id == "post" && item.frontmatter.pinned;
-			});
-			this.sortPostsByDate(posts);
-			return posts;
-		},
-	},
+  computed: {
+    posts() {
+      let posts = this.$site.pages.filter((item) => {
+        return item.id == "post" && item.frontmatter.pinned;
+      });
+      this.sortPostsByDate(posts);
+      return posts;
+    },
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
 @tailwind base;
-
-.writing
-	@apply: mt-5;
-
-	.writing-item
-		@apply: my-2;
-
-		.date
-			@apply: inline-flex text-gray-600 w-24;
 </style>

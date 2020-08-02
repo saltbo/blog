@@ -1,5 +1,5 @@
 ---
-title: "Note测试内容Note测试内容Note测试内容Note测试内容Note测试内容Note测试内容"
+title: "Note测试内容Note测试内容Note测"
 date: 2020-01-01T00:00:00+08:00
 labels: [idea]
 ---
