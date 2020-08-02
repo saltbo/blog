@@ -96,7 +96,11 @@ module.exports = themeConfig => {
       // official plugins
       ['@vuepress/blog', blogPluginOptions],
       ['@vuepress/google-analytics', { 'ga': themeConfig.googleAnalytics }],
-      ['@vuepress/medium-zoom', true],
+      ['@vuepress/pwa', {
+        serviceWorker: true,
+        updatePopup: true
+      }],
+      ['@vuepress/medium-zoom'],
       ['@vuepress/last-updated', {
         transformer: (timestamp, lang) => {
           return moment(timestamp).format('Y-M-D H:m:s')

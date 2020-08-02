@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "My personal blog",
+  "description": "Saltbo's blog",
   "author": "saltbo",
   "license": "MIT",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "@tailwindcss/typography": "^0.2.0",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-google-analytics": "^1.5.0",
+    "@vuepress/plugin-pwa": "^1.5.2",
     "@vuepress/plugin-search": "^1.4.0",
     "@vuepress/theme-blog": "^2.2.0",
     "busuanzi.pure.js": "^1.0.3",
