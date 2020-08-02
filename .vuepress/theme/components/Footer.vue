@@ -2,7 +2,7 @@
   <footer>
     <div class="frow" v-if="$themeConfig.footer">
       {{copyright}} -
-      <a class="beian" href="http://beian.miit.gov.cn/" target="_blank" v-if="icp">{{icp}}</a>
+      <a class="beian" rel="noopener" href="http://beian.miit.gov.cn/" target="_blank" v-if="icp">{{icp}}</a>
     </div>
     <div class="frow">
       本站已稳定运行：
@@ -13,8 +13,8 @@
     </div>
     <div class="frow">
       Powered by
-      <a href="https://vuepress.vuejs.org/" target="_blank">Vuepress</a> &
-      <a href="https://saltbo.cn/" target="_blank">Saltbo</a>
+      <a rel="noopener" href="https://vuepress.vuejs.org/" target="_blank">Vuepress</a> &
+      <a rel="noopener" href="https://github.com/saltbo/" target="_blank">Saltbo</a>
     </div>
   </footer>
 </template>
@@ -28,8 +28,8 @@ export default {
         days: 0,
         hours: 0,
         minutes: 0,
-        seconds: 0
-      }
+        seconds: 0,
+      },
     };
   },
   computed: {
@@ -40,7 +40,7 @@ export default {
     },
     icp() {
       return (this.$themeConfig.footer && this.$themeConfig.footer.icp) || [];
-    }
+    },
   },
   methods: {
     setRuntime() {
@@ -56,7 +56,7 @@ export default {
 
       diffTs %= 60;
       this.runtime.seconds = Math.floor(diffTs / 1);
-    }
+    },
   },
   mounted() {
     if (this.$themeConfig.footer) {
@@ -66,30 +66,26 @@ export default {
     setInterval(() => {
       this.setRuntime();
     }, 1000);
-  }
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
-footer {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 0.8em;
+footer
   color: #666;
+  font-size: 0.8em;
+  margin: 0 auto;
   padding: 10px 0;
+  text-align: center;
 
-  a {
+  a
     color: #666;
-    text-decoration: none;
     font-weight: normal;
-  }
+    text-decoration: none;
 
-  .beian {
+  .beian
     font-size: 0.7em;
-  }
-}
 
-.frow {
+.frow
   line-height: 26px;
-}
 </style>

@@ -37,20 +37,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.copyright {
+.copyright
+  background-color: #edf2f7;
+  border-left: 4px solid #fc8181;
   color: #666;
   padding: 1rem 0.5rem 1rem 1rem;
   word-break: break-all;
-  border-left: 4px solid #fc8181;
-  background-color: #edf2f7;
 
-  li {
-    list-style: none;
+  li
     line-height: 28px;
-  }
+    list-style: none;
 
-  @media (max-width: $MQMobile) {
+  @media (max-width: $MQMobile)
     margin: 1rem;
-  }
-}
 </style>
