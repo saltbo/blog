@@ -9,6 +9,11 @@ on:
       - edited
       - deleted
   pull_request:
+  workflow_run:
+    workflows: ["wakatime"]
+    branches: [master]
+    types: 
+      - completed
 
 jobs:
   build:
