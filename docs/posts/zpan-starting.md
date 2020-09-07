@@ -26,6 +26,9 @@ ZPan是一款基于云存储的网盘系统，使用它您可以很方便的连�
 
 ## 项目地址
 
-- GitHub：https://github.com/saltbo/zpan
-- 演示地址：http://zpan.saltbo.cn（账号密码都是demo）
+- GitHub：[https://github.com/saltbo/zpan](https://github.com/saltbo/zpan)
+- 演示地址：[http://zpan.saltbo.cn](http://zpan.saltbo.cn)（账号密码都是demo）
+- 文档地址： [https://saltbo.cn/zpan](https://saltbo.cn/zpan)
+
+
 

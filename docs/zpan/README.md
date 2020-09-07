@@ -91,12 +91,18 @@ provider:
 
 其他参数当您在对应平台上创建完bucket就可以拿到了，配置到响应位置即可。
 
-## 演示
 
-我们自用的地址为zpan.saltbo.cn，在这里为大家提供了一个演示账号，您可以先进行体验。
 
-用户名：demo，密码：demo
+## 项目地址
 
-## 用户反馈群
+- GitHub：[https://github.com/saltbo/zpan](https://github.com/saltbo/zpan)
+- 演示地址：[http://zpan.saltbo.cn](http://zpan.saltbo.cn)（账号密码都是demo）
+- 文档地址： [https://saltbo.cn/zpan](https://saltbo.cn/zpan)
+
+
+
+## 用户反馈
 
 <img src="https://static.saltbo.cn/images/image-20200907222028162.png" alt="image-20200907222028162" style="zoom: 25%;" />
+
+扫码加我微信进群，一起完善这个产品。
