@@ -22,10 +22,10 @@ ZPan基于云存储来实现底层文件系统，就是看中了云存储的不�
 
 ## 快速开始
 
-### Linux
+### Linux(暂不可用，请使用Docker方式)
 ```bash
 # 安装服务
-curl -sSf https://dl.saltbo.cn/install.sh?k=zpan | sh
+curl -sSf https://dl.saltbo.cn/install.sh | sh -s zpan
 
 # 启动服务
 systemctl start zpan
