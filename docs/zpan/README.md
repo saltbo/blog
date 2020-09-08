@@ -105,4 +105,4 @@ provider:
 
 <img src="https://static.saltbo.cn/images/image-20200907222028162.png" alt="image-20200907222028162" style="zoom: 25%;" />
 
-扫码加我微信进群，一起完善这个产品。
+扫码进群，和我一起完善这个产品。
