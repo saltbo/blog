@@ -76,7 +76,7 @@ provider:
 
 #### driver & dsn
 
-- sqlite: zpan.db
+- sqlite3: zpan.db
 - mysql: user:pass@tcp(127.0.0.1:3306)/zpan?charset=utf8mb4&parseTime=True&loc=Local
 - postgres: user=zpan password=zpan dbname=zpan port=9920 sslmode=disable TimeZone=Asia/Shanghai
 - mssql: sqlserver://zpan:LoremIpsum86@localhost:9930?database=zpan
