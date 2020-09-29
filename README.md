@@ -6,11 +6,11 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go           10 hrs 23 mins  ██████████████▓░░░░░░░░░░   58.61 % 
-Markdown     3 hrs 55 mins   █████▓░░░░░░░░░░░░░░░░░░░   22.12 % 
-Vue.js       3 hrs 4 mins    ████▒░░░░░░░░░░░░░░░░░░░░   17.34 % 
-HTML         12 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.15 % 
-JavaScript   4 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.45 % 
+Go           10 hrs 44 mins  ███████████████░░░░░░░░░░   59.97 % 
+Vue.js       3 hrs 33 mins   █████░░░░░░░░░░░░░░░░░░░░   19.89 % 
+Markdown     2 hrs 45 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.36 % 
+JavaScript   22 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.07 % 
+JSON         17 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.61 % 
 ```
 <!--END_SECTION:waka-->
 
