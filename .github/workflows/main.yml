@@ -42,11 +42,6 @@ jobs:
           dist: docs/notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Notion2Github
-        uses: younho9/notion2github@v1.1.0
-        with:
-          database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
-          docs-directory: docs/notes2
       - name: Format documents
         uses: creyD/prettier_action@v3.1
         with:
