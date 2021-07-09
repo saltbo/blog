@@ -1,20 +1,26 @@
 <template>
   <footer>
     <div class="frow" v-if="$themeConfig.footer">
-      {{copyright}} -
-      <a class="beian" rel="noopener" href="http://beian.miit.gov.cn/" target="_blank" v-if="icp">{{icp}}</a>
+      {{ copyright }} -
+      <a class="beian" rel="noopener" href="http://beian.miit.gov.cn/" target="_blank" v-if="icp">{{ icp }}</a>
     </div>
     <div class="frow">
       本站已稳定运行：
-      <span>{{runtime.days}}</span>天
-      <span>{{runtime.hours}}</span>时
-      <span>{{runtime.minutes}}</span>分
-      <span>{{runtime.seconds}}</span>秒
+      <span>{{ runtime.days }}</span
+      >天 <span>{{ runtime.hours }}</span
+      >时 <span>{{ runtime.minutes }}</span
+      >分 <span>{{ runtime.seconds }}</span
+      >秒
     </div>
     <div class="frow">
       Powered by
       <a rel="noopener" href="https://vuepress.vuejs.org/" target="_blank">Vuepress</a> &
       <a rel="noopener" href="https://github.com/saltbo/" target="_blank">Saltbo</a>
+    </div>
+    <div class="frow">
+      <a rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
+        <img width="100" src="images/upyun-logo.png" alt="" />
+      </a>
     </div>
   </footer>
 </template>
@@ -34,9 +40,7 @@ export default {
   },
   computed: {
     copyright() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || ""
-      );
+      return (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || "";
     },
     icp() {
       return (this.$themeConfig.footer && this.$themeConfig.footer.icp) || [];
@@ -88,4 +92,7 @@ footer
 
 .frow
   line-height: 26px;
+
+  img
+    margin: 0 auto;
 </style>
