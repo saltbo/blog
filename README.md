@@ -6,11 +6,10 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go           6 hrs 31 mins   ██████████████████████▓░░   91.26 % 
-SQL          7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.75 % 
-JavaScript   7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.63 % 
-Markdown     6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.61 % 
-Makefile     5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.30 % 
+Go           3 hrs 21 mins   ██████████████████████▓░░   91.32 % 
+Markdown     6 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.14 % 
+Makefile     5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.54 % 
+TypeScript   3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.62 % 
 ```
 <!--END_SECTION:waka-->
 
