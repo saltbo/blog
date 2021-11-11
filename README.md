@@ -6,11 +6,7 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go                4 hrs 58 mins   ██████████████████████▓░░   90.18 % 
-Markdown          13 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.95 % 
-Other             12 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.76 % 
-Makefile          3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.13 % 
-Protocol Buffer   2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.64 % 
+Go               2 hrs 7 mins    █████████████████████████   99.34 % 
 ```
 <!--END_SECTION:waka-->
 
