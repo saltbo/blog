@@ -6,7 +6,8 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go               1 hr 29 mins    ████████████████████████▓   99.02 % 
+Go               2 hrs 9 mins    ███████████████████████▓░   95.07 % 
+YAML             5 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.38 % 
 ```
 <!--END_SECTION:waka-->
 
