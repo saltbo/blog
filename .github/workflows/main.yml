@@ -47,8 +47,8 @@ jobs:
       - name: Deploy
         uses: saltbo/uptoc@master
         with:
-          driver: oss
-          region: cn-zhangjiakou
+          driver: qiniu
+          region: cn-north-1
           bucket: saltbo-blog
           dist: public
         env:
