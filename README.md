@@ -6,8 +6,8 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go               26 mins         ██████████████████████▓░░   90.92 % 
-Makefile         2 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   06.98 % 
+Go               18 mins         ██████████████████████░░░   87.85 % 
+Makefile         2 mins          ██▒░░░░░░░░░░░░░░░░░░░░░░   09.34 % 
 ```
 <!--END_SECTION:waka-->
 
