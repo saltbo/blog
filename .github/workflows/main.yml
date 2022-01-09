@@ -37,7 +37,7 @@ jobs:
       - name: Format documents
         uses: creyD/prettier_action@v3.1
         with:
-          prettier_options: --write ./web/content/**/*.md
+          prettier_options: --write ./docs/**/*.md
           commit_message: 'notion-md-gen: update articles (auto)'
       - name: Build
         run: yarn && yarn build
