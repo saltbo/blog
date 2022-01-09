@@ -3,34 +3,36 @@ title: "阿里云OSS上传服务的搭建"
 author: "saltbo"
 cover: /images/posts/oss.jpeg
 date: 2016-04-04T13:18:35+08:00
-tags: ["阿里云", "OSS"] 
+tags: ["阿里云", "OSS"]
 ---
 
-很多项目经常会用到阿里云的OSS，每次都需要集成一遍oss的sdk。那么有没有一劳永逸的方法呢。答案当然是yes！
+很多项目经常会用到阿里云的 OSS，每次都需要集成一遍 oss 的 sdk。那么有没有一劳永逸的方法呢。答案当然是 yes！
+
 <!-- more -->
 
-很多项目经常会用到阿里云的OSS，每次都需要集成一遍oss的sdk。
+很多项目经常会用到阿里云的 OSS，每次都需要集成一遍 oss 的 sdk。
 
-那么有没有一劳永逸的方法呢。答案当然是yes！
+那么有没有一劳永逸的方法呢。答案当然是 yes！
 
-我们可以将oss上传做成一个可以对外提供的服务，以后再需要使用的时候就直接调用就好了。
+我们可以将 oss 上传做成一个可以对外提供的服务，以后再需要使用的时候就直接调用就好了。
 
-本服务采用RESTFull接口设计。
+本服务采用 RESTFull 接口设计。
 
 提供两个方法：upload，urlsign
 
-upload为统一上传接口，通过这个接口可以上传任意文件到OSS。
+upload 为统一上传接口，通过这个接口可以上传任意文件到 OSS。
 
-urlsign为url签名接口，通过这个接口可以拿到私有bucket的签名地址。
+urlsign 为 url 签名接口，通过这个接口可以拿到私有 bucket 的签名地址。
 
 下面直接来看代码
+
 ```php
 <?
-/** 
-  * 验证来源ID 
+/**
+  * 验证来源ID
   */
 private function checkSource() {
-    if (empty($GLOBALS['sources']) || empty($this->_sourceid)) {        
+    if (empty($GLOBALS['sources']) || empty($this->_sourceid)) {
         Output::jsonStr(Error::ERROR_AUTH_SOURCE_FAIL);
     }
     foreach($GLOBALS['sources'] as $key => $value) {
@@ -45,17 +47,19 @@ private function checkSource() {
     }
 }
 ```
+
 这样可能看不懂，再来看下配置
 ![配置](https://static.saltbo.cn/images/1240-20200801000327526.png)
 
 这回是不是理解了呢。
-通过这段代码可以实现在配置里指定单独的Bucket和绑定的域名。
+通过这段代码可以实现在配置里指定单独的 Bucket 和绑定的域名。
 
-但是，实际情况是如果绑定的域名是CDN域名，那么就无法操作oss了，那么有什么解决办法呢。
+但是，实际情况是如果绑定的域名是 CDN 域名，那么就无法操作 oss 了，那么有什么解决办法呢。
 
-答案就是：所有的上传操作都走oss的内网域名，上传成功之后返回的地址走绑定域名。
+答案就是：所有的上传操作都走 oss 的内网域名，上传成功之后返回的地址走绑定域名。
 
 代码如下：
+
 ```php
 <?
 /**
@@ -77,9 +81,11 @@ public function ossClient($useDomain = 0) {
     }
 }
 ```
+
 因为同一个方法中不一定使用绑定的域名还是原始域名，所以这里封装了一个方法，目的就是可以指定使用绑定的域名或者不使用。
 
 下面就是具体的接口代码
+
 ```php
 <?
 /**
@@ -129,6 +135,6 @@ public function urlSignAction() {
     Output::jsonStr(Error::SUCCESS, $sign_url);}
 ```
 
-到这里，我们就搭建好了一个基本的服务，以后有需要用到oss上传的项目，只要在本服务配置文件的sources数组中新增一个成员，然后就可以通过接口直接调用了。
+到这里，我们就搭建好了一个基本的服务，以后有需要用到 oss 上传的项目，只要在本服务配置文件的 sources 数组中新增一个成员，然后就可以通过接口直接调用了。
 
-***我是闫大伯，一只永不停歇的野生程序猿***
+**_我是闫大伯，一只永不停歇的野生程序猿_**

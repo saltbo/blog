@@ -6,30 +6,33 @@ date: 2020-05-10T20:12:41+08:00
 tags: ["golang"]
 ---
 
-sync.Pool可以在高并发场景下提高吞吐能力，但是如果使用不当会导致严重的问题。这里详细梳理一下这次遇到的问题。
+sync.Pool 可以在高并发场景下提高吞吐能力，但是如果使用不当会导致严重的问题。这里详细梳理一下这次遇到的问题。
+
 <!-- more -->
 
-
 ## 前言
-之前测试仿真环境总是发生丢body的问题，经过长时间的排查，终于发现了原因。我们网关的Client用的是fasthttp，测试仿真环境是使用nginx自建的LB。当业务发版的时候nginx会reload配置文件，本来这个过程是没有问题的。但是，由于fasthttp实现的原因无法感知到server端的连接断开，从而导致client丢失了body。具体的详情可见这个[issue](https://github.com/valyala/fasthttp/issues/766)
+
+之前测试仿真环境总是发生丢 body 的问题，经过长时间的排查，终于发现了原因。我们网关的 Client 用的是 fasthttp，测试仿真环境是使用 nginx 自建的 LB。当业务发版的时候 nginx 会 reload 配置文件，本来这个过程是没有问题的。但是，由于 fasthttp 实现的原因无法感知到 server 端的连接断开，从而导致 client 丢失了 body。具体的详情可见这个[issue](https://github.com/valyala/fasthttp/issues/766)
 
 ## 原始代码
-为了解决丢body的问题，我们只能改为使用buffer。具体的实现如下：
+
+为了解决丢 body 的问题，我们只能改为使用 buffer。具体的实现如下：
+
 ```go
 func (c *Context) BodyBuffer() (*bytes.Buffer, error) {
    if v, ok := c.Get("BB"); ok {
       return v.(*bytes.Buffer), nil
    }
- 
+
    buff := initvar.BufPool.Get().(*[]byte)
    buffer := initvar.BufferPool.Get().(*bytes.Buffer)
    buffer.Reset()
- 
+
    _, err := io.CopyBuffer(buffer, c.Request.Body, *buff)
    if err != nil {
       return nil, err
    }
- 
+
    initvar.BufPool.Put(buff)
    initvar.BufferPool.Put(buffer)
    c.Set("BB", buffer)
@@ -37,40 +40,41 @@ func (c *Context) BodyBuffer() (*bytes.Buffer, error) {
 }
 ```
 
-结果，在线上有一个服务反馈他们有一个接口收到的RequestBody中混入了其他的数据。收到反馈后我们重新Review这段代码，迅速想到这里sync.Pool的使用存在问题。
+结果，在线上有一个服务反馈他们有一个接口收到的 RequestBody 中混入了其他的数据。收到反馈后我们重新 Review 这段代码，迅速想到这里 sync.Pool 的使用存在问题。
 
-这里我们在Put后又返回了buffer的指针，就造成多个Request公用一个buffer，自然就会导致某个Request中混入其他Request的Body。
+这里我们在 Put 后又返回了 buffer 的指针，就造成多个 Request 公用一个 buffer，自然就会导致某个 Request 中混入其他 Request 的 Body。
 
 ## 修正
 
 定位到问题后，我们迅速的进行了修改。 但是，万万没想到，又大意了！
+
 ```go
 func (c *Context) BodyBytes() ([]byte, error) {
    if v, ok := c.Get("BB"); ok {
       return v.([]byte), nil
    }
- 
+
    buff := initvar.BufPool.Get().(*[]byte)
    buffer := initvar.BufferPool.Get().(*bytes.Buffer)
    defer initvar.BufPool.Put(buff)
    defer initvar.BufferPool.Put(buffer)
- 
+
    buffer.Reset()
    _, err := io.CopyBuffer(buffer, c.Request.Body, *buff)
    if err != nil {
       return nil, err
    }
- 
+
    c.Set("BB", buffer.Bytes())
    return buffer.Bytes(), nil
 }
 ```
 
-可以看到，我们为了解决原始代码的问题，想着在Put之前取出Bytes返回。但是，这里的Bytes函数读取的是Buffer中的属性里的一个[]byte，所以就导致仍然存在问题。
+可以看到，我们为了解决原始代码的问题，想着在 Put 之前取出 Bytes 返回。但是，这里的 Bytes 函数读取的是 Buffer 中的属性里的一个[]byte，所以就导致仍然存在问题。
 
 ## 重现
 
-为了验证我们的猜想，我们写了下面的代码进行验证，最终的输出确实可以看到Body里混入了其他数据。
+为了验证我们的猜想，我们写了下面的代码进行验证，最终的输出确实可以看到 Body 里混入了其他数据。
 
 ```go
 func main() {
@@ -117,24 +121,23 @@ func main() {
 
 ## 解决
 
-最终，我们将buffer放到Context中，问题得到了解决。
+最终，我们将 buffer 放到 Context 中，问题得到了解决。
 
 ```go
 func (c *Context) ReadBodyBytes() ([]byte, error) {
    if c.bodyBuffer.Len() > 0 {
       return c.bodyBuffer.Bytes(), nil
    }
- 
+
    written, err := io.Copy(&c.bodyBuffer, c.Request.Body)
    if err != nil {
       return nil, fmt.Errorf("read body error: %s, written: %d, buffer: %s", err, written, c.bodyBuffer.String())
    }
- 
+
    return c.bodyBuffer.Bytes(), nil
 }
 ```
 
-
 ## 总结
 
-在使用sync.Pool的时候需要注意引用问题。 切记要保证Put回去对象已经使用完毕。
+在使用 sync.Pool 的时候需要注意引用问题。 切记要保证 Put 回去对象已经使用完毕。

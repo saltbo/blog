@@ -6,16 +6,17 @@ date: 2020-06-29T01:10:41+08:00
 pinned: true
 ---
 
-经过一个端午节的迭代，v1.4.3版本终于发布了。欢迎试用~
+经过一个端午节的迭代，v1.4.3 版本终于发布了。欢迎试用~
+
 <!-- more -->
 
 ## 配置持久化
 
-从v1.4.3开始我们支持将配置持久化的存储到本机了，效果如下
+从 v1.4.3 开始我们支持将配置持久化的存储到本机了，效果如下
 
 [![asciicast](https://asciinema.org/a/343794.svg)](https://asciinema.org/a/343794)
 
-## 支持Typora
+## 支持 Typora
 
 ![image-20200628214441740](https://static.saltbo.cn/images/image-20200628214441740.png)
 
@@ -49,10 +50,8 @@ jobs:
         env:
           UPTOC_UPLOADER_AK: ${{ secrets.UPTOC_UPLOADER_KEYID }}
           UPTOC_UPLOADER_SK: ${{ secrets.UPTOC_UPLOADER_KEYSECRET }}
-
 ```
 
-
-
 ## 更多配置
+
 详见 [中文文档](/uptoc)
