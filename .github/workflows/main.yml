@@ -31,7 +31,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: notion-md-gen
-        uses: saltbo/notion-md-gen@master
+        uses: saltbo/notion-md-gen@fly
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Format documents
