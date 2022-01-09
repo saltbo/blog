@@ -31,19 +31,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: notion-blog
-        uses: xzebra/notion-blog@master
-        with:
-          database-id: '7870f466c01f4b5e9b695a4ecb0be2a1'
-          content-folder: ./docs/posts
-          images-folder: ./.vuepress/public/images/posts
-          images-link: /public/images/posts
-          archetype-file: ./blog.template
-          property-description: "Description"
-          property-tags: "Tags"
-          property-categories: "Categories"
-          filter-prop: 'Status'
-          filter-value: 'Finished ✅'
-          published-value: 'Published 🖨'
+        uses: saltbo/notion-md-gen@master
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Build
