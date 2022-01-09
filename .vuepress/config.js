@@ -35,10 +35,10 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '文章', link: '/posts/' },
+      // { text: '文章', link: '/posts/' },
+      // { text: '笔记', link: '/notes/' },
       { text: '笔记', link: '/notes/' },
       { text: '标签', link: '/tags/' },
-      { text: '归档', link: '/archives/' },
       { text: '友链', link: '/links.html' },
       { text: '关于', link: '/about.html' },
     ],

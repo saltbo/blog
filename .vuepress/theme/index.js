@@ -38,15 +38,15 @@ module.exports = themeConfig => {
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
       },
-      {
-        id: 'note',
-        dirname: 'notes',
-        path: '/notes/',
-        layout: 'Notes',
-        itemLayout: 'Note',
-        itemPermalink: '/:regular',
-        frontmatter: { title: 'Notes' },
-      },
+      // {
+      //   id: 'note',
+      //   dirname: 'notes',
+      //   path: '/notes/',
+      //   layout: 'Notes',
+      //   itemLayout: 'Note',
+      //   itemPermalink: '/:regular',
+      //   frontmatter: { title: 'Notes' },
+      // },
     ],
     frontmatters: [
       {
@@ -86,9 +86,9 @@ module.exports = themeConfig => {
     extend: '@vuepress/theme-default',  // Theme Inheritance => https://vuepress.vuejs.org/theme/inheritance.html
     additionalPages: [
       {
-        path: '/archives/',
+        path: '/notes/',
         frontmatter: {
-          layout: 'Archives'
+          layout: 'Notes'
         }
       }
     ],

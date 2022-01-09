@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - master
-  issues:
-    types: 
-      - opened
-      - edited
-      - deleted
   pull_request:
   workflow_run:
     workflows: ["wakatime"]
@@ -35,13 +30,23 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Check out code
         uses: actions/checkout@v1
-      - name: Fetch Issues
-        uses: saltbo/issues2md@master
-        with: 
-          repo: saltbo/blog
-          dist: docs/notes
+      - name: notion-blog
+        uses: xzebra/notion-blog@master
+        with:
+          database-id: '7870f466c01f4b5e9b695a4ecb0be2a1'
+          content-folder: docs/posts
+          images-folder: .vuepress/public/images/posts
+          images-link: /public/images/posts
+          archetype-file: blog.template
+          property-description: "Description"
+          property-tags: "Tags"
+          property-categories: "Categories"
+          filter-prop: 'Status'
+          filter-value: 'Finished ✅'
+          published-value: 'Published 🖨'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # You need to generate an Integration token in Notion API page
+          NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Build
         run: yarn && yarn build
       - name: Deploy

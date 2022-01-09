@@ -10,7 +10,7 @@ module.exports = {
         default: '0rem',
         sm: '2rem',
         lg: '4rem',
-        xl: '6rem',
+        xl: '14rem',
       },
     },
     boxShadow: {

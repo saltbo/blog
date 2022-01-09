@@ -1,14 +1,12 @@
 <template>
-  <Card title="我的笔记">
-    <div class="lg:px-20 pb-10">
-      <div class="flex py-1" v-for="page in pages">
-        <router-link class="flex flex-grow w-8/12" :to="page.path">
-          <span class="inline-block truncate">{{ page.title }}</span>
-          <Badge v-for="label in page.frontmatter.labels" :text="label" />
-        </router-link>
-
-        <span class="flex-none text-gray-600 ml-5">{{ page.frontmatter.date | moment('YYYY-MM-DD') }}</span>
-      </div>
+  <Card class="lg:px-20 md:px-16 lg:pb-10">
+    <!-- <div>太棒了! 目前共计 {{articles.length}} 篇文章。 继续努力。</div> -->
+    <div class="flex py-1" v-for="article in articles">
+      <h2 class="w-full mt-10 mb-3" v-if="!article.id">{{ article.title }}</h2>
+      <template v-else>
+        <span class="flex-none text-gray-600 w-16 ml-3 lg:ml-6">{{ article.frontmatter.date | moment('MM-DD') }}</span>
+        <router-link class="flex-grow truncate" :to="article.path">{{ article.title }}</router-link>
+      </template>
     </div>
   </Card>
 </template>
@@ -16,26 +14,26 @@
 <script>
 export default {
   components: {},
-  methods: {
-    compareDate(a, b) {
-      function getTimeNum(date) {
-        return new Date(date.frontmatter.date).getTime();
-      }
-      return getTimeNum(b) - getTimeNum(a);
-    },
-    sortPostsByDate(posts) {
-      posts.sort((prev, next) => {
-        return this.compareDate(prev, next);
-      });
-    },
-  },
+  methods: {},
   computed: {
-    pages() {
-      let pages = this.$site.pages.filter((item) => {
-        return item.id == "note";
+    articles() {
+      let posts = this.$site.pages.filter((item) => {
+        return item.id == "post";
       });
-      this.sortPostsByDate(pages);
-      return pages;
+      this.sortPostsByDate(posts);
+
+      // insert the year item into the posts array.
+      let lastYear;
+      for (let i = 0; i < posts.length; i++) {
+        let year = posts[i].frontmatter.date.moment("YYYY");
+        if (year != lastYear) {
+          posts.splice(i, 0, { title: year });
+        }
+
+        lastYear = year;
+      }
+
+      return posts;
     },
   },
   mounted() {},
