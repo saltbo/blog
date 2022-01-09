@@ -30,10 +30,15 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Check out code
         uses: actions/checkout@v2
-      - name: notion-blog
+      - name: notion-md-gen
         uses: saltbo/notion-md-gen@master
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
+      - name: Format documents
+        uses: creyD/prettier_action@v3.1
+        with:
+          prettier_options: --write ./web/content/**/*.md
+          commit_message: 'notion-md-gen: update articles (auto)'
       - name: Build
         run: yarn && yarn build
       - name: Deploy
