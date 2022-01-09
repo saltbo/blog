@@ -29,15 +29,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          path: 'saltbo-blog'
       - name: notion-blog
         uses: xzebra/notion-blog@master
         with:
           database-id: '7870f466c01f4b5e9b695a4ecb0be2a1'
-          content-folder: docs/posts
-          images-folder: .vuepress/public/images/posts
+          content-folder: ./saltbo-blog/docs/posts
+          images-folder: ./saltbo-blog/.vuepress/public/images/posts
           images-link: /public/images/posts
-          archetype-file: blog.template
+          archetype-file: ./saltbo-blog/blog.template
           property-description: "Description"
           property-tags: "Tags"
           property-categories: "Categories"
@@ -45,7 +48,6 @@ jobs:
           filter-value: 'Finished ✅'
           published-value: 'Published 🖨'
         env:
-          # You need to generate an Integration token in Notion API page
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Build
         run: yarn && yarn build
