@@ -1,33 +1,33 @@
 # RustHowTo
+
 How to do something during rust developing.
 
 ---
 
 ## 基础
 
-这里罗列了Rust最基本的东西
+这里罗列了 Rust 最基本的东西
 
 ### 基础类型
 
-| 符号   | 长度      | 值范围 |
-| ----- | --------- | ------ |
-| u8    | 8-bit     | 0~255 |
-| u16   | 16-bit    | 0~65535 |
-| u32   | 32-bit    | 0~4294967295 |
-| u64   | 64-bit    | 0~18446744073709551615 |
-| u128  | 128-bit   |        |
-| usize | arch      | - |
-| i8    | 8-bit     | -128~127 |
-| i16   | 16-bit    | -32768~32767 |
-| i32   | 32-bit    | -2147483648~2147483647 |
+| 符号  | 长度      | 值范围                                   |
+| ----- | --------- | ---------------------------------------- |
+| u8    | 8-bit     | 0~255                                    |
+| u16   | 16-bit    | 0~65535                                  |
+| u32   | 32-bit    | 0~4294967295                             |
+| u64   | 64-bit    | 0~18446744073709551615                   |
+| u128  | 128-bit   |                                          |
+| usize | arch      | -                                        |
+| i8    | 8-bit     | -128~127                                 |
+| i16   | 16-bit    | -32768~32767                             |
+| i32   | 32-bit    | -2147483648~2147483647                   |
 | i64   | 64-bit    | -9223372036854775808~9223372036854775807 |
-| i128  | arch      | - |
-| isize | isize-bit |        |
-| f32   | 32-bit    |        |
-| f64   | 64-bit    |        |
-| bool  | 64-bit    | true~false |
-| char  | 32-bit    |        |
-
+| i128  | arch      | -                                        |
+| isize | isize-bit |                                          |
+| f32   | 32-bit    |                                          |
+| f64   | 64-bit    |                                          |
+| bool  | 64-bit    | true~false                               |
+| char  | 32-bit    |                                          |
 
 ### 如何定义变量
 
@@ -73,12 +73,10 @@ let bytes_slice = &bytes1[1..3];
 ### 如何定义常量和全局变量
 
 ```rust
-const N: i32 = 5; 
+const N: i32 = 5;
 
 static NAME: &'static str = "Steve";
 ```
-
-
 
 ### 如何输出打印
 
@@ -161,7 +159,7 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
-  
+
   	// 关联函数
     fn print123() -> i32 {
       println!(123);
@@ -190,76 +188,72 @@ type byte = u8
 ### 如何控制可见性
 
 ---
+
 ## 类型转换
 
 ### 如何把数字转换成字符串
 
-
-
 ### 如何把字符串转换成数字
 
+### 如何把字符串转换成 Bytes
 
+### 如何把 Bytes 转换成字符串
 
-### 如何把字符串转换成Bytes
-
-
-
-### 如何把Bytes转换成字符串
-
-
-
-### 如何将数字转成Bytes
+### 如何将数字转成 Bytes
 
 ```rust
 let bint = 14562;
 println!(bint.to_be_bytes());
 ```
 
-### 如何将Bytes转成数字
+### 如何将 Bytes 转成数字
 
 ```rust
 let bytes: [u8; 5] = [22,33,44,55,66];
 println!(u32::from_be_bytes(bytes));
 ```
+
 ---
+
 ## 加解密
-### 如何进行MD5加密
 
-### 如何进行Hmac加密
+### 如何进行 MD5 加密
 
-### 如何进行AES加解密
+### 如何进行 Hmac 加密
 
-### 如何进行RSA加解密
+### 如何进行 AES 加解密
 
-
+### 如何进行 RSA 加解密
 
 ---
+
 ## 编码解码
-### 如何进行Base64编码
 
-### 如何进行Base64解码
+### 如何进行 Base64 编码
 
-### 如何进行URL编码
+### 如何进行 Base64 解码
 
-### 如何进行URL解码
+### 如何进行 URL 编码
+
+### 如何进行 URL 解码
 
 ---
+
 ## 实际应用
 
-### 如何启动一个HTTP服务
+### 如何启动一个 HTTP 服务
 
-### 如何发送一个HTTP请求
+### 如何发送一个 HTTP 请求
 
 ---
+
 # 参考文献
-- [Rust程序设计语言](https://kaisery.github.io/trpl-zh-cn/)
+
+- [Rust 程序设计语言](https://kaisery.github.io/trpl-zh-cn/)
 - [Learn Rust in Y Minutes](https://learnxinyminutes.com/docs/rust/)
 
 ---
+
 # 贡献者
+
 - [Saltbo](https://github.com/saltbo)
-
-
-
-
-

@@ -2,27 +2,27 @@
 title: "net.http三个坑的总结"
 author: "saltbo"
 cover: /images/posts/nethttp.jpeg
-tags: ["golang" ]
+tags: ["golang"]
 date: 2018-04-22
 ---
 
+最近在做一个 API 网关项目，其中最核心的一部分是代理服务器的功能。在实现代理转发的过程中踩了 golang 的 net.http 这个包的三个坑，记录总结一下。
 
-
-最近在做一个API网关项目，其中最核心的一部分是代理服务器的功能。在实现代理转发的过程中踩了golang的net.http这个包的三个坑，记录总结一下。
 <!-- more -->
 
 ### 0x00 | Host
 
-当你发送一个请求给下游服务的时候，如果你发送请求的时候是IP，这个时候你想要通过Header里传递Host。但是，如果你只是在header头里设置Host: www.baidu.com，你会发现下游服务收到的Host还是IP。解决方案如下：
+当你发送一个请求给下游服务的时候，如果你发送请求的时候是 IP，这个时候你想要通过 Header 里传递 Host。但是，如果你只是在 header 头里设置 Host: www.baidu.com，你会发现下游服务收到的Host还是IP。解决方案如下：
 
 ```go
 req, _ := http.NewRequest(method, url, bodyReader)
 
 // https://github.com/golang/go/issues/7682
-req.Host = req.Header.Get("Host") 
+req.Host = req.Header.Get("Host")
 ```
 
-我们跟踪到req.Host处也可以看到它的注释
+我们跟踪到 req.Host 处也可以看到它的注释
+
 ```go
 // For client requests Host optionally overrides the Host
 // header to send. If empty, the Request.Write method uses
@@ -32,11 +32,13 @@ Host string
 ```
 
 ### 0x01 | Content-Length
-这个和上一个问题类似，区别是上一个问题导致Host错误，这个问题可能会导致丢失Content-Length从而变成chunked。
 
-这个问题很蛋疼，因为明明我在header里设置了Content-Length，但是实际却变成了chunked。经过反复的测试都没有重现，直到在github上找到了这个https://github.com/golang/go/issues/16264
+这个和上一个问题类似，区别是上一个问题导致 Host 错误，这个问题可能会导致丢失 Content-Length 从而变成 chunked。
+
+这个问题很蛋疼，因为明明我在 header 里设置了 Content-Length，但是实际却变成了 chunked。经过反复的测试都没有重现，直到在 github 上找到了这个https://github.com/golang/go/issues/16264
 
 后来我又查到了这段代码。
+
 ```go
 func NewRequest(method, url string, body io.Reader) (*Request, error) {
 	if method == "" {
@@ -116,9 +118,9 @@ func NewRequest(method, url string, body io.Reader) (*Request, error) {
 }
 ```
 
-可以看到，这里面居然有个switch，当你使用bytes.Buffer,bytes.Reader或者strings.Reader作为Body的时候，它会自动给你设置req.ContentLength...
+可以看到，这里面居然有个 switch，当你使用 bytes.Buffer,bytes.Reader 或者 strings.Reader 作为 Body 的时候，它会自动给你设置 req.ContentLength...
 
-所以，问题不是当你Post一个ReadCloser的时候，就会变成chunked，而是你Post非这三种类型的body进来的时候都没有Content-Length，需要自己显式设置。代码如下：
+所以，问题不是当你 Post 一个 ReadCloser 的时候，就会变成 chunked，而是你 Post 非这三种类型的 body 进来的时候都没有 Content-Length，需要自己显式设置。代码如下：
 
 ```go
 req, _ := http.NewRequest(method, url, bodyReader)
@@ -128,6 +130,7 @@ req.ContentLength = req.Header.Get("Content-Length")
 ### 0x02 | WriteHeader
 
 这个问题就更蛋疼了。先看注释
+
 ```go
 // WriteHeader sends an HTTP response header with status code.
 // If WriteHeader is not called explicitly, the first call to Write
@@ -137,9 +140,10 @@ req.ContentLength = req.Header.Get("Content-Length")
 WriteHeader(int)
 ```
 
-注解只说了显式调用一般是发送错误码，一般不用调用，当调用Write的时候默认会设置http.StatusOK。但是这里却没有告诉我们在WriteHeader之后进行的任何Header操作都是不生效的！
+注解只说了显式调用一般是发送错误码，一般不用调用，当调用 Write 的时候默认会设置 http.StatusOK。但是这里却没有告诉我们在 WriteHeader 之后进行的任何 Header 操作都是不生效的！
 
-这简直就是个坑。因为我们经常会根据不同的情况Write不同的Body，一般在Write body的时候才知道是不是需要进行一些特殊的header操作。本来想着，要不把WriteHeader放到最后去，但是发现最后设置的StatusCode压根不生效。翻了下源码才明白
+这简直就是个坑。因为我们经常会根据不同的情况 Write 不同的 Body，一般在 Write body 的时候才知道是不是需要进行一些特殊的 header 操作。本来想着，要不把 WriteHeader 放到最后去，但是发现最后设置的 StatusCode 压根不生效。翻了下源码才明白
+
 ```go
 func (w *response) WriteHeader(code int) {
 	if w.conn.hijacked() {
@@ -198,8 +202,8 @@ func (w *response) write(lenData int, dataB []byte, dataS string) (n int, err er
 }
 ```
 
-其实就是注解中那句话，如果没有显式调用WriteHeader，当第一次调用Write的时候就会自动进行一次WriteHeader，所以，后续就不能再显式调用WriteHeader了。。
+其实就是注解中那句话，如果没有显式调用 WriteHeader，当第一次调用 Write 的时候就会自动进行一次 WriteHeader，所以，后续就不能再显式调用 WriteHeader 了。。
 
-这个坑逆天就逆天在你必须先Header.Set然后才能WriteHeader，最后才能Write。这个顺序如果乱了，要不就是丢失StatusCode，要不就是丢失Header.
+这个坑逆天就逆天在你必须先 Header.Set 然后才能 WriteHeader，最后才能 Write。这个顺序如果乱了，要不就是丢失 StatusCode，要不就是丢失 Header.
 
-最终无奈之下我们只能遵循规则，在不同的判定条件里分别WriteHeader。。
+最终无奈之下我们只能遵循规则，在不同的判定条件里分别 WriteHeader。。
