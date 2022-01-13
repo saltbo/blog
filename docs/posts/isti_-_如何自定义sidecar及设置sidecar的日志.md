@@ -1,6 +1,6 @@
 ---
 title: "Isti - 如何自定义Sidecar及设置Sidecar的日志"
-description: "如何自定义Sidecar及设置Sidecar的日志"
+description: ""
 image: ""
 date: 2022-01-07T15:19:00+07:00
 lastmod: 2022-01-12T15:24:00+07:00
