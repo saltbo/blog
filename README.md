@@ -6,11 +6,11 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Other        35 hrs 50 mins  ████████████████▒░░░░░░░░   64.87 % 
-Go           8 hrs 30 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.41 % 
-Vue.js       7 hrs 17 mins   ███▒░░░░░░░░░░░░░░░░░░░░░   13.21 % 
-YAML         1 hr 58 mins    █░░░░░░░░░░░░░░░░░░░░░░░░   03.57 % 
-JavaScript   1 hr 2 mins     ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.89 % 
+Other        31 hrs 11 mins  ████████████████░░░░░░░░░   64.24 % 
+Vue.js       7 hrs 17 mins   ███▓░░░░░░░░░░░░░░░░░░░░░   15.03 % 
+Go           6 hrs 26 mins   ███▒░░░░░░░░░░░░░░░░░░░░░   13.25 % 
+YAML         2 hrs 10 mins   █░░░░░░░░░░░░░░░░░░░░░░░░   04.49 % 
+JavaScript   1 hr 2 mins     ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.15 % 
 ```
 <!--END_SECTION:waka-->
 
