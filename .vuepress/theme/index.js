@@ -25,15 +25,15 @@ module.exports = themeConfig => {
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
       },
-      // {
-      //   id: 'note',
-      //   dirname: 'notes',
-      //   path: '/notes/',
-      //   layout: 'Notes',
-      //   itemLayout: 'Note',
-      //   itemPermalink: '/:regular',
-      //   frontmatter: { title: 'Notes' },
-      // },
+      {
+        id: 'note',
+        dirname: 'notes',
+        path: '/posts/',
+        layout: 'Archives',
+        itemLayout: 'Post',
+        itemPermalink: '/:regular',
+        frontmatter: { title: 'Notes' },
+      },
     ],
     frontmatters: [
       {
