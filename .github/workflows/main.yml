@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Clean the old notes
         run: |
-          rm ./docs/nodes/*
+          rm -rf ./docs/notes/*
       - name: notion-md-gen
         uses: saltbo/notion-md-gen@fix_imagefilename
         env:
