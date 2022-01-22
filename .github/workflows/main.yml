@@ -32,8 +32,11 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Check out code
         uses: actions/checkout@v2
+      - name: Clean the old notes
+        run: |
+          rm ./docs/nodes/*
       - name: notion-md-gen
-        uses: saltbo/notion-md-gen@fly
+        uses: saltbo/notion-md-gen@fix_imagefilename
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Format documents

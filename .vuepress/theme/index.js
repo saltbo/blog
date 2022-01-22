@@ -8,20 +8,7 @@ module.exports = themeConfig => {
    * Default theme configuration
    */
   themeConfig = Object.assign(themeConfig, {
-    nav: themeConfig.nav || [
-      {
-        text: 'Home',
-        link: '/',
-      },
-      {
-        text: 'Posts',
-        link: '/posts/',
-      },
-      {
-        text: 'Tags',
-        link: '/tags/',
-      },
-    ],
+    nav: themeConfig.nav || [  ],
   })
 
   /**
@@ -33,7 +20,7 @@ module.exports = themeConfig => {
         id: 'post',
         dirname: 'posts',
         path: '/posts/',
-        layout: 'Posts',
+        layout: 'Archives',
         itemLayout: 'Post',
         itemPermalink: '/:regular',
         frontmatter: { title: 'Posts' },
@@ -85,12 +72,12 @@ module.exports = themeConfig => {
   return {
     extend: '@vuepress/theme-default',  // Theme Inheritance => https://vuepress.vuejs.org/theme/inheritance.html
     additionalPages: [
-      {
-        path: '/notes/',
-        frontmatter: {
-          layout: 'Notes'
-        }
-      }
+      // {
+      //   path: '/notes/',
+      //   frontmatter: {
+      //     layout: 'Notes'
+      //   }
+      // }
     ],
     plugins: [
       // official plugins

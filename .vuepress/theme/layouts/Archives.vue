@@ -18,7 +18,7 @@ export default {
   computed: {
     articles() {
       let posts = this.$site.pages.filter((item) => {
-        return item.id == "post";
+        return item.id == "post" || item.id == "note";
       });
       this.sortPostsByDate(posts);
 
