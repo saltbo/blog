@@ -3,7 +3,7 @@ title: "Shell中exec和eval的区别"
 description: ""
 image: ""
 date: 2021-06-09T08:56:00+07:00
-lastmod: 2022-01-10T08:54:00+07:00
+lastmod: 2022-01-23T03:17:00+07:00
 author: "闫勃"
 tags:
   - "Shell"
