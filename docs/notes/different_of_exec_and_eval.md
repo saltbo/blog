@@ -1,5 +1,5 @@
 ---
-title: "Shell中exec和eval的区别"
+title: "different of exec and eval"
 description: ""
 image: ""
 date: 2021-06-09T08:56:00+07:00
