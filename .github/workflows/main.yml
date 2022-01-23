@@ -36,7 +36,7 @@ jobs:
         run: |
           rm -rf ./docs/notes/*
       - name: notion-md-gen
-        uses: saltbo/notion-md-gen@fix_imagefilename
+        uses: saltbo/notion-md-gen@feat_betterproperty
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Format documents
