@@ -17,6 +17,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    ['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
     ['script', { type: 'text/javascript' }, `
       var targetProtocol = "https:";
       if (window.location.hostname != 'localhost' && window.location.protocol != targetProtocol)
