@@ -4,6 +4,7 @@
 	"imagesFolder": "./.vuepress/public/images/notes",
 	"contentFolder": "./docs/notes",
 	"archetypeFile": "./blog.template",
+	"propertyTitle": "Title",
 	"propertyDescription": "Description",
 	"propertyTags": "Tags",
 	"propertyCategories": "Categories",

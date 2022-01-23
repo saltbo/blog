@@ -23,7 +23,7 @@
     "tailwindcss": "^1.4.6",
     "vue-moment": "^4.1.0",
     "vuepress": "^1.5.2",
-    "vuepress-plugin-disqusjs": "^1.0.1",
+    "vuepress-plugin-disqusjs": "^1.0.2",
     "vuepress-plugin-reading-time": "^0.1.1"
   }
 }

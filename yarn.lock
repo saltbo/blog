@@ -9551,10 +9551,10 @@ vuepress-plugin-disqus@^0.2.0:
   dependencies:
     vue-disqus "^3.0.5"
 
-vuepress-plugin-disqusjs@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-disqusjs/-/vuepress-plugin-disqusjs-1.0.1.tgz#9dca0fce92e0b5db087e6cd41939fd33b0545e09"
-  integrity sha512-K2HcBmAe0qehEsX5t2ynNKZvi2qgACFERrF0XFL2x+CRq9H5NdWlG83dUyrpRZY8EUAQcMioNtnguOHUavHn2g==
+vuepress-plugin-disqusjs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-disqusjs/download/vuepress-plugin-disqusjs-1.0.2.tgz#94d66434d09cc77fd8fa497cfeb707e703660d93"
+  integrity sha512-G9k/kHZFEb/bHURkZy+Rl8sBlOJEkExGpMQEsanbDqqcxwHNtluhfGyT8pdfyMd15bOLPnUtvviIC8vtdpNXRg==
   dependencies:
     disqusjs "^1.2.6"
 
