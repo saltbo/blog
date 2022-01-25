@@ -3,7 +3,7 @@ title: "iptables基本概念和操作"
 description: ""
 image: ""
 date: 2022-01-25T06:46:00+07:00
-lastmod: 2022-01-25T12:36:00+07:00
+lastmod: 2022-01-25T12:48:00+07:00
 author: "闫勃"
 tags:
   - "iptables"
@@ -41,6 +41,14 @@ raw 表：关闭 nat 表上启用的连接追踪机制；内核模块：iptable_
 1. FORWARD：当收到需要通过防火墙转发给其他地址的数据包时，将应用此链中的规则
 
 ## 表链关系
+
+|             | raw | mangle | nat | filter |
+| :---------- | :-- | :----- | :-- | :----- |
+| PREROUTING  | ✅  | ✅     | ✅  | ❌     |
+| POSTROUTING | ❌  | ✅     | ✅  | ❌     |
+| INPUT       | ❌  | ✅     | ❌  | ✅     |
+| OUTPUT      | ✅  | ✅     | ✅  | ✅     |
+| FORWARD     | ❌  | ✅     | ❌  | ✅     |
 
 ## 规则
 
