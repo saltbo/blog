@@ -3,13 +3,9 @@
 	"imagesLink": "/images/notes",
 	"imagesFolder": "./.vuepress/public/images/notes",
 	"contentFolder": "./docs/notes",
-	"archetypeFile": "./blog.template",
-	"propertyTitle": "Title",
-	"propertyDescription": "Description",
-	"propertyTags": "Tags",
-	"propertyCategories": "Categories",
 	"filterProp": "Status",
 	"filterValue": ["Finished ✅","Published 🖨"],
 	"publishedValue": "Published 🖨",
-	"useShortcodes": true
+	"useShortcodes": true,
+	"shortCodesTarget": "vuepress"
 }
