@@ -1,16 +1,16 @@
 ---
-title: "如何自定义Sidecar及设置Sidecar的日志"
-description: ""
-image: ""
-date: 2022-01-07T15:19:00+07:00
-lastmod: 2022-01-23T03:16:00+07:00
-author: "闫勃"
-tags:
-  - "Istio"
-  - "Sidecar"
+author: saltbo
 categories:
-  - "ServiceMesh"
-draft: false
+  - ServiceMesh
+createat: "2022-01-07T15:19:00+07:00"
+date: "2022-01-07T00:00:00+07:00"
+lastupdated: "2022-01-27T13:34:00+07:00"
+name: customization sidecar
+status: "Published \U0001F5A8"
+tags:
+  - Istio
+  - Sidecar
+title: 如何自定义Sidecar及设置Sidecar的日志
 ---
 
 ### 场景
@@ -20,10 +20,9 @@ draft: false
 ### 步骤
 
 1. 挂载一个日志卷进去
-1. 修改 istio 的配置文件
+2. 修改 istio 的配置文件
 
 问题 1：如何自定义 sidecar 的配置？
-
 答案：直接在 containers 下面新建一个容器，name 为 istio-proxy，image 为 auto。然后根据我们的需求设置 volumeMounts 即可
 
 ```yaml

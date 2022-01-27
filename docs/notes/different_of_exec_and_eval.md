@@ -1,14 +1,14 @@
 ---
-title: "Shell中exec和eval的区别"
-description: ""
-image: ""
-date: 2021-06-09T08:56:00+07:00
-lastmod: 2022-01-23T03:17:00+07:00
-author: "闫勃"
+author: saltbo
+categories: []
+createat: "2021-06-09T08:56:00+07:00"
+date: "2022-01-09T00:00:00+07:00"
+lastupdated: "2022-01-27T13:34:00+07:00"
+name: different of exec and eval
+status: "Published \U0001F5A8"
 tags:
-  - "Shell"
-categories:
-draft: false
+  - Shell
+title: Shell中exec和eval的区别
 ---
 
 默认情况下，如果直接执行 bash -c command，command 会以子进程方式运行，执行完成后返回父进程继续执行。

@@ -1,51 +1,57 @@
 ---
-title: "iptables基本概念和操作"
-description: ""
-image: "/images/notes/www.notion.so_solid_beige.png"
-date: 2022-01-25T06:46:00+07:00
-lastmod: 2022-01-27T11:50:00+07:00
-author: "闫勃"
-tags:
-  - "iptables"
+author: saltbo
 categories:
-  - "Linxu"
-draft: false
+  - Linxu
+cover: /images/notes/learn-iptables/www.notion.so_solid_beige.png
+createat: "2022-01-25T06:46:00+07:00"
+date: "2022-01-25T00:00:00+07:00"
+lastupdated: "2022-01-27T15:04:00+07:00"
+name: learn-iptables
+status: "Published \U0001F5A8"
+tags:
+  - iptables
+title: iptables基本概念和操作
 ---
 
 # 简介
 
-iptables 本质上只是一个命令行工具，真正起作用的是 Linux 内核中的 netfilter，他有通过 hook 的方式进行相关的控制，如下图：
+> aaaadd
 
-![](/images/notes/iptables%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%93%8D%E4%BD%9C/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
+- abc
+- aaaa
+-
+- [ ] ttt
+      iptables 本质上只是一个命令行工具，真正起作用的是 Linux 内核中的 netfilter，他有通过 hook 的方式进行相关的控制，如下图：
+      ![](/images/notes/learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
 
 # 基础知识
 
 ## 四表
 
 1. filter 表：负责过滤功能，防火墙；内核模块：iptables_filter
-1. nat 表：network address translation，网络地址转换功能；内核模块：iptable_nat
-1. mangle 表：拆解报文，做出修改，并重新封装 的功能；内核模块：iptable_mangle
-1. raw 表：关闭 nat 表上启用的连接追踪机制；内核模块：iptable_raw
+2. nat 表：network address translation，网络地址转换功能；内核模块：iptable_nat
+3. mangle 表：拆解报文，做出修改，并重新封装 的功能；内核模块：iptable_mangle
+4. raw 表：关闭 nat 表上启用的连接追踪机制；内核模块：iptable_raw
 
 ## 五链
 
-![](/images/notes/iptables%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%93%8D%E4%BD%9C/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
+![](/images/notes/learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
 
 1. PREROUTING：在对数据包做路由选择之前，将应用此链中的规则
-1. POSTROUTING：在对数据包做路由选择之后，将应用此链中的规则
-1. INPUT：当收到访问本机地址的数据包时，将应用此链中的规则
-1. OUTPUT：当本机向外发送数据包时，将应用此链中的规则
-1. FORWARD：当收到需要通过防火墙转发给其他地址的数据包时，将应用此链中的规则
+2. POSTROUTING：在对数据包做路由选择之后，将应用此链中的规则
+3. INPUT：当收到访问本机地址的数据包时，将应用此链中的规则
+4. OUTPUT：当本机向外发送数据包时，将应用此链中的规则
+5. FORWARD：当收到需要通过防火墙转发给其他地址的数据包时，将应用此链中的规则
 
 ## 表链关系
 
 |             | raw | mangle | nat | filter |
-| :---------- | :-- | :----- | :-- | :----- |
-| PREROUTING  | ✅  | ✅     | ✅  | ❌     |
-| POSTROUTING | ❌  | ✅     | ✅  | ❌     |
-| INPUT       | ❌  | ✅     | ❌  | ✅     |
-| OUTPUT      | ✅  | ✅     | ✅  | ✅     |
-| FORWARD     | ❌  | ✅     | ❌  | ✅     |
+| :---------: | :-: | :----: | :-: | :----: |
+| PREROUTING  | ✅  |   ✅   | ✅  |   ❌   |
+| POSTROUTING | ❌  |   ✅   | ✅  |   ❌   |
+|    INPUT    | ❌  |   ✅   | ❌  |   ✅   |
+|   OUTPUT    | ✅  |   ✅   | ✅  |   ✅   |
+|   FORWARD   | ❌  |   ✅   | ❌  |   ✅   |
 
 ## 规则
 
