@@ -1,9 +1,9 @@
 ---
 title: "iptables基本概念和操作"
 description: ""
-image: ""
+image: "/images/notes/www.notion.so_solid_beige.png"
 date: 2022-01-25T06:46:00+07:00
-lastmod: 2022-01-25T13:32:00+07:00
+lastmod: 2022-01-27T11:50:00+07:00
 author: "闫勃"
 tags:
   - "iptables"
