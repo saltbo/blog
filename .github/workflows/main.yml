@@ -35,6 +35,7 @@ jobs:
       - name: Clean the old notes
         run: |
           rm -rf ./docs/notes/*
+          rm -rf ./.vuepress/public/images/notes/*
       - name: notion-md-gen
         uses: saltbo/notion-md-gen@fly
         env:
