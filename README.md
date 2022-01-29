@@ -6,11 +6,11 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Go            24 hrs 14 mins  ████████████████▓░░░░░░░░   67.19 % 
-Go Template   3 hrs 3 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.48 % 
-Markdown      2 hrs 36 mins   █▓░░░░░░░░░░░░░░░░░░░░░░░   07.22 % 
-YAML          1 hr 45 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   04.87 % 
-Other         1 hr 35 mins    █░░░░░░░░░░░░░░░░░░░░░░░░   04.41 % 
+Go            31 hrs 29 mins  █████████████████▒░░░░░░░   69.05 % 
+Go Template   5 hrs 28 mins   ███░░░░░░░░░░░░░░░░░░░░░░   12.01 % 
+Markdown      3 hrs 35 mins   ██░░░░░░░░░░░░░░░░░░░░░░░   07.88 % 
+YAML          1 hr 49 mins    █░░░░░░░░░░░░░░░░░░░░░░░░   04.00 % 
+JSON          1 hr 24 mins    ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.09 % 
 ```
 <!--END_SECTION:waka-->
 
