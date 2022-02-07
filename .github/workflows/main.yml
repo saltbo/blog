@@ -37,7 +37,7 @@ jobs:
           rm -rf ./docs/notes/*
           rm -rf ./.vuepress/public/images/notes/*
       - name: notion-md-gen
-        uses: saltbo/notion-md-gen@fly
+        uses: bonaysoft/notion-md-gen@master
         env:
           NOTION_SECRET : ${{ secrets.NOTION_SECRET }}
       - name: Format documents
