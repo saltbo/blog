@@ -4,7 +4,7 @@ categories:
   - Kubernetes
 createat: "2022-02-10T10:44:00+07:00"
 date: "2022-02-10T00:00:00+07:00"
-lastupdated: "2022-02-10T14:16:00+07:00"
+lastupdated: "2022-02-10T15:18:00+07:00"
 name: client-go && informer
 status: "Published \U0001F5A8"
 tags:
@@ -190,3 +190,28 @@ informer 中的 chunk
 ![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_a08d5ac4-0c06-4a13-9830-93afb745a31c.png)
 抓包观察 watch 机制
 **3.4.3 核心代码走读**
+![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_9b57d3a9-4fba-4494-92b7-efbda35f69e3.png)
+Informer 组件：
+
+- Controller
+- Reflector：通过 Kubernetes Watch API 监听 resource 下的所有事件
+- Lister：用来被调用 List/Get 方法
+- Processor：记录并触发回调函数
+- DeltaFIFO
+- LocalStore
+  ![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
+  ![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
+
+# 四、实现一个简单的 Controller
+
+![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
+
+# 参考文档
+
+- https://github.com/kubernetes/client-go
+- https://qiankunli.github.io/2020/07/20/client_go.html
+- [client-go 的使用及源码分析 · Kubernetes 学习笔记](https://www.huweihuang.com/kubernetes-notes/develop/client-go.html)
+- [edge and level triggered interrupts - L](http://liujunming.top/2020/03/14/edge-and-level-triggered-interrupts/)
+- https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E8%AE%BA
+- [深入理解 k8s 中的 list-watch 机制](http://yost.top/2019/08/01/inside-list-watch-in-k8s/)
+- [HTTP 协议中的 Transfer-Encoding | JerryQu 的小站](https://imququ.com/post/transfer-encoding-header-in-http.html)
