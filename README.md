@@ -6,13 +6,11 @@ layout: Home
 ## Activity
 <!--START_SECTION:waka-->
 ```text
-Total: 15 hrs 32 mins
-
-YAML           11 hrs 5 mins   ██████████████████░░░░░░░   71.41 % 
-CUE            2 hrs 34 mins   ████░░░░░░░░░░░░░░░░░░░░░   16.53 % 
-Markdown       57 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.19 % 
-Bash           20 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.21 % 
-Shell Script   16 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.79 % 
+YAML       9 hrs 7 mins    ████████████████░░░░░░░░░   63.41 % 
+CUE        1 hr 59 mins    ███▒░░░░░░░░░░░░░░░░░░░░░   13.83 % 
+Markdown   58 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.72 % 
+Other      51 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.00 % 
+Bash       41 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.85 % 
 ```
 <!--END_SECTION:waka-->
 
