@@ -4,9 +4,9 @@ categories:
   - ServiceMesh
 createat: "2022-02-24T01:26:00+07:00"
 date: "2022-02-24T00:00:00+07:00"
-lastupdated: "2022-02-24T03:07:00+07:00"
+lastupdated: "2022-02-24T03:27:00+07:00"
 name: learn envoy config
-status: Finished ✅
+status: "Published \U0001F5A8"
 tags:
   - Sidecar
   - Envoy
@@ -67,46 +67,46 @@ admin:
 
 static_resources:
   listeners:
-  - name: listener_0
-    address:
-      socket_address:
-        protocol: TCP
-        address: 0.0.0.0
-        port_value: 8081
-    filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
-        typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
-          stat_prefix: saltbo
-          http_filters:
-          - name: envoy.filters.http.router
-          route_config:
-            name: saltbo
-            virtual_hosts:
-            - name: saltbo
-              domains: ["*"]
-              routes:
-              - match:
-                  prefix: "/"
-                route:
-                  host_rewrite_literal: saltbo.cn
-                  cluster: saltbo
+    - name: listener_0
+      address:
+        socket_address:
+          protocol: TCP
+          address: 0.0.0.0
+          port_value: 8081
+      filter_chains:
+        - filters:
+            - name: envoy.filters.network.http_connection_manager
+              typed_config:
+                "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+                stat_prefix: saltbo
+                http_filters:
+                  - name: envoy.filters.http.router
+                route_config:
+                  name: saltbo
+                  virtual_hosts:
+                    - name: saltbo
+                      domains: ["*"]
+                      routes:
+                        - match:
+                            prefix: "/"
+                          route:
+                            host_rewrite_literal: saltbo.cn
+                            cluster: saltbo
 
   clusters:
-  - name: saltbo
-    connect_timeout: 0.3s
-    type: STRICT_DNS
-		dns_lookup_family: V4_ONLY
-    load_assignment:
-      cluster_name: saltbo
-      endpoints:
-      - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: saltbo.cn
-                port_value: 80
+    - name: saltbo
+      connect_timeout: 0.3s
+      type: STRICT_DNS
+      dns_lookup_family: V4_ONLY
+      load_assignment:
+        cluster_name: saltbo
+        endpoints:
+          - lb_endpoints:
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: saltbo.cn
+                      port_value: 80
 ```
 
 ### 给反向代理加个访问日志
@@ -116,28 +116,28 @@ static_resources:
 ```yaml
 static_resources:
   listeners:
-  - name: listener_0
-    address:
-      socket_address:
-        protocol: TCP
-        address: 0.0.0.0
-        port_value: 8081
-    filter_chains:
-    - filters:
-      - name: envoy.filters.network.http_connection_manager
-        typed_config:
-          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
-          stat_prefix: saltbo
-					access_log:
-          - name: envoy.access_loggers.stdout
-            typed_config:
-              "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
-          - name: envoy.access_loggers.file
-            typed_config:
-              "@type": type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog
-              path: "/tmp/access.log"
-          http_filters:
-          - name: envoy.filters.http.router
+    - name: listener_0
+      address:
+        socket_address:
+          protocol: TCP
+          address: 0.0.0.0
+          port_value: 8081
+      filter_chains:
+        - filters:
+            - name: envoy.filters.network.http_connection_manager
+              typed_config:
+                "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+                stat_prefix: saltbo
+                access_log:
+                  - name: envoy.access_loggers.stdout
+                    typed_config:
+                      "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+                  - name: envoy.access_loggers.file
+                    typed_config:
+                      "@type": type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog
+                      path: "/tmp/access.log"
+                http_filters:
+                  - name: envoy.filters.http.router
 ```
 
 可以看到，新增了一个 access_log 字段，这个字段的配置仔细观察的话会发现跟 filter 的配置很像。
