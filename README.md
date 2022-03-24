@@ -7,8 +7,7 @@ layout: Home
 <!--START_SECTION:waka-->
 
 ```text
-Go               2 hrs 28 mins   ██████▓░░░░░░░░░░░░░░░░░░   26.53 %
-Other            2 hrs 19 mins   ██████▒░░░░░░░░░░░░░░░░░░   24.99 %
+Other                 2 hrs 51 mins   ████████░░░░░░░░░░░░░░░░░   32.02 %
 ```
 
 <!--END_SECTION:waka-->
