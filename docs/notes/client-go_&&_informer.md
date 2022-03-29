@@ -4,7 +4,7 @@ categories:
   - Kubernetes
 createat: "2022-02-10T10:44:00+07:00"
 date: "2022-02-10T00:00:00+07:00"
-lastupdated: "2022-02-10T15:18:00+07:00"
+lastupdated: "2022-03-29T08:52:00+07:00"
 name: client-go && informer
 status: "Published \U0001F5A8"
 tags:
