@@ -4,9 +4,9 @@ categories:
   - ServiceMesh
 createat: "2022-03-29T08:46:00+07:00"
 date: "2022-03-29T00:00:00+07:00"
-lastupdated: "2022-03-29T12:44:00+07:00"
+lastupdated: "2022-03-29T12:49:00+07:00"
 name: envoy config in istio
-status: Finished ✅
+status: "Published \U0001F5A8"
 tags:
   - Istio
   - Envoy
