@@ -7,10 +7,8 @@ layout: Home
 <!--START_SECTION:waka-->
 
 ```text
-YAML                  5 hrs 27 mins   █████████░░░░░░░░░░░░░░░░   36.00 %
-Java                  2 hrs 1 min     ███▒░░░░░░░░░░░░░░░░░░░░░   13.31 %
-Go                    1 hr 58 mins    ███▒░░░░░░░░░░░░░░░░░░░░░   13.05 %
-Other                 1 hr 42 mins    ██▓░░░░░░░░░░░░░░░░░░░░░░   11.21 %
+YAML                  5 hrs 32 mins   ████████▓░░░░░░░░░░░░░░░░   35.06 %
+Other                 2 hrs 47 mins   ████▒░░░░░░░░░░░░░░░░░░░░   17.73 %
 ```
 
 <!--END_SECTION:waka-->
