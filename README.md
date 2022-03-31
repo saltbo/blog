@@ -7,8 +7,9 @@ layout: Home
 <!--START_SECTION:waka-->
 
 ```text
-YAML                  5 hrs 32 mins   ████████▓░░░░░░░░░░░░░░░░   35.06 %
-Other                 2 hrs 47 mins   ████▒░░░░░░░░░░░░░░░░░░░░   17.73 %
+YAML             6 hrs 23 mins   ███████████░░░░░░░░░░░░░░   44.63 %
+Go               2 hrs 32 mins   ████▒░░░░░░░░░░░░░░░░░░░░   17.79 %
+Other            2 hrs 16 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.88 %
 ```
 
 <!--END_SECTION:waka-->
