@@ -19,7 +19,7 @@
     </div>
     <div class="frow">
       <a rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
-        <img width="100" src="images/upyun-logo.png" alt="" />
+        <img width="100" src="/images/upyun-logo.png" alt="" />
       </a>
     </div>
   </footer>
