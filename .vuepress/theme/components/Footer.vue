@@ -17,11 +17,11 @@
       <a rel="noopener" href="https://vuepress.vuejs.org/" target="_blank">Vuepress</a> &
       <a rel="noopener" href="https://github.com/saltbo/" target="_blank">Saltbo</a>
     </div>
-    <div class="frow">
+    <!-- <div class="frow">
       <a rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
         <img width="100" src="/images/upyun-logo.png" alt="" />
       </a>
-    </div>
+    </div> -->
   </footer>
 </template>
 
