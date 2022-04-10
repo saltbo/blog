@@ -4,9 +4,9 @@ categories:
   - SmartHome
 createat: "2022-04-10T13:23:00+07:00"
 date: "2022-04-10T00:00:00+07:00"
-lastupdated: "2022-04-10T13:51:00+07:00"
+lastupdated: "2022-04-10T14:06:00+07:00"
 name: desktop lighting automation by the API of home-assistant
-status: Finished ✅
+status: "Published \U0001F5A8"
 tags:
   - HomeAssistant
   - sleepwatcher
