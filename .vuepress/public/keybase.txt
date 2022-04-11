@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/saltbo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://saltbo.cn
+  * I am saltbo (https://keybase.io/saltbo) on keybase.
+  * I have a public key ASALhTCquSG21rfxgR7OzEj8ekpY4m5bUOz91wan_QkpnAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e590292a5d670a9b17e995cb59404c1c2ef3a2f6bd94812385b43550ac0b05b90a",
+      "host": "keybase.io",
+      "kid": "01200b8530aab921b6d6b7f1811ececc48fc7a4a58e26e5b50ecfdd706a7fd09299c0a",
+      "uid": "3ad94050d0d14980f7d492627ced6019",
+      "username": "saltbo"
+    },
+    "merkle_root": {
+      "ctime": 1582277976,
+      "hash": "556fa5644cd2ce0b0f851a2bdf4c9971908d3591ba3512e6d9260823fb6e064bf51679c9f23decb70887b6856ef2e89c66eb6fe078edef48101abcc561bf38d5",
+      "hash_meta": "46e4841374b28753233096a5d267e1a9653efe58d4cfd18f9401e5ccd9438927",
+      "seqno": 14679741
+    },
+    "service": {
+      "entropy": "Am0NWq38pO4kOXFnY6ZqYn3W",
+      "hostname": "saltbo.cn",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1582277987,
+  "expire_in": 504576000,
+  "prev": "ff5ad50fb1ecccfd12d9aee3392310eb36a1e61b471abb6e80dd46bf442cc357",
+  "seqno": 37,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgC4Uwqrkhtta38YEezsxI/HpKWOJuW1Ds/dcGp/0JKZwKp3BheWxvYWTESpcCJcQg/1rVD7HszP0S2a7jOSMQ6zah5htHGrtugN1Gv0Qsw1fEIDDwfGP09XzsExcaY2BEdKN8d0YX32yqvqKS0yNBsuM/AgHCo3NpZ8RARLTL6Ii/VTzsz9wujXylmZlcQm16iHbjWfxVo2NvjtCJWnjBphTvFfIpidE/HP/gpKXgrm+nxhHua6qJgsMaB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOt5V0qL+YZj1rz6bcCWho91decK7I2oTlFA2pMjQSvLo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/saltbo
+
+==================================================================
