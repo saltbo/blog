@@ -55,7 +55,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Check out code
         uses: actions/checkout@v3
-        submodules: .vuepress/theme
+        with:
+          submodules: .vuepress/theme
       - name: Build
         run: yarn && yarn build
       - name: Deploy
