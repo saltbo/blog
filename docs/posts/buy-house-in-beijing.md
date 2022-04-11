@@ -3,6 +3,7 @@ title: "北京买房规划"
 author: "saltbo"
 cover: /images/posts/beijing.jpeg
 date: 2020-04-18T10:48:41+08:00
+draft: true
 ---
 
 第一次买房，预计会踩到各种各样的坑。记录一下完整的过程。

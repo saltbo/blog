@@ -1,3 +1,8 @@
+---
+author: "saltbo"
+categories: "devhowto"
+---
+
 # RustHowTo
 
 How to do something during rust developing.

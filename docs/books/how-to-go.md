@@ -1,5 +1,6 @@
 ---
-sidebar: "auto"
+author: "saltbo"
+categories: "devhowto"
 ---
 
 # GoHowTo
