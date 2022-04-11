@@ -1,0 +1,3 @@
+[submodule ".vuepress/theme"]
+	path = .vuepress/theme
+	url = git@github.com:saltbo/blog-theme.git
