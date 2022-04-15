@@ -3,7 +3,7 @@ author: saltbo
 categories: []
 createat: "2022-04-15T03:07:00+07:00"
 date: "2019-10-27T00:00:00+07:00"
-lastupdated: "2022-04-15T10:17:00+07:00"
+lastupdated: "2022-04-15T10:29:00+07:00"
 name: hugo-uptoc-oss
 status: "Published \U0001F5A8"
 tags: []
@@ -26,14 +26,17 @@ uptoc，即 upload to the cloud。它是一个用于将文件部署到云存储�
 
 ### 2.1 Uptoc 安装
 
-```plain text
+```bash
 curl -sSf http://uptoc.saltbo.cn/install.sh | sh
 ```
 
 ### 2.2 Uptoc 使用
 
-```plain text
-uptoc --endpoint oss-cn-beijing.aliyuncs.com \--access_key LTAI4FxxxxxxxBXmS3 \--access_secret Vt1FZgxxxxxxxxxxxxKp380AI \--bucket demo-bucket \/opt/blog/public
+```bash
+uptoc --endpoint oss-cn-beijing.aliyuncs.com \
+--access_key LTAI4FxxxxxxxBXmS3 \
+--access_secret Vt1FZgxxxxxxxxxxxxKp380AI \
+--bucket demo-bucket \/opt/blog/public
 ```
 
 只需要简单的参数就可以将目标文件自动同步到云端。当然为了安全考虑，access_key 和 access_secret 支持系统变量，这样我们就可以通过 Travis 等集成工具的后台来配置它们。
