@@ -19,10 +19,10 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Clean the old notes
+      - name: Clean the old posts
         run: |
-          rm -rf ./docs/notes/*
-          rm -rf ./.vuepress/public/images/notes/*
+          rm -rf ./docs/posts/*
+          rm -rf ./.vuepress/public/images/posts/*
       - name: notion-md-gen
         uses: bonaysoft/notion-md-gen@master
         env:
