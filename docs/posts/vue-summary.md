@@ -3,7 +3,7 @@ author: saltbo
 categories: []
 createat: "2022-04-15T03:08:00+07:00"
 date: "2018-04-20T00:00:00+07:00"
-lastupdated: "2022-04-15T10:17:00+07:00"
+lastupdated: "2022-04-15T12:49:00+07:00"
 name: vue-summary
 status: "Published \U0001F5A8"
 tags: []
@@ -113,7 +113,9 @@ if (!String.prototype.moment) {
 }
 ```
 
+::: v-pre
 在使用的时候，如果是在 dom 结构中，用法是`{{ data.time | moment }}`。
+:::
 如果是在 js 中，用法是`params.row.create_time.moment()`
 
 ## 0x05 如何提交数据
