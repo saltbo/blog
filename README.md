@@ -1,22 +1,7 @@
----
-title: "首页"
-layout: Home
----
 
-## Activity
-<!--START_SECTION:waka-->
+# Blog
 
-```text
-YAML              4 hrs 11 mins   ███████▒░░░░░░░░░░░░░░░░░   29.62 %
-Go                2 hrs 51 mins   █████░░░░░░░░░░░░░░░░░░░░   20.18 %
-Vue.js            2 hrs 13 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.75 %
-Other             2 hrs 11 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.46 %
-```
+[![](https://github.com/saltbo/blog/workflows/build/badge.svg)](https://github.com/saltbo/blog/actions?query=workflow%3Abuild)
+[![](https://img.shields.io/github/license/saltbo/blog)](https://github.com/saltbo/blog/blob/master/LICENSE)
 
-<!--END_SECTION:waka-->
-
-## Writing
-<PindedPosts />
-
-## Projects
-<Projects />
+Repo of my blog → Welcome [visit](https://saltbo.cn)  :)
