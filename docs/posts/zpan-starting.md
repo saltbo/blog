@@ -1,21 +1,21 @@
 ---
-title: ZPan首发！迟到一年的云存储网盘还有人需要么？
 author: saltbo
-date: 2020-09-07T22:54:37+08:00
-tags: ["golang"]
-pinned: true
+categories: []
+createat: "2022-04-15T03:08:00+07:00"
+date: "2020-09-07T00:00:00+07:00"
+lastupdated: "2022-04-15T10:17:00+07:00"
+name: zpan-starting
+status: "Published \U0001F5A8"
+tags: []
+title: ZPan首发！迟到一年的云存储网盘还有人需要么？
 ---
 
 ZPan 是一款基于云存储的网盘系统，使用它您可以很方便的连接阿里云 OSS，腾讯 COS，七牛云 KODO 等对象存储系统来启动一个完整的私有网盘系统。
 
-<!-- more -->
-
 ## 起因
 
 最开始是因为女票有网盘的需求，但是某度网盘总限速，开会员还限速。所以我就想自己搭一个不限速的网盘。找了一圈之后发现 owncloud、nextcloud 之类传统网盘都是基于本地文件系统。后来找到了 cloudreve，但是发现他是 php 写的，部署起来比较麻烦。所以我就想着自己写一个。
-
 19 年 9 月底开始搞，每天晚上下班写写，大概不到一个月就部署上线使用了。但是，我觉得这个东西要搞的完善还是很麻烦，包括用户系统、分享、回收站、离线下载、WEBDav 等等。当时我想快速做一个开源项目了解下开源项目的玩法，所以就转头去做 Uptoc 了。没想到这一暂停就是一年，一年后当我把这个项目重新拿起来快重构完的时候，忽然发现 Cloudreve 也用 Go 重构了一版 🤣
-
 真的是五味杂陈。不过我还是想把它做出来，我想看看我做的第一个应用类的开源项目能不能获得一些用户。
 
 ## 使用 ZPan
@@ -29,5 +29,5 @@ ZPan 是一款基于云存储的网盘系统，使用它您可以很方便的连
 ## 项目地址
 
 - GitHub：[https://github.com/saltbo/zpan](https://github.com/saltbo/zpan)
-- 演示地址：[http://zpan.saltbo.cn](http://zpan.saltbo.cn)（账号密码都是 demo）
+- 演示地址：[http://zpan.saltbo.cn](http://zpan.saltbo.cn/)（账号密码都是 demo）
 - 文档地址： [https://saltbo.cn/zpan](https://saltbo.cn/zpan)

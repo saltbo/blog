@@ -2,7 +2,7 @@
 author: saltbo
 categories:
   - Linux
-cover: /images/notes/learn-iptables/www.notion.so_solid_beige.png
+cover: /images/posts/learn-iptables/www.notion.so_solid_beige.png
 createat: "2022-01-25T06:46:00+07:00"
 date: "2022-01-25T00:00:00+07:00"
 lastupdated: "2022-01-27T16:20:00+07:00"
@@ -16,7 +16,7 @@ title: iptables基本概念和操作
 # 简介
 
 iptables 本质上只是一个命令行工具，真正起作用的是 Linux 内核中的 netfilter，他有通过 hook 的方式进行相关的控制，如下图：
-![](/images/notes/learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
+![](/images/posts/learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
 
 # 基础知识
 
@@ -29,7 +29,7 @@ iptables 本质上只是一个命令行工具，真正起作用的是 Linux 内�
 
 ## 五链
 
-![](/images/notes/learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
+![](/images/posts/learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
 
 1. PREROUTING：在对数据包做路由选择之前，将应用此链中的规则
 2. POSTROUTING：在对数据包做路由选择之后，将应用此链中的规则

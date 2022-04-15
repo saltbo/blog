@@ -48,7 +48,7 @@ spec:
   > 答：Resource 是一个对象，Kind 是一个对象的类型名称
 
 提问：一个标准的 K8S 资源的 API 长什么样？
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_59f9c088-3594-4dc7-ba6f-9e0737d6bb22.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_59f9c088-3594-4dc7-ba6f-9e0737d6bb22.png)
 
 ## 2.2 实战调用
 
@@ -101,7 +101,7 @@ c.client.Post().
 
 ## 3.2 Package 介绍
 
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_94352c55-903a-45d4-a55b-c4ea1f47eb21.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_94352c55-903a-45d4-a55b-c4ea1f47eb21.png)
 **client-go 源码目录结构**
 
 - discovery：用于发现 APIs 的相关资源
@@ -116,19 +116,19 @@ c.client.Post().
 ## 3.3 核心 Package 走读
 
 3.3.1 kubernetes(clientset)
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_e00f4b01-ef65-4ec6-82f8-8cff8b85e06f.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_e00f4b01-ef65-4ec6-82f8-8cff8b85e06f.png)
 3.3.2 dynamic
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_f911cd99-c8cc-4e6c-adeb-5beb00b31e5d.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_f911cd99-c8cc-4e6c-adeb-5beb00b31e5d.png)
 3.3.3 transport
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0b02563e-8df4-4e9e-9c2d-67edf9f6099e.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0b02563e-8df4-4e9e-9c2d-67edf9f6099e.png)
 
 ## 3.4 Informer
 
 informer 实际上是为 controller 服务的，所以这里我们先了解下 k8s 的 controller 的设计理念。
 **3.4.1 控制循环**
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_267d8461-b62d-40b5-986a-8477029836c7.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_267d8461-b62d-40b5-986a-8477029836c7.png)
 控制论图解
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bf1e5346-e0fe-4e49-89af-6a1d08051474.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bf1e5346-e0fe-4e49-89af-6a1d08051474.png)
 Kubernetes 中的控制循环
 
 通常，控制环路如下所示：
@@ -139,11 +139,11 @@ Kubernetes 中的控制循环
 4. 重复循环；返回步骤 1。
 
 提问：在控制循环中要求近乎实时的获取资源状态，如何实现？
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_622f66f6-46b8-4467-8c70-98ac34440441.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_622f66f6-46b8-4467-8c70-98ac34440441.png)
 边沿触发与电平触发
 
 提问：事件驱动如何保证不丢数据？
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_febf6daf-2d7e-4468-b2d7-b71d4e67d06a.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_febf6daf-2d7e-4468-b2d7-b71d4e67d06a.png)
 这张图里展示了三种策略:
 
 1. edge-driven-only，错过了第二状态改变
@@ -151,7 +151,7 @@ Kubernetes 中的控制循环
 3. edge-triggered with resync，在上一个策略的基础上增加 resync
 
 **3.4.2 ListWatch**
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c94f5927-75c5-46d0-87dd-6380f5e7d1de.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c94f5927-75c5-46d0-87dd-6380f5e7d1de.png)
 list-watch，顾名思义由 list 和 watch 组成。list 调用资源的 list API 获取所有资源，watch 调用资源的 watch API 监听资源变更事件。
 提问：如何实现 watch？
 
@@ -183,14 +183,14 @@ Network                      ——> 第三个chunk块内容
 ```
 
 普通 HTTP 请求响应处理
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bdfd75af-17d5-447e-8cfb-9543a843759a.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bdfd75af-17d5-447e-8cfb-9543a843759a.png)
 chunked 的 HTTP 请求处理
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_da426cd8-5664-4afc-b28f-5a2506edf75b.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_da426cd8-5664-4afc-b28f-5a2506edf75b.png)
 informer 中的 chunk
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_a08d5ac4-0c06-4a13-9830-93afb745a31c.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_a08d5ac4-0c06-4a13-9830-93afb745a31c.png)
 抓包观察 watch 机制
 **3.4.3 核心代码走读**
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_9b57d3a9-4fba-4494-92b7-efbda35f69e3.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_9b57d3a9-4fba-4494-92b7-efbda35f69e3.png)
 Informer 组件：
 
 - Controller
@@ -199,12 +199,12 @@ Informer 组件：
 - Processor：记录并触发回调函数
 - DeltaFIFO
 - LocalStore
-  ![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
-  ![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
+  ![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
+  ![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
 
 # 四、实现一个简单的 Controller
 
-![](/images/notes/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
+![](/images/posts/client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
 
 # 参考文档
 

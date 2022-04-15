@@ -22,7 +22,7 @@ title: Istio中的Envoy配置文件
 
 ## 流量路线图
 
-![](/images/notes/envoy%20config%20in%20istio/s3.us-west-2.amazonaws.com_688b59ac-53c3-48f2-a1be-7f89d9657acf.png)
+![](/images/posts/envoy%20config%20in%20istio/s3.us-west-2.amazonaws.com_688b59ac-53c3-48f2-a1be-7f89d9657acf.png)
 这里有两个端口需要特别注意，即 15001 端口和 15006 端口。这两个端口引出两个概念：OutBound 和 Inbound。
 
 我们需要知道，Istio 做的流量拦截不止是入口方向的流量，还包括出口方向。所以在整个链路中就分为 OutBound 和 InBound。OutBound 负责接收 Iptables 拦截的所有出口流量，InBound 负责接收 Iptables 拦截的入口方向的流量。

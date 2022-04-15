@@ -1,24 +1,26 @@
 ---
-title: "Uptoc v1.4.3 版本发布，支持 Typora，支持配置上传目录。"
-author: "saltbo"
-cover: /images/posts/uptoc.jpeg
-date: 2020-06-29T01:10:41+08:00
-pinned: true
+author: saltbo
+categories: []
+createat: "2022-04-15T03:08:00+07:00"
+date: "2020-06-29T00:00:00+07:00"
+lastupdated: "2022-04-15T10:17:00+07:00"
+name: uptoc-v1.4.3
+status: "Published \U0001F5A8"
+tags: []
+title: Uptoc v1.4.3 版本发布，支持 Typora，支持配置上传目录。
 ---
 
 经过一个端午节的迭代，v1.4.3 版本终于发布了。欢迎试用~
 
-<!-- more -->
-
 ## 配置持久化
 
 从 v1.4.3 开始我们支持将配置持久化的存储到本机了，效果如下
-
-[![asciicast](https://asciinema.org/a/343794.svg)](https://asciinema.org/a/343794)
+![](/images/posts/uptoc-v1.4.3/asciinema.org_343794.svg
 
 ## 支持 Typora
 
-![image-20200628214441740](https://static.saltbo.cn/images/image-20200628214441740.png)
+![](/images/posts/uptoc-v1.4.3/static.saltbo.cn_image-20200628214441740.png
+image-20200628214441740
 
 ## 支持发布静态资源
 

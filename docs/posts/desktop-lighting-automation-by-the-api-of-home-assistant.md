@@ -24,7 +24,7 @@ title: 基于HomeAssistant的API实现桌面灯光自动化
 ## HomeAssistant 文档
 
 在官方文档上果然找到了能力的支持，接下来就简单啦~
-![](/images/notes/desktop%20lighting%20automation%20by%20the%20API%20of%20home-assistant/s3.us-west-2.amazonaws.com_75e7a9a0-a363-4cb0-b76d-f2a3e503e07f.png)
+![](/images/posts/desktop%20lighting%20automation%20by%20the%20API%20of%20home-assistant/s3.us-west-2.amazonaws.com_75e7a9a0-a363-4cb0-b76d-f2a3e503e07f.png)
 [https://developers.home-assistant.io/docs/api/rest/](https://developers.home-assistant.io/docs/api/rest/)
 
 ## 实现

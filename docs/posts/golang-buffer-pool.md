@@ -1,14 +1,17 @@
 ---
-title: "使用buffer对象池（sync.Pool）需要着重关注引用问题"
-author: "saltbo"
-cover: /images/posts/syncpool.jpg
-date: 2020-05-10T20:12:41+08:00
-tags: ["golang"]
+author: saltbo
+categories: []
+createat: "2022-04-15T03:07:00+07:00"
+date: "2020-05-10T00:00:00+07:00"
+lastupdated: "2022-04-15T10:17:00+07:00"
+name: golang-buffer-pool
+status: "Published \U0001F5A8"
+tags:
+  - golang
+title: 使用buffer对象池（sync.Pool）需要着重关注引用问题
 ---
 
 sync.Pool 可以在高并发场景下提高吞吐能力，但是如果使用不当会导致严重的问题。这里详细梳理一下这次遇到的问题。
-
-<!-- more -->
 
 ## 前言
 
@@ -41,7 +44,6 @@ func (c *Context) BodyBuffer() (*bytes.Buffer, error) {
 ```
 
 结果，在线上有一个服务反馈他们有一个接口收到的 RequestBody 中混入了其他的数据。收到反馈后我们重新 Review 这段代码，迅速想到这里 sync.Pool 的使用存在问题。
-
 这里我们在 Put 后又返回了 buffer 的指针，就造成多个 Request 公用一个 buffer，自然就会导致某个 Request 中混入其他 Request 的 Body。
 
 ## 修正
