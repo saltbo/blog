@@ -11,13 +11,17 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon-152x152.png' }],
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    ['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    // ['script', { src: 'https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js' }],
+    // ['script', { src: '/dist/echarts-wordcloud.js' }],
     ['script', { type: 'text/javascript' }, `
       var targetProtocol = "https:";
       if (window.location.hostname != 'localhost' && window.location.protocol != targetProtocol)
@@ -29,26 +33,32 @@ module.exports = {
   postcss: {
     plugins: [
       require('autoprefixer'),
-      require('tailwindcss')(path.join(__dirname, 'theme/tailwind.config.js')),
     ]
   },
   // theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '笔记', link: '/posts/' },
-      { text: '标签', link: '/tags/' },
+      // { text: '分享', link: '/shares/' },
+      // { text: '笔记', link: '/posts/' },
+      { text: '文章', link: '/categories/' },
+      { text: '小册', link: '/booklets.html' },
       { text: '友链', link: '/links.html' },
+      // { text: '赞助', link: '/sponsor.html' },
       { text: '关于', link: '/about.html' },
+      // { text: '实验室', link: 'https://labs.saltbo.cn/' },
     ],
-    sidebar: {
-      '/books/': getBooks(),
-    },
+    sidebar: 'auto',
     search: true,
     smoothScroll: true,
     dateFormat: 'YYYY-MM-DD',
     searchMaxSuggestions: 10,
     repo: 'saltbo/blog',
+    repos: [
+      'saltbo/zpan',
+      'saltbo/uptoc',
+      'bonaysoft/notion-md-gen'
+    ],
     docsDir: 'docs',
     editLinks: true,
     editLinkText: '发现错误了？去修改!',
@@ -71,20 +81,4 @@ module.exports = {
       siteStartAt: '2019/03/21 22:03:04'
     },
   }
-}
-
-function getBooks() {
-  return [
-    {
-      title: 'DevHowTo',
-      collapsable: false,
-      sidebarDepth: 2,
-      children: [
-        '',
-        'go',
-        'rust',
-        'python',
-      ]
-    }
-  ]
 }

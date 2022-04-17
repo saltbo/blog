@@ -1,6 +1,6 @@
 ---
 title: "关于"
-comment: true
+copyright: false
 editLink: false
 ---
 
