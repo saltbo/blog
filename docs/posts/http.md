@@ -1,9 +1,10 @@
 ---
 author: saltbo
-categories: []
+categories:
+  - HTTP
 createat: "2022-04-15T03:07:00+07:00"
 date: "2016-04-03T00:00:00+07:00"
-lastupdated: "2022-04-15T10:17:00+07:00"
+lastupdated: "2022-04-19T06:58:00+07:00"
 name: http
 status: "Published \U0001F5A8"
 tags:

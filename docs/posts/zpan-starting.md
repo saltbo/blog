@@ -1,9 +1,10 @@
 ---
 author: saltbo
-categories: []
+categories:
+  - 开源项目
 createat: "2022-04-15T03:08:00+07:00"
 date: "2020-09-07T00:00:00+07:00"
-lastupdated: "2022-04-15T10:17:00+07:00"
+lastupdated: "2022-04-19T06:58:00+07:00"
 name: zpan-starting
 status: "Published \U0001F5A8"
 tags: []
