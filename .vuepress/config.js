@@ -7,21 +7,6 @@ module.exports = {
   description: 'A laboratory of saltbo',
   dest: 'public',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon-152x152.png' }],
-    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css' }],
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
-    // ['script', { src: 'https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js' }],
-    // ['script', { src: '/dist/echarts-wordcloud.js' }],
     ['script', { type: 'text/javascript' }, `
       var targetProtocol = "https:";
       if (window.location.hostname != 'localhost' && window.location.protocol != targetProtocol)
