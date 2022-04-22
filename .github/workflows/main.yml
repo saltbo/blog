@@ -59,12 +59,6 @@ jobs:
           submodules: true
       - name: Build
         run: yarn && yarn build
-      - name: Snapshot Repos
-        uses: saltbo/actions/snapshot-gh-repos@master
-        with:
-          repos: "saltbo/zpan,bonaysoft/notion-md-gen,saltbo/uptoc"
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
-          outputFile: public/snapshot-repos.json
       - name: Deploy
         uses: saltbo/uptoc@master
         with:
