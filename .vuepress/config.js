@@ -64,6 +64,7 @@ module.exports = {
     searchMaxSuggestions: 10,
     repo: 'saltbo/blog',
     repos: [
+      'saltbo/rslocal',
       'saltbo/zpan',
       'saltbo/uptoc',
       'bonaysoft/notion-md-gen'

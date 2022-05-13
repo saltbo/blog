@@ -4,12 +4,6 @@ editLink: false
 copyright: false
 ---
 
-## 开源项目
-
-- [Zpan - 基于云存储的网盘系统，解决传统网盘下载速度受限于服务器带宽的问题](/wiki/zpan/)
-- [Uptoc - 静态文件部署工具，支持多家云平台](/wiki/uptoc/)
-- [Gofbot - 通用的消息转发机器人，支持配置自定义模板](https://github.com/saltbo/gofbot)
-
 ## 个人小册
 
 - [如何学习 Go](https://booklets.saltbo.cn/#/how-to-go/)
