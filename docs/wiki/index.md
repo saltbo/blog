@@ -5,7 +5,8 @@ copyright: false
 ---
 
 ## 命令手册
-- [GPG常用命令](/wiki/gpg.html)
+
+- [GPG 常用命令](/wiki/gpg.html)
 
 ## 编程手册
 
