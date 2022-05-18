@@ -4,7 +4,10 @@ editLink: false
 copyright: false
 ---
 
-## 个人小册
+## 命令手册
+- [GPG常用命令](/wiki/gpg.html)
+
+## 编程手册
 
 - [如何学习 Go](https://booklets.saltbo.cn/#/how-to-go/)
 - [如何学习 Python](https://booklets.saltbo.cn/#/how-to-python/)
