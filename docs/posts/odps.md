@@ -23,13 +23,13 @@ title: 阿里云数加平台尝试之简单数据统计
 ## 数加之初步了解
 
 大概半年前初步了解过阿里云的数加平台。数加是阿里云依托 DataIDE、ODPS、机器学习等等建立起来的一个庞大的大数据系统。如下图，这是今年 8 月 9 日阿里云全面升级 DT NEXT 极致未来新品发布会后官网的变化。与原先相比，产品线更加一目了然。原先我们经常用到的 ECS、RDS、OSS 等都归属为云计算基础服务，新增了大数据（数加）栏目。其中就有我们今天要讲到的大数据开发套件（DataIDE）和大数据计算服务（MaxCompute），其中 MaxCompute 原名 ODPS，所以现在很多地方还叫 ODPS,这里需要稍微注意一下。
-![](/images/posts/odps/static.saltbo.cn_1240-20200731234928250.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731234928250.png)
 
 ## 数加之 DataIDE
 
 DataIDE 即所谓的大数据开发套件。如下图：
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235000806.png
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235008055.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235000806.png)
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235008055.png)
 数据开发工作台
 DataIDE 的功能主要分为三部分，即 ODPS_SQL、数据同步、机器学习。由于对机器学习并不了解所以并没有深入学习，我们的数据统计仅需要数据同步和 ODPS_SQL 即可。
 数据同步就是将业务数据库中的数据同步到 ODPS 中。 ODPS_SQL 的作用就是你可以根据你的统计需求像写普通 SQL 一样完成统计。
@@ -43,8 +43,8 @@ ODPS，全称 Open Data Processing Service。即开放数据处理服务，是�
 
 上面我们初步了解了 DataIDE 和 ODPS，下面我们来看下如何通过 DataIDE 和 ODPS 来解决产品妹子给我提的新需求。
 先看下产品妹子需要的渠道数据都有哪些。
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235035205.png
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235041050.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235035205.png)
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235041050.png)
 渠道数据历史趋势
 嗯，从原型上来看主要需要两部分数据，即销售数据和访问数据。
 再来看下我们的业务数据是什么样子的。
@@ -54,27 +54,27 @@ ODPS，全称 Open Data Processing Service。即开放数据处理服务，是�
 
 有了上面的两张表，我们需要做的工作就很简单了。
 首先，我们在 DataIDE 的控制台新建一个任务。然后在任务面板新建一个数据同步节点。如下图中的订单表和访问记录表就是两个数据同步节点
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235054120.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235054120.png)
 双击同步节点对齐进行相应配置。
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235109580.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235109580.png)
 如上图。首先选择数据来源，选择源数据中的数据表，选择完毕后系统会自动拉去源数据的数据表结构显示在下方。然后选择数据流向和 ODPS 中的表。
 _需要注意的是初次使用时，需要自行创建 ODPS 中的表_
 。最后需要设置数据过滤规则。如下图：
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235116373.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235116373.png)
 这里需要注意的是数据过滤中的语句是普通的 SQL 不是 ODPS_SQL。
 
 ## DataIDE 之 ODPS_SQL 节点
 
 因为大同小异，所以这里我们仅以销售数据的统计节点为例进行讲解。如下图：
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235124360.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235124360.png)
 可以看到，基本语法上来说和普通 SQL 差别不大。我们需要统计渠道的付款订单数量和订单金额，所以我们直接 COUNT(id),SUM(payment_fee)并 GROUP BY spm。这都是基本的 SQL 用法这里就不多说了，不了解的朋友可以自行搜索学习。需要注意的是 TO_DATE 是 ODPS_SQL 内置的函数，ODPS_SQL 有很多内置函数，大家可以自行查阅手册。
 另外就是 **\*b\*\*\*\***d**\*\***p**\***.**\***s**\*\***y**\*\***s**\*\***t**\*\***e**\*\***m**\***.**\***b**\*\***i**\*\***z**\*\***d**\*\***a**\*\***t**\*\***e**\*** \*  \* **\***和**\*** \* \*{bdp.system.cyctime}** 是 DataIDE 的两个系统参数。它们分别代表 **日常调度实例定时时间的前一天** 和 **日常调度实例定时时间\*\* 。
 
 ## 最终
 
 最终节点任务执行完成就会生成以下数据
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235131437.png
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235136655.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235131437.png)
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235136655.png)
 渠道访问数据
 那么，结束了么？
 如果你以为结束了，那么只能说明你跟我一样很天真！
@@ -86,7 +86,7 @@ What？没有 PHP 版本的 SDK？只有 Java 版本和 Python 版本的？
 妈哒，说好的 PHP 是最好的语言呢？
 还好，本猿对 Python 也略有涉猎(傲娇脸)
 最终将结果数据汇总到 RDS 中。
-![](/images/posts/odps/static.saltbo.cn_1240-20200731235143850.png
+![](/images/posts/odps/static.saltbo.cn_1240-20200731235143850.png)
 最终统计出来的渠道数据
 
 ## 结尾

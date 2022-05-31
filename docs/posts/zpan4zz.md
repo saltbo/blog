@@ -49,7 +49,7 @@ title: 为了她，我自研了一款现代化的网盘
 ### 直链传输
 
 虽然对象存储不限速，但是网盘的运行服务器还是有带宽限制的啊。别担心，对象存储提供了一种直链传输的方式，也就是预签名链接。我们完全没有必要让流量到网盘服务器兜一圈，只需要将经过签名的 URL 告诉浏览器，浏览器即可直接将文件 PUT 到对象存储上去。
-![](/images/posts/zpan4zz/static.saltbo.cn_practice-post-callback-7-20201026222943032.png
+![](/images/posts/zpan4zz/static.saltbo.cn_practice-post-callback-7-20201026222943032.png)
 
 ### 多存储切换
 

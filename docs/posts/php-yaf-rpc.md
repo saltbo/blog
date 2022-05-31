@@ -15,7 +15,7 @@ RPC（Remote Procedure Call Protocol）——远程过程调用协议，它是�
 今天让我们来认识一种更高效的调用协议——RPC
 PHP 的 RPC 框架并不少，比如鸟叔的 Yar，比如我们今天讲到的 Hprose。
 鸟叔的 Yar 只支持 PHP，而 Hprose 提供了多种客户端。
-![](/images/posts/php-yaf-rpc/static.saltbo.cn_1240-20200731233943992.png
+![](/images/posts/php-yaf-rpc/static.saltbo.cn_1240-20200731233943992.png)
 Hprose
 这就为我们搭建一个跨语言的服务提供了可能。
 另外一个很重要的是原因是 Hprose 不止可以搭建基于 HTTP 协议的 RPC 服务，还可以搭建基于 Socket 协议的 RPC 服务！

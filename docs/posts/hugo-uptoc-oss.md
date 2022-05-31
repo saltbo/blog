@@ -40,7 +40,7 @@ uptoc --endpoint oss-cn-beijing.aliyuncs.com \
 ```
 
 只需要简单的参数就可以将目标文件自动同步到云端。当然为了安全考虑，access_key 和 access_secret 支持系统变量，这样我们就可以通过 Travis 等集成工具的后台来配置它们。
-![](/images/posts/hugo-uptoc-oss/static.saltbo.cn_image-20191027124716113.png
+![](/images/posts/hugo-uptoc-oss/static.saltbo.cn_image-20191027124716113.png)
 image-20191027142908681
 现在只需要在你的.travis.yml 中增加如下配置就完成了
 
@@ -52,7 +52,7 @@ after_success:  - curl -sSf http://uptoc.saltbo.cn/install.sh | sh  - uptoc --en
 
 ### 3 阿里云 OSS 配置
 
-![](/images/posts/hugo-uptoc-oss/static.saltbo.cn_image-20191027135934555.png
+![](/images/posts/hugo-uptoc-oss/static.saltbo.cn_image-20191027135934555.png)
 image-20191027135934555
 创建好 bucket，在 bucket 的基础设置里需要进行这两项配置。
 

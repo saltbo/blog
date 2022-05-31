@@ -16,11 +16,11 @@ title: Uptoc v1.4.3 版本发布，支持 Typora，支持配置上传目录。
 ## 配置持久化
 
 从 v1.4.3 开始我们支持将配置持久化的存储到本机了，效果如下
-![](/images/posts/uptoc-v1.4.3/asciinema.org_343794.svg
+![](/images/posts/uptoc-v1.4.3/asciinema.org_343794.svg)
 
 ## 支持 Typora
 
-![](/images/posts/uptoc-v1.4.3/static.saltbo.cn_image-20200628214441740.png
+![](/images/posts/uptoc-v1.4.3/static.saltbo.cn_image-20200628214441740.png)
 image-20200628214441740
 
 ## 支持发布静态资源

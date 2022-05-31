@@ -15,7 +15,7 @@ title: 基于Swoole和RabbitMQ实现的一个完整的异步任务系统
 
 ## 系统介绍
 
-![](/images/posts/php-swoole-rabbitmq/static.saltbo.cn_1240-20200731234430392.png
+![](/images/posts/php-swoole-rabbitmq/static.saltbo.cn_1240-20200731234430392.png)
 消费端架构图
 从图中可以看到，我们这个系统是一个基于事件的异步任务系统。就是说当一个事件产生时，生产者将事件抛给调度器，调度器负责查询事件下有哪些任务，然后将这些任务丢到相应的队列中，最后由消费者消费任务队列中的任务。
 在整个系统中主要分为三大部分
@@ -59,7 +59,7 @@ EventManager::register('order_paied', 'virtualShipping', 'demo'); //虚拟商品
 ## 消费者
 
 重头戏来了，一个异步任务系统最重要的就是消费端了，现在让我们来看下 Worker 的流程图。
-![](/images/posts/php-swoole-rabbitmq/static.saltbo.cn_1240-20200731234439162.png
+![](/images/posts/php-swoole-rabbitmq/static.saltbo.cn_1240-20200731234439162.png)
 一个完整的消费进程
 可以看到，在这里我们采用了两个交换器和两个队列，一个负责处理正常的任务即 ntask，另一个负责处理需要延迟执行的任务即 dtask。简单描述下一个任务的生命周期。
 

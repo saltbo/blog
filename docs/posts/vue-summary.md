@@ -316,7 +316,7 @@ http://localhost:8080/webpack-dev-server
 ```
 
 如下图：
-![](/images/posts/vue-summary/static.saltbo.cn_1240-20200731233230518.png
+![](/images/posts/vue-summary/static.saltbo.cn_1240-20200731233230518.png)
 找到这些静态文件就好办了，既然没有生成文件，那我们只能在后端服务中代理这些静态文件
 
 ```go

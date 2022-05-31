@@ -43,7 +43,7 @@ private function checkSource() {
 ```
 
 这样可能看不懂，再来看下配置
-![](/images/posts/php-oss/static.saltbo.cn_1240-20200801000327526.png
+![](/images/posts/php-oss/static.saltbo.cn_1240-20200801000327526.png)
 这回是不是理解了呢。 通过这段代码可以实现在配置里指定单独的 Bucket 和绑定的域名。
 但是，实际情况是如果绑定的域名是 CDN 域名，那么就无法操作 oss 了，那么有什么解决办法呢。
 答案就是：所有的上传操作都走 oss 的内网域名，上传成功之后返回的地址走绑定域名。
