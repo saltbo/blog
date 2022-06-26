@@ -2,7 +2,7 @@
     {
         "name": "Jerry Qu",
         "intro": "专注 WEB 端开发",
-        "avatar": "https://static.saltbo.cn/images/2020-08/IK73Mn.jpg",
+        "avatar": "/images/links/IK73Mn.jpeg",
         "link": "https://imququ.com/",
         "bgColor": "#CBEAFA",
         "textColor": "#6854A1"
@@ -16,17 +16,9 @@
         "textColor": "#fff"
     },
     {
-        "name": "稚晖",
-        "intro": "野生钢铁侠",
-        "avatar": "https://pengzhihui.xyz/logo.jpg",
-        "link": "https://pengzhihui.xyz/",
-        "bgColor": "#FCDBA0",
-        "textColor": "#A05F2C"
-    },
-    {
         "name": "Jiajun Huang",
         "intro": "Jiajun的编程随想",
-        "avatar": "https://static.saltbo.cn/images/2020-08/gIsNmN.png",
+        "avatar": "/images/links/gIsNmN.png",
         "link": "https://jiajunhuang.com/",
         "bgColor": "#EEDFF9",
         "textColor": "#A05F2C"
