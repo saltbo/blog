@@ -59,6 +59,8 @@ jobs:
           submodules: true
       - name: Build
         run: yarn && yarn build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Deploy
         uses: saltbo/uptoc@master
         with:
