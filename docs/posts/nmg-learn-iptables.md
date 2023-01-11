@@ -2,7 +2,7 @@
 author: saltbo
 categories:
     - Linux
-cover: /images/posts/learn-iptables/www.notion.so_solid_beige.png
+cover: /images/posts/nmg-learn-iptables/www.notion.so_solid_beige.png
 createat: "2022-01-25T06:46:00+07:00"
 date: "2022-01-25T00:00:00+07:00"
 lastupdated: "2022-01-27T16:20:00+07:00"
@@ -15,7 +15,7 @@ title: iptables基本概念和操作
 
 # 简介
 iptables本质上只是一个命令行工具，真正起作用的是Linux内核中的netfilter，他有通过hook的方式进行相关的控制，如下图：
-![](/images/posts/learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
+![](/images/posts/nmg-learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
 # 基础知识
 ## 四表
 1. filter表：负责过滤功能，防火墙；内核模块：iptables_filter
@@ -23,7 +23,7 @@ iptables本质上只是一个命令行工具，真正起作用的是Linux内核�
 3. mangle表：拆解报文，做出修改，并重新封装 的功能；内核模块：iptable_mangle
 4. raw表：关闭nat表上启用的连接追踪机制；内核模块：iptable_raw
 ## 五链
-![](/images/posts/learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
+![](/images/posts/nmg-learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
 1. PREROUTING：在对数据包做路由选择之前，将应用此链中的规则
 2. POSTROUTING：在对数据包做路由选择之后，将应用此链中的规则
 3. INPUT：当收到访问本机地址的数据包时，将应用此链中的规则

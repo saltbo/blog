@@ -7,6 +7,7 @@ notion:
   publishedValue: Published 🖨
 markdown:
   shortcodeSyntax: vuepress
+  pageNamePrefix: nmg-
   postSavePath: ./docs/posts
   imageSavePath: ./.vuepress/public/images/posts
   imagePublicLink: /images/posts
