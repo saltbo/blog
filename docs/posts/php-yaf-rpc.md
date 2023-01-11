@@ -168,5 +168,5 @@ Trait Trait_Hprose
 
 ## 后记
 
-虽然实现了最初的目标，但是由于 Yaf 的特性，必须继承 Yaf_Controller_Abstract。所以 get_class_methods 的时候会把 Yaf_Controller_Abstract 中的方法也变成 RPC 服务，这是唯一的一个缺憾。。。
-**_我是闫大伯，一只求知欲旺盛的程序猿_**
+虽然实现了最初的目标，但是由于 Yaf 的特性，必须继承 Yaf*Controller_Abstract。所以 get_class_methods 的时候会把 Yaf_Controller_Abstract 中的方法也变成 RPC 服务，这是唯一的一个缺憾。。。
+\*\**我是闫大伯，一只求知欲旺盛的程序猿\_\*\*
