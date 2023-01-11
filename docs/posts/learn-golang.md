@@ -7,19 +7,26 @@ lastupdated: "2022-04-15T10:17:00+07:00"
 name: learn-golang
 status: "Published \U0001F5A8"
 tags:
-    - golang
+  - golang
 title: 写在学习golang一个月后
 ---
 
 由于 PHP 没有连接池，当高并发时就会有大量的数据库连接直接冲击到 MySQL 上，最终导致数据库挂掉。虽然 Swoole 有连接池，但是 Swoole 只是 PHP 的一个扩展，之前使用 Swoole 过程中就踩过很多的坑。经过我们的讨论还是觉得使用 Golang 更加可控一些。
+
 ### 遇到的问题
+
 连接池。由于 PHP 没有连接池，当高并发时就会有大量的数据库连接直接冲击到 MySQL 上，最终导致数据库挂掉。虽然 Swoole 有连接池，但是 Swoole 只是 PHP 的一个扩展，之前使用 Swoole 过程中就踩过很多的坑。经过我们的讨论还是觉得使用 Golang 更加可控一些。
+
 ### 框架的选择
+
 在 PHP 中一直用的是 Yaf，所以在 Go 中自然而言就选择了 Gin。因为我们一直以来的原则是：尽量接近底层代码。
 封装过于完善的框架不利于对整个系统的掌控及理解。我不需要你告诉我这个目录是干嘛的，这个配置怎么写，这个函数怎么用等等。
 Gin 是一个轻路由框架，很符合我们的需求。为了更好地开发，我们也做了几个中间件。
+
 ### 中间件——input
+
 每个接口都需要获取 GET 或 POST 的参数，但是 gin 自带的方法只能返回 string，所以我们进行了简单的封装。封装过后我们就可以根据所需直接转换成想要的数据类型。
+
 ```go
 package input
 
@@ -60,6 +67,7 @@ func (input *I) Atoi() int {
 	return body
 }
 ```
+
 ```go
 package input
 
@@ -75,18 +83,25 @@ func Post(p string) *I {
 	return i.get(p)
 }
 ```
+
 封装之前
+
 ```go
 pid, _ := strconv.Atoi(c.Query("product_id"))
 alias := c.Query("product_alias")
 ```
+
 封装之后
+
 ```go
-pid := input.Get("product_id").Atoi()  
+pid := input.Get("product_id").Atoi()
 alias := input.Get("product_alias").String()
 ```
+
 ### 中间件——logger
+
 gin 自身的 logger 比较简单，一般我们都需要将日志按日期分文件写到某个目录下。所以我们自己重写了一个 logger，这个 logger 可以实现将日志按日期分文件并将错误信息发送给 Sentry。
+
 ```go
 package ginx
 
@@ -140,6 +155,7 @@ func writerCheck() {
 	lastDay = nowDay
 }
 ```
+
 ```go
 package ginx
 
@@ -267,9 +283,13 @@ func (l *Log) Report() {
 	}
 }
 ```
+
 由于 Gin 是一个轻路由框架，所以类似数据库操作和 Redis 操作并没有相应的包。这就需要我们自己去选择好用的包。
+
 ### Package - 数据库操作
+
 最初学习阶段使用了 datbase/sql，但是这个包有个用起来很不爽的问题。
+
 ```go
 pid := 10021
 rows, err := db.Query("SELECT title FROM `product` WHERE id=?", pid)
@@ -288,9 +308,11 @@ if err := rows.Err(); err != nil {
     log.Fatal(err)
 }
 ```
-上述代码，如果 select 的不是 title，而是*，这时就需要提前把表结构中的所有字段都定义成一个变量，然后传给 Scan 方法。
+
+上述代码，如果 select 的不是 title，而是\*，这时就需要提前把表结构中的所有字段都定义成一个变量，然后传给 Scan 方法。
 这样，如果一张表中有十个以上字段的话，开发过程就会异常麻烦。那么我们期望的是什么呢。提前定义字段是必须的，但是正常来说应该是定义成一个结构体吧？ 我们期望的是查询后可以直接将查询结果转换成结构化数据。
 花了点时间寻找，终于找到了这么一个包——github.com/jmoiron/sqlx。
+
 ```go
 // You can also get a single result, a la QueryRow
 jason = Person{}
@@ -306,10 +328,14 @@ if err != nil {
     return
 }
 ```
+
 sqlx 其实是对 database/sql 的扩展，这样一来开发起来是不是就爽多了，嘎嘎~
 为什么不用 ORM? 还是上一节说过的，尽量不用过度封装的包。
+
 ### Package - Redis 操作
+
 最初我们使用了 redigo【github.com/garyburd/redigo/redis】，使用上倒是没有什么不爽的，但是在压测的时候发现一个问题，即连接池的使用。
+
 ```go
 func factory(name string) *redis.Pool {
 	conf := config.Get("redis." + name).(*toml.TomlTree)
@@ -361,8 +387,10 @@ func Slave(db int) RedisClient {
 	return client
 }
 ```
+
 以上是定义了一个连接池，这里就产生了一个问题，在 redigo 中执行 redis 命令时是需要自行从连接池中获取连接，而在使用后还需要自己将连接放回连接池。最初我们就是没有将连接放回去，导致压测的时候一直压不上去。
 那么有没有更好的包呢，答案当然是肯定的 —— gopkg.in/redis.v5
+
 ```go
 func factory(name string) *redis.Client {
 	conf := config.Get("redis." + name).(*toml.TomlTree)
@@ -401,8 +429,10 @@ func Slave() *redis.Client {
 	return getRedis("slave")
 }
 ```
+
 可以看到，这个包就是直接返回需要的连接了。
 那么我们去看一下他的源码，连接有没有放回去呢。
+
 ```go
 func (c *baseClient) conn() (*pool.Conn, bool, error) {
 	cn, isNew, err := c.connPool.Get()
@@ -459,8 +489,11 @@ func (c *baseClient) defaultProcess(cmd Cmder) error {
 	return cmd.Err()
 }
 ```
+
 可以看到，在这个包中的底层操作会先去 connPool 中 Get 一个连接，用完之后又执行了 putConn 方法将连接放回 connPool。
+
 ### 结束语
+
 ```go
 package main
 
@@ -481,6 +514,7 @@ func main() {
 	router.Run(":7321") // listen and serve on 0.0.0.0:7321
 }
 ```
+
 3 月 21 日开始写 main，现在已经上线一个星期了，暂时还没发现什么问题。
 经过压测对比，在性能上提升了大概四倍左右。原先响应时间在 70 毫秒左右，现在是 10 毫秒左右。原先的吞吐量大概在 1200 左右，现在是 3300 左右。
 虽然 Go 很棒，但是我还是想说：PHP 是最好的语言！
