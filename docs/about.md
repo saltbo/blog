@@ -6,7 +6,7 @@ editLink: false
 
 ## 关于我
 
-生活在帝都的张家口人，我的GPG公钥是：[A6D9859C3FE0DCBE](https://saltbo.cn/pgp_keys.asc)
+我的GPG公钥是：[A6D9859C3FE0DCBE](https://saltbo.cn/pgp_keys.asc)
 
 个人定位是工程师，而不是XX语言程序员。所以每隔几年我会学习一门新的语言,你可以在[这里](https://github.com/saltbo?tab=repositories&q=learn-&type=&language=&sort=)看到我的学习记录。技术栈只是工具，不要让语言限制了你的发展。
 
