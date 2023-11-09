@@ -121,7 +121,7 @@ Kubernetes中的控制循环
 边沿触发与电平触发
 
 提问：事件驱动如何保证不丢数据？
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_febf6daf-2d7e-4468-b2d7-b71d4e67d06a.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_febf6daf-2d7e-4468-b2d7-b71d4e67d06a.png)
 这张图里展示了三种策略:
 1. edge-driven-only，错过了第二状态改变
 2. edge-triggered，不依赖事件的数据而是自行获取数据
