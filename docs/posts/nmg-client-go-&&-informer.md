@@ -101,7 +101,7 @@ c.client.Post().
 3.3.2 dynamic
 ![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_f911cd99-c8cc-4e6c-adeb-5beb00b31e5d.png)
 3.3.3 transport
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0b02563e-8df4-4e9e-9c2d-67edf9f6099e.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_0b02563e-8df4-4e9e-9c2d-67edf9f6099e.png)
 ## 3.4 Informer
 informer实际上是为controller服务的，所以这里我们先了解下k8s的controller的设计理念。
 **3.4.1 控制循环**
@@ -155,7 +155,7 @@ Network                      ——> 第三个chunk块内容
 0                            ——> 标记性终止块，大小为0字节
 ```
 普通HTTP请求响应处理
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bdfd75af-17d5-447e-8cfb-9543a843759a.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_bdfd75af-17d5-447e-8cfb-9543a843759a.png)
 chunked的HTTP请求处理
 ![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_da426cd8-5664-4afc-b28f-5a2506edf75b.png)
 informer中的chunk
@@ -173,7 +173,7 @@ Informer组件：
 ![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
 ![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
 # 四、实现一个简单的Controller
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
 # 参考文档
 - https://github.com/kubernetes/client-go
 - https://qiankunli.github.io/2020/07/20/client_go.html
