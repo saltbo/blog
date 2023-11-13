@@ -23,7 +23,7 @@ iptables本质上只是一个命令行工具，真正起作用的是Linux内核�
 3. mangle表：拆解报文，做出修改，并重新封装 的功能；内核模块：iptable_mangle
 4. raw表：关闭nat表上启用的连接追踪机制；内核模块：iptable_raw
 ## 五链
-![](/images/posts/nmg-learn-iptables/s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
+![](/images/posts/nmg-learn-iptables/prod-files-secure.s3.us-west-2.amazonaws.com_e5432620-abf4-4b3a-bcb2-aa199b615c55.png)
 1. PREROUTING：在对数据包做路由选择之前，将应用此链中的规则
 2. POSTROUTING：在对数据包做路由选择之后，将应用此链中的规则
 3. INPUT：当收到访问本机地址的数据包时，将应用此链中的规则

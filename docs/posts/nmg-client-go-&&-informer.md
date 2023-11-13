@@ -97,9 +97,9 @@ c.client.Post().
 - transport：用作初始化一个http连接，AA也是在这里完成的
 ## 3.3 核心Package走读
 3.3.1 kubernetes(clientset)
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_e00f4b01-ef65-4ec6-82f8-8cff8b85e06f.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_e00f4b01-ef65-4ec6-82f8-8cff8b85e06f.png)
 3.3.2 dynamic
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_f911cd99-c8cc-4e6c-adeb-5beb00b31e5d.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_f911cd99-c8cc-4e6c-adeb-5beb00b31e5d.png)
 3.3.3 transport
 ![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_0b02563e-8df4-4e9e-9c2d-67edf9f6099e.png)
 ## 3.4 Informer
