@@ -15,7 +15,7 @@ title: iptables基本概念和操作
 
 # 简介
 iptables本质上只是一个命令行工具，真正起作用的是Linux内核中的netfilter，他有通过hook的方式进行相关的控制，如下图：
-![](/images/posts/nmg-learn-iptables/s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
+![](/images/posts/nmg-learn-iptables/prod-files-secure.s3.us-west-2.amazonaws.com_89d0f15f-c24c-40b2-97c7-d46f9c0f8d95.png)
 # 基础知识
 ## 四表
 1. filter表：负责过滤功能，防火墙；内核模块：iptables_filter

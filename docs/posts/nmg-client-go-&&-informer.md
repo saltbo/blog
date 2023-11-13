@@ -105,9 +105,9 @@ c.client.Post().
 ## 3.4 Informer
 informer实际上是为controller服务的，所以这里我们先了解下k8s的controller的设计理念。
 **3.4.1 控制循环**
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_267d8461-b62d-40b5-986a-8477029836c7.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_267d8461-b62d-40b5-986a-8477029836c7.png)
 控制论图解
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_bf1e5346-e0fe-4e49-89af-6a1d08051474.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_bf1e5346-e0fe-4e49-89af-6a1d08051474.png)
 Kubernetes中的控制循环
 
 通常，控制环路如下所示：
@@ -157,12 +157,12 @@ Network                      ——> 第三个chunk块内容
 普通HTTP请求响应处理
 ![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_bdfd75af-17d5-447e-8cfb-9543a843759a.png)
 chunked的HTTP请求处理
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_da426cd8-5664-4afc-b28f-5a2506edf75b.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_da426cd8-5664-4afc-b28f-5a2506edf75b.png)
 informer中的chunk
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_a08d5ac4-0c06-4a13-9830-93afb745a31c.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_a08d5ac4-0c06-4a13-9830-93afb745a31c.png)
 抓包观察watch机制
 **3.4.3 核心代码走读**
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_9b57d3a9-4fba-4494-92b7-efbda35f69e3.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_9b57d3a9-4fba-4494-92b7-efbda35f69e3.png)
 Informer组件：
 - Controller
 - Reflector：通过Kubernetes Watch API监听resource下的所有事件

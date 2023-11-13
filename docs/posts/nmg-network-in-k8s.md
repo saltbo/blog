@@ -82,7 +82,7 @@ spec:
 ## 2.2 集群内部流量如何到达一个应用
 **2.2.1 通过Service访问**
 
-![](/images/posts/nmg-network%20in%20k8s/s3.us-west-2.amazonaws.com_b9465a2a-d7af-410c-bc10-d00790ca9f78.png)
+![](/images/posts/nmg-network%20in%20k8s/prod-files-secure.s3.us-west-2.amazonaws.com_b9465a2a-d7af-410c-bc10-d00790ca9f78.png)
 在 Kubernetes 集群中，每个 Node 运行一个 `kube-proxy` 进程。 `kube-proxy` 负责为 Service 实现了一种 VIP（虚拟 IP）的形式。
 ![](/images/posts/nmg-network%20in%20k8s/li.feishu.cn_)
 当client访问clusterIP时，根据kube-proxy配置好的转发规则，请求会被转发到目标Pod上。
