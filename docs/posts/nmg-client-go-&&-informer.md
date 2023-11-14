@@ -117,7 +117,7 @@ Kubernetes中的控制循环
 4. 重复循环；返回步骤1。
 
 提问：在控制循环中要求近乎实时的获取资源状态，如何实现？
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_622f66f6-46b8-4467-8c70-98ac34440441.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_622f66f6-46b8-4467-8c70-98ac34440441.png)
 边沿触发与电平触发
 
 提问：事件驱动如何保证不丢数据？
@@ -128,7 +128,7 @@ Kubernetes中的控制循环
 3. edge-triggered with resync，在上一个策略的基础上增加resync
 
 **3.4.2 ListWatch**
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_c94f5927-75c5-46d0-87dd-6380f5e7d1de.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_c94f5927-75c5-46d0-87dd-6380f5e7d1de.png)
 list-watch，顾名思义由list和watch组成。list调用资源的list API获取所有资源，watch调用资源的watch API监听资源变更事件。
 提问：如何实现watch？
 - 方案1：短轮训
