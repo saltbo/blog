@@ -17,7 +17,7 @@ title: 在K8S中一个网络请求是如何到达应用的
 2. 集群内部的一个请求如何到达应用？
 # 二、典型应用的网络请求链路
 ## 2.1 集群外部流量如何到达一个应用
-![](/images/posts/nmg-network%20in%20k8s/s3.us-west-2.amazonaws.com_74256f48-d6e6-4515-9fa1-02c0f7693b43.png)
+![](/images/posts/nmg-network%20in%20k8s/prod-files-secure.s3.us-west-2.amazonaws.com_74256f48-d6e6-4515-9fa1-02c0f7693b43.png)
 **2.1.1 通过NodePort类型的Service访问**
 从根源上讲，这种方式是唯一的集群外部访问方式。
 ```bash

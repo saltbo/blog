@@ -41,7 +41,7 @@ spec:
 > 答：Resource是一个对象，Kind是一个对象的类型名称
 
 提问：一个标准的K8S资源的API长什么样？
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_59f9c088-3594-4dc7-ba6f-9e0737d6bb22.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_59f9c088-3594-4dc7-ba6f-9e0737d6bb22.png)
 ## 2.2 实战调用
 **2.2.1 跳过鉴权**
 因为本次分享的API只是个引子，我们就不讲鉴权了。kubectl有个proxy的子命令可以实现在本地搭建一个具备kubectl同等权限的代理。这里我们通过这种方式跳过鉴权。
@@ -85,7 +85,7 @@ c.client.Post().
    Into(result)
 ```
 ## 3.2 Package介绍
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_94352c55-903a-45d4-a55b-c4ea1f47eb21.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_94352c55-903a-45d4-a55b-c4ea1f47eb21.png)
 **client-go源码目录结构**
 - discovery：用于发现APIs的相关资源
 - kubernetes(clientset)：基于rest封装的包含所有k8s内置资源的client集合
@@ -170,8 +170,8 @@ Informer组件：
 - Processor：记录并触发回调函数
 - DeltaFIFO
 - LocalStore
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
-![](/images/posts/nmg-client-go%20&&%20informer/s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_0bf58d4b-5199-42ea-9bf1-0ea4add15c21.png)
+![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_655b74d3-fd3c-4390-a120-9e8c224b6be6.png)
 # 四、实现一个简单的Controller
 ![](/images/posts/nmg-client-go%20&&%20informer/prod-files-secure.s3.us-west-2.amazonaws.com_c8ba7cb2-245b-4717-a165-3392a84ad35e.png)
 # 参考文档
