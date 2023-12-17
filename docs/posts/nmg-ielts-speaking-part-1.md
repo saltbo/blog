@@ -4,9 +4,9 @@ categories:
     - IELTS
 createat: "2023-12-17T08:48:00+07:00"
 date: "2023-12-17T00:00:00+07:00"
-lastupdated: "2023-12-17T14:52:00+07:00"
+lastupdated: "2023-12-17T14:53:00+07:00"
 name: IELTS Speaking Part 1
-status: Finished ✅
+status: "Published \U0001F5A8"
 tags:
     - IELTS
 title: 雅思口语Part 1
