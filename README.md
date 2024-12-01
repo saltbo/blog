@@ -4,4 +4,3 @@
 [![](https://img.shields.io/github/license/saltbo/blog)](https://github.com/saltbo/blog/blob/master/LICENSE)
 
 Repo of my blog → Welcome [visit](https://saltbo.cn)  :)
-
